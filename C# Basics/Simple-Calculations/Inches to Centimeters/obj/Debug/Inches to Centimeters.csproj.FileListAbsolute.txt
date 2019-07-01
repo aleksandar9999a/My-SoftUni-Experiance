@@ -1,0 +1,7 @@
+E:\C#\Simple-Calculations\Inches to Centimeters\bin\Debug\Inches to Centimeters.exe.config
+E:\C#\Simple-Calculations\Inches to Centimeters\bin\Debug\Inches to Centimeters.exe
+E:\C#\Simple-Calculations\Inches to Centimeters\bin\Debug\Inches to Centimeters.pdb
+E:\C#\Simple-Calculations\Inches to Centimeters\obj\Debug\Inches to Centimeters.csprojAssemblyReference.cache
+E:\C#\Simple-Calculations\Inches to Centimeters\obj\Debug\Inches to Centimeters.csproj.CoreCompileInputs.cache
+E:\C#\Simple-Calculations\Inches to Centimeters\obj\Debug\Inches to Centimeters.exe
+E:\C#\Simple-Calculations\Inches to Centimeters\obj\Debug\Inches to Centimeters.pdb

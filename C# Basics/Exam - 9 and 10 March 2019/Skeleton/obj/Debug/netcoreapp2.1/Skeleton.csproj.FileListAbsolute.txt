@@ -1,0 +1,10 @@
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\bin\Debug\netcoreapp2.1\Skeleton.deps.json
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\bin\Debug\netcoreapp2.1\Skeleton.runtimeconfig.json
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\bin\Debug\netcoreapp2.1\Skeleton.runtimeconfig.dev.json
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\bin\Debug\netcoreapp2.1\Skeleton.dll
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\bin\Debug\netcoreapp2.1\Skeleton.pdb
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\obj\Debug\netcoreapp2.1\Skeleton.csproj.CoreCompileInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\obj\Debug\netcoreapp2.1\Skeleton.AssemblyInfoInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\obj\Debug\netcoreapp2.1\Skeleton.AssemblyInfo.cs
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\obj\Debug\netcoreapp2.1\Skeleton.dll
+E:\C#\Exam - 9 and 10 March 2019\Skeleton\obj\Debug\netcoreapp2.1\Skeleton.pdb

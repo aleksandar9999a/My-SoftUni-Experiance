@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Time + 15 Minutes\bin\Debug\Time + 15 Minutes.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Time + 15 Minutes\bin\Debug\Time + 15 Minutes.exe
+E:\C#\Условни конструкции\Conditional-Statements\Time + 15 Minutes\bin\Debug\Time + 15 Minutes.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Time + 15 Minutes\obj\Debug\Time + 15 Minutes.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Time + 15 Minutes\obj\Debug\Time + 15 Minutes.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Time + 15 Minutes\obj\Debug\Time + 15 Minutes.exe
+E:\C#\Условни конструкции\Conditional-Statements\Time + 15 Minutes\obj\Debug\Time + 15 Minutes.pdb

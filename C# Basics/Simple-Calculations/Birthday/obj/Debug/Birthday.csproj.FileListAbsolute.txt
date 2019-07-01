@@ -1,0 +1,7 @@
+E:\C#\Simple-Calculations\Birthday\bin\Debug\Birthday.exe.config
+E:\C#\Simple-Calculations\Birthday\bin\Debug\Birthday.exe
+E:\C#\Simple-Calculations\Birthday\bin\Debug\Birthday.pdb
+E:\C#\Simple-Calculations\Birthday\obj\Debug\Birthday.csprojAssemblyReference.cache
+E:\C#\Simple-Calculations\Birthday\obj\Debug\Birthday.csproj.CoreCompileInputs.cache
+E:\C#\Simple-Calculations\Birthday\obj\Debug\Birthday.exe
+E:\C#\Simple-Calculations\Birthday\obj\Debug\Birthday.pdb

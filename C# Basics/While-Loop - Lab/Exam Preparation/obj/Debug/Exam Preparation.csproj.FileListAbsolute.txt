@@ -1,0 +1,7 @@
+E:\C#\While-Loop - Lab\Exam Preparation\bin\Debug\Exam Preparation.exe.config
+E:\C#\While-Loop - Lab\Exam Preparation\bin\Debug\Exam Preparation.exe
+E:\C#\While-Loop - Lab\Exam Preparation\bin\Debug\Exam Preparation.pdb
+E:\C#\While-Loop - Lab\Exam Preparation\obj\Debug\Exam Preparation.csprojAssemblyReference.cache
+E:\C#\While-Loop - Lab\Exam Preparation\obj\Debug\Exam Preparation.csproj.CoreCompileInputs.cache
+E:\C#\While-Loop - Lab\Exam Preparation\obj\Debug\Exam Preparation.exe
+E:\C#\While-Loop - Lab\Exam Preparation\obj\Debug\Exam Preparation.pdb

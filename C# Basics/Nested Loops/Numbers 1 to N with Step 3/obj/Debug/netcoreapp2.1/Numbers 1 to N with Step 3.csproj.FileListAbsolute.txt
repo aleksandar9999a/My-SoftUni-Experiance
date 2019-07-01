@@ -1,0 +1,10 @@
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\bin\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.deps.json
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\bin\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.runtimeconfig.json
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\bin\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.runtimeconfig.dev.json
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\bin\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.dll
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\bin\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.pdb
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\obj\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.csproj.CoreCompileInputs.cache
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\obj\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.AssemblyInfoInputs.cache
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\obj\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.AssemblyInfo.cs
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\obj\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.dll
+E:\C#\Nested Loops\Numbers 1 to N with Step 3\obj\Debug\netcoreapp2.1\Numbers 1 to N with Step 3.pdb

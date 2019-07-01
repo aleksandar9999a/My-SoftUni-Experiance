@@ -1,0 +1,6 @@
+E:\C#\Условни конструкции\Conditional-Statements\Even or Odd\bin\Debug\Even or Odd.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Even or Odd\bin\Debug\Even or Odd.exe
+E:\C#\Условни конструкции\Conditional-Statements\Even or Odd\bin\Debug\Even or Odd.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Even or Odd\obj\Debug\Even or Odd.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Even or Odd\obj\Debug\Even or Odd.exe
+E:\C#\Условни конструкции\Conditional-Statements\Even or Odd\obj\Debug\Even or Odd.pdb

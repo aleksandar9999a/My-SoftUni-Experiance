@@ -1,0 +1,11 @@
+E:\C#\Nested Loops\Gymnastics\bin\Debug\netcoreapp2.1\Gymnastics.deps.json
+E:\C#\Nested Loops\Gymnastics\bin\Debug\netcoreapp2.1\Gymnastics.runtimeconfig.json
+E:\C#\Nested Loops\Gymnastics\bin\Debug\netcoreapp2.1\Gymnastics.runtimeconfig.dev.json
+E:\C#\Nested Loops\Gymnastics\bin\Debug\netcoreapp2.1\Gymnastics.dll
+E:\C#\Nested Loops\Gymnastics\bin\Debug\netcoreapp2.1\Gymnastics.pdb
+E:\C#\Nested Loops\Gymnastics\obj\Debug\netcoreapp2.1\Gymnastics.csprojAssemblyReference.cache
+E:\C#\Nested Loops\Gymnastics\obj\Debug\netcoreapp2.1\Gymnastics.csproj.CoreCompileInputs.cache
+E:\C#\Nested Loops\Gymnastics\obj\Debug\netcoreapp2.1\Gymnastics.AssemblyInfoInputs.cache
+E:\C#\Nested Loops\Gymnastics\obj\Debug\netcoreapp2.1\Gymnastics.AssemblyInfo.cs
+E:\C#\Nested Loops\Gymnastics\obj\Debug\netcoreapp2.1\Gymnastics.dll
+E:\C#\Nested Loops\Gymnastics\obj\Debug\netcoreapp2.1\Gymnastics.pdb

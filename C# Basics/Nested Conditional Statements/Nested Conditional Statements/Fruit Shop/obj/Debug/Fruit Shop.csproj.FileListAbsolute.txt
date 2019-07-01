@@ -1,0 +1,7 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit Shop\bin\Debug\Fruit Shop.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit Shop\bin\Debug\Fruit Shop.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit Shop\bin\Debug\Fruit Shop.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit Shop\obj\Debug\Fruit Shop.csprojAssemblyReference.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit Shop\obj\Debug\Fruit Shop.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit Shop\obj\Debug\Fruit Shop.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit Shop\obj\Debug\Fruit Shop.pdb

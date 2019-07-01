@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Sum Seconds\bin\Debug\Sum Seconds.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Sum Seconds\bin\Debug\Sum Seconds.exe
+E:\C#\Условни конструкции\Conditional-Statements\Sum Seconds\bin\Debug\Sum Seconds.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Sum Seconds\obj\Debug\Sum Seconds.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Sum Seconds\obj\Debug\Sum Seconds.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Sum Seconds\obj\Debug\Sum Seconds.exe
+E:\C#\Условни конструкции\Conditional-Statements\Sum Seconds\obj\Debug\Sum Seconds.pdb

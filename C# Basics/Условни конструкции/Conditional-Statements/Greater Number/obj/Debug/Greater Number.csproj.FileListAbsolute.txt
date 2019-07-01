@@ -1,0 +1,6 @@
+E:\C#\Условни конструкции\Conditional-Statements\Greater Number\bin\Debug\Greater Number.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Greater Number\bin\Debug\Greater Number.exe
+E:\C#\Условни конструкции\Conditional-Statements\Greater Number\bin\Debug\Greater Number.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Greater Number\obj\Debug\Greater Number.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Greater Number\obj\Debug\Greater Number.exe
+E:\C#\Условни конструкции\Conditional-Statements\Greater Number\obj\Debug\Greater Number.pdb

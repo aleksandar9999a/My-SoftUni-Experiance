@@ -1,0 +1,7 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Summer Outfit\bin\Debug\Summer Outfit.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Summer Outfit\bin\Debug\Summer Outfit.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Summer Outfit\bin\Debug\Summer Outfit.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Summer Outfit\obj\Debug\Summer Outfit.csprojAssemblyReference.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Summer Outfit\obj\Debug\Summer Outfit.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Summer Outfit\obj\Debug\Summer Outfit.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Summer Outfit\obj\Debug\Summer Outfit.pdb

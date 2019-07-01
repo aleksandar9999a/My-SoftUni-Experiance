@@ -1,0 +1,10 @@
+E:\C#\21 April Online Exam\Easter Bake\bin\Debug\netcoreapp2.1\Easter Bake.deps.json
+E:\C#\21 April Online Exam\Easter Bake\bin\Debug\netcoreapp2.1\Easter Bake.runtimeconfig.json
+E:\C#\21 April Online Exam\Easter Bake\bin\Debug\netcoreapp2.1\Easter Bake.runtimeconfig.dev.json
+E:\C#\21 April Online Exam\Easter Bake\bin\Debug\netcoreapp2.1\Easter Bake.dll
+E:\C#\21 April Online Exam\Easter Bake\bin\Debug\netcoreapp2.1\Easter Bake.pdb
+E:\C#\21 April Online Exam\Easter Bake\obj\Debug\netcoreapp2.1\Easter Bake.csproj.CoreCompileInputs.cache
+E:\C#\21 April Online Exam\Easter Bake\obj\Debug\netcoreapp2.1\Easter Bake.AssemblyInfoInputs.cache
+E:\C#\21 April Online Exam\Easter Bake\obj\Debug\netcoreapp2.1\Easter Bake.AssemblyInfo.cs
+E:\C#\21 April Online Exam\Easter Bake\obj\Debug\netcoreapp2.1\Easter Bake.dll
+E:\C#\21 April Online Exam\Easter Bake\obj\Debug\netcoreapp2.1\Easter Bake.pdb

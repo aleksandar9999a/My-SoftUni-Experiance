@@ -1,0 +1,7 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Ski Trip\bin\Debug\Ski Trip.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Ski Trip\bin\Debug\Ski Trip.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Ski Trip\bin\Debug\Ski Trip.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Ski Trip\obj\Debug\Ski Trip.csprojAssemblyReference.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Ski Trip\obj\Debug\Ski Trip.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Ski Trip\obj\Debug\Ski Trip.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Ski Trip\obj\Debug\Ski Trip.pdb

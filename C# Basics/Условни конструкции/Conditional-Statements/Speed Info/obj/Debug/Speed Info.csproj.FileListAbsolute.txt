@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Speed Info\bin\Debug\Speed Info.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Speed Info\bin\Debug\Speed Info.exe
+E:\C#\Условни конструкции\Conditional-Statements\Speed Info\bin\Debug\Speed Info.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Speed Info\obj\Debug\Speed Info.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Speed Info\obj\Debug\Speed Info.exe
+E:\C#\Условни конструкции\Conditional-Statements\Speed Info\obj\Debug\Speed Info.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Speed Info\obj\Debug\Speed Info.csprojAssemblyReference.cache

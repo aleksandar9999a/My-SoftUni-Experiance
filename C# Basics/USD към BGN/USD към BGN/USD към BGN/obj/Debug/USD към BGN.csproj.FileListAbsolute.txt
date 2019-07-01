@@ -1,0 +1,6 @@
+E:\C#\USD към BGN\USD към BGN\USD към BGN\bin\Debug\USD към BGN.exe.config
+E:\C#\USD към BGN\USD към BGN\USD към BGN\bin\Debug\USD към BGN.exe
+E:\C#\USD към BGN\USD към BGN\USD към BGN\bin\Debug\USD към BGN.pdb
+E:\C#\USD към BGN\USD към BGN\USD към BGN\obj\Debug\USD към BGN.csproj.CoreCompileInputs.cache
+E:\C#\USD към BGN\USD към BGN\USD към BGN\obj\Debug\USD към BGN.exe
+E:\C#\USD към BGN\USD към BGN\USD към BGN\obj\Debug\USD към BGN.pdb

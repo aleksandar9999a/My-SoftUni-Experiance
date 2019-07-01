@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Scholarship\bin\Debug\Scholarship.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Scholarship\bin\Debug\Scholarship.exe
+E:\C#\Условни конструкции\Conditional-Statements\Scholarship\bin\Debug\Scholarship.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Scholarship\obj\Debug\Scholarship.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Scholarship\obj\Debug\Scholarship.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Scholarship\obj\Debug\Scholarship.exe
+E:\C#\Условни конструкции\Conditional-Statements\Scholarship\obj\Debug\Scholarship.pdb

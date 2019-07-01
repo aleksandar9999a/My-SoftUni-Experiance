@@ -1,0 +1,10 @@
+E:\C#\21 April Online Exam\Easter Decoration\bin\Debug\netcoreapp2.1\Easter Decoration.deps.json
+E:\C#\21 April Online Exam\Easter Decoration\bin\Debug\netcoreapp2.1\Easter Decoration.runtimeconfig.json
+E:\C#\21 April Online Exam\Easter Decoration\bin\Debug\netcoreapp2.1\Easter Decoration.runtimeconfig.dev.json
+E:\C#\21 April Online Exam\Easter Decoration\bin\Debug\netcoreapp2.1\Easter Decoration.dll
+E:\C#\21 April Online Exam\Easter Decoration\bin\Debug\netcoreapp2.1\Easter Decoration.pdb
+E:\C#\21 April Online Exam\Easter Decoration\obj\Debug\netcoreapp2.1\Easter Decoration.csproj.CoreCompileInputs.cache
+E:\C#\21 April Online Exam\Easter Decoration\obj\Debug\netcoreapp2.1\Easter Decoration.AssemblyInfoInputs.cache
+E:\C#\21 April Online Exam\Easter Decoration\obj\Debug\netcoreapp2.1\Easter Decoration.AssemblyInfo.cs
+E:\C#\21 April Online Exam\Easter Decoration\obj\Debug\netcoreapp2.1\Easter Decoration.dll
+E:\C#\21 April Online Exam\Easter Decoration\obj\Debug\netcoreapp2.1\Easter Decoration.pdb

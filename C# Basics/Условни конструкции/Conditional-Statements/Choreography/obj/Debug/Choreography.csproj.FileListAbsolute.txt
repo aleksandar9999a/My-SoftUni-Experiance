@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Choreography\bin\Debug\Choreography.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Choreography\bin\Debug\Choreography.exe
+E:\C#\Условни конструкции\Conditional-Statements\Choreography\bin\Debug\Choreography.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Choreography\obj\Debug\Choreography.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Choreography\obj\Debug\Choreography.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Choreography\obj\Debug\Choreography.exe
+E:\C#\Условни конструкции\Conditional-Statements\Choreography\obj\Debug\Choreography.pdb

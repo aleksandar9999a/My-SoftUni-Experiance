@@ -1,0 +1,5 @@
+E:\C#\For-Loop - Lab\Half Sum Element\bin\Debug\Half Sum Element.exe.config
+E:\C#\For-Loop - Lab\Half Sum Element\bin\Debug\Half Sum Element.exe
+E:\C#\For-Loop - Lab\Half Sum Element\bin\Debug\Half Sum Element.pdb
+E:\C#\For-Loop - Lab\Half Sum Element\obj\Debug\Half Sum Element.exe
+E:\C#\For-Loop - Lab\Half Sum Element\obj\Debug\Half Sum Element.pdb

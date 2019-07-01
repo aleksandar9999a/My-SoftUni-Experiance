@@ -1,0 +1,10 @@
+E:\C#\21 April Online Exam\Easter Trip\bin\Debug\netcoreapp2.1\Easter Trip.deps.json
+E:\C#\21 April Online Exam\Easter Trip\bin\Debug\netcoreapp2.1\Easter Trip.runtimeconfig.json
+E:\C#\21 April Online Exam\Easter Trip\bin\Debug\netcoreapp2.1\Easter Trip.runtimeconfig.dev.json
+E:\C#\21 April Online Exam\Easter Trip\bin\Debug\netcoreapp2.1\Easter Trip.dll
+E:\C#\21 April Online Exam\Easter Trip\bin\Debug\netcoreapp2.1\Easter Trip.pdb
+E:\C#\21 April Online Exam\Easter Trip\obj\Debug\netcoreapp2.1\Easter Trip.csproj.CoreCompileInputs.cache
+E:\C#\21 April Online Exam\Easter Trip\obj\Debug\netcoreapp2.1\Easter Trip.AssemblyInfoInputs.cache
+E:\C#\21 April Online Exam\Easter Trip\obj\Debug\netcoreapp2.1\Easter Trip.AssemblyInfo.cs
+E:\C#\21 April Online Exam\Easter Trip\obj\Debug\netcoreapp2.1\Easter Trip.dll
+E:\C#\21 April Online Exam\Easter Trip\obj\Debug\netcoreapp2.1\Easter Trip.pdb

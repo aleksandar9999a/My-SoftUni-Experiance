@@ -1,0 +1,11 @@
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\bin\Debug\netcoreapp2.1\World Snooker Championship.deps.json
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\bin\Debug\netcoreapp2.1\World Snooker Championship.runtimeconfig.json
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\bin\Debug\netcoreapp2.1\World Snooker Championship.runtimeconfig.dev.json
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\bin\Debug\netcoreapp2.1\World Snooker Championship.dll
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\bin\Debug\netcoreapp2.1\World Snooker Championship.pdb
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\obj\Debug\netcoreapp2.1\World Snooker Championship.csprojAssemblyReference.cache
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\obj\Debug\netcoreapp2.1\World Snooker Championship.csproj.CoreCompileInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\obj\Debug\netcoreapp2.1\World Snooker Championship.AssemblyInfoInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\obj\Debug\netcoreapp2.1\World Snooker Championship.AssemblyInfo.cs
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\obj\Debug\netcoreapp2.1\World Snooker Championship.dll
+E:\C#\Exam - 9 and 10 March 2019\World Snooker Championship\obj\Debug\netcoreapp2.1\World Snooker Championship.pdb

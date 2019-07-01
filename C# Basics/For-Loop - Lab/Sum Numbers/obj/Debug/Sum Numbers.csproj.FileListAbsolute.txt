@@ -1,0 +1,6 @@
+E:\C#\For-Loop - Lab\Sum Numbers\bin\Debug\Sum Numbers.exe.config
+E:\C#\For-Loop - Lab\Sum Numbers\bin\Debug\Sum Numbers.exe
+E:\C#\For-Loop - Lab\Sum Numbers\bin\Debug\Sum Numbers.pdb
+E:\C#\For-Loop - Lab\Sum Numbers\obj\Debug\Sum Numbers.csprojResolveAssemblyReference.cache
+E:\C#\For-Loop - Lab\Sum Numbers\obj\Debug\Sum Numbers.exe
+E:\C#\For-Loop - Lab\Sum Numbers\obj\Debug\Sum Numbers.pdb

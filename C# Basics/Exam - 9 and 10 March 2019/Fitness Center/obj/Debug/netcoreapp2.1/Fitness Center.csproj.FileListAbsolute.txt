@@ -1,0 +1,11 @@
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\bin\Debug\netcoreapp2.1\Fitness Center.deps.json
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\bin\Debug\netcoreapp2.1\Fitness Center.runtimeconfig.json
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\bin\Debug\netcoreapp2.1\Fitness Center.runtimeconfig.dev.json
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\bin\Debug\netcoreapp2.1\Fitness Center.dll
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\bin\Debug\netcoreapp2.1\Fitness Center.pdb
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\obj\Debug\netcoreapp2.1\Fitness Center.csprojAssemblyReference.cache
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\obj\Debug\netcoreapp2.1\Fitness Center.csproj.CoreCompileInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\obj\Debug\netcoreapp2.1\Fitness Center.AssemblyInfoInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\obj\Debug\netcoreapp2.1\Fitness Center.AssemblyInfo.cs
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\obj\Debug\netcoreapp2.1\Fitness Center.dll
+E:\C#\Exam - 9 and 10 March 2019\Fitness Center\obj\Debug\netcoreapp2.1\Fitness Center.pdb

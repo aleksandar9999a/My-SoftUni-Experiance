@@ -1,0 +1,6 @@
+E:\C#\For-Loop - Lab\Vowels Sum\bin\Debug\Vowels Sum.exe.config
+E:\C#\For-Loop - Lab\Vowels Sum\bin\Debug\Vowels Sum.exe
+E:\C#\For-Loop - Lab\Vowels Sum\bin\Debug\Vowels Sum.pdb
+E:\C#\For-Loop - Lab\Vowels Sum\obj\Debug\Vowels Sum.exe
+E:\C#\For-Loop - Lab\Vowels Sum\obj\Debug\Vowels Sum.pdb
+E:\C#\For-Loop - Lab\Vowels Sum\obj\Debug\Vowels Sum.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+E:\C#\Условни конструкции\Conditional-Statements\Number to Text\bin\Debug\Number to Text.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Number to Text\bin\Debug\Number to Text.exe
+E:\C#\Условни конструкции\Conditional-Statements\Number to Text\bin\Debug\Number to Text.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Number to Text\obj\Debug\Number to Text.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Number to Text\obj\Debug\Number to Text.exe
+E:\C#\Условни конструкции\Conditional-Statements\Number to Text\obj\Debug\Number to Text.pdb

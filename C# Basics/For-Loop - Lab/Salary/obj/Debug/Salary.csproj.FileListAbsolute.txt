@@ -1,0 +1,5 @@
+E:\C#\For-Loop - Lab\Salary\bin\Debug\Salary.exe.config
+E:\C#\For-Loop - Lab\Salary\bin\Debug\Salary.exe
+E:\C#\For-Loop - Lab\Salary\bin\Debug\Salary.pdb
+E:\C#\For-Loop - Lab\Salary\obj\Debug\Salary.exe
+E:\C#\For-Loop - Lab\Salary\obj\Debug\Salary.pdb

@@ -1,0 +1,7 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Small Shop\bin\Debug\Small Shop.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Small Shop\bin\Debug\Small Shop.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Small Shop\bin\Debug\Small Shop.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Small Shop\obj\Debug\Small Shop.csprojAssemblyReference.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Small Shop\obj\Debug\Small Shop.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Small Shop\obj\Debug\Small Shop.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Small Shop\obj\Debug\Small Shop.pdb

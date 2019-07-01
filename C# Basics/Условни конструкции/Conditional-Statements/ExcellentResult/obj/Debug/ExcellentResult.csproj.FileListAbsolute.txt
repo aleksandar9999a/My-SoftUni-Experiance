@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\ExcellentResult\bin\Debug\ExcellentResult.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\ExcellentResult\bin\Debug\ExcellentResult.exe
+E:\C#\Условни конструкции\Conditional-Statements\ExcellentResult\bin\Debug\ExcellentResult.pdb
+E:\C#\Условни конструкции\Conditional-Statements\ExcellentResult\obj\Debug\ExcellentResult.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\ExcellentResult\obj\Debug\ExcellentResult.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\ExcellentResult\obj\Debug\ExcellentResult.exe
+E:\C#\Условни конструкции\Conditional-Statements\ExcellentResult\obj\Debug\ExcellentResult.pdb

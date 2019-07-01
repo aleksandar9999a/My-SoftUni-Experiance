@@ -1,0 +1,11 @@
+E:\C#\21 April Online Exam\Easter Eggs Battle\bin\Debug\netcoreapp2.1\Easter Eggs Battle.deps.json
+E:\C#\21 April Online Exam\Easter Eggs Battle\bin\Debug\netcoreapp2.1\Easter Eggs Battle.runtimeconfig.json
+E:\C#\21 April Online Exam\Easter Eggs Battle\bin\Debug\netcoreapp2.1\Easter Eggs Battle.runtimeconfig.dev.json
+E:\C#\21 April Online Exam\Easter Eggs Battle\bin\Debug\netcoreapp2.1\Easter Eggs Battle.dll
+E:\C#\21 April Online Exam\Easter Eggs Battle\bin\Debug\netcoreapp2.1\Easter Eggs Battle.pdb
+E:\C#\21 April Online Exam\Easter Eggs Battle\obj\Debug\netcoreapp2.1\Easter Eggs Battle.csprojAssemblyReference.cache
+E:\C#\21 April Online Exam\Easter Eggs Battle\obj\Debug\netcoreapp2.1\Easter Eggs Battle.csproj.CoreCompileInputs.cache
+E:\C#\21 April Online Exam\Easter Eggs Battle\obj\Debug\netcoreapp2.1\Easter Eggs Battle.AssemblyInfoInputs.cache
+E:\C#\21 April Online Exam\Easter Eggs Battle\obj\Debug\netcoreapp2.1\Easter Eggs Battle.AssemblyInfo.cs
+E:\C#\21 April Online Exam\Easter Eggs Battle\obj\Debug\netcoreapp2.1\Easter Eggs Battle.dll
+E:\C#\21 April Online Exam\Easter Eggs Battle\obj\Debug\netcoreapp2.1\Easter Eggs Battle.pdb

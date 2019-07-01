@@ -1,0 +1,6 @@
+E:\C#\Условни конструкции\Conditional-Statements\Equal Numbers\bin\Debug\Equal Numbers.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Equal Numbers\bin\Debug\Equal Numbers.exe
+E:\C#\Условни конструкции\Conditional-Statements\Equal Numbers\bin\Debug\Equal Numbers.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Equal Numbers\obj\Debug\Equal Numbers.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Equal Numbers\obj\Debug\Equal Numbers.exe
+E:\C#\Условни конструкции\Conditional-Statements\Equal Numbers\obj\Debug\Equal Numbers.pdb

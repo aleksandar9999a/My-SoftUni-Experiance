@@ -1,0 +1,6 @@
+E:\C#\Условни конструкции\Conditional-Statements\Number 100 200\bin\Debug\Number 100 200.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Number 100 200\bin\Debug\Number 100 200.exe
+E:\C#\Условни конструкции\Conditional-Statements\Number 100 200\bin\Debug\Number 100 200.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Number 100 200\obj\Debug\Number 100 200.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Number 100 200\obj\Debug\Number 100 200.exe
+E:\C#\Условни конструкции\Conditional-Statements\Number 100 200\obj\Debug\Number 100 200.pdb

@@ -1,0 +1,6 @@
+E:\C#\While-Loop - Lab\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+E:\C#\While-Loop - Lab\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+E:\C#\While-Loop - Lab\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+E:\C#\While-Loop - Lab\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+E:\C#\While-Loop - Lab\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+E:\C#\While-Loop - Lab\ConsoleApp1\obj\Debug\Invalid number.csprojResolveAssemblyReference.cache

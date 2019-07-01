@@ -1,0 +1,7 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point on Rectangle Border\bin\Debug\Point on Rectangle Border.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point on Rectangle Border\bin\Debug\Point on Rectangle Border.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point on Rectangle Border\bin\Debug\Point on Rectangle Border.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point on Rectangle Border\obj\Debug\Point on Rectangle Border.csprojAssemblyReference.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point on Rectangle Border\obj\Debug\Point on Rectangle Border.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point on Rectangle Border\obj\Debug\Point on Rectangle Border.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point on Rectangle Border\obj\Debug\Point on Rectangle Border.pdb

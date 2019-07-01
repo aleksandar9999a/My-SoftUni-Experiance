@@ -1,0 +1,1 @@
+E:\C#\For-Loop - Lab\Latin Letters\bin\Debug\Latin Letters.exe.config

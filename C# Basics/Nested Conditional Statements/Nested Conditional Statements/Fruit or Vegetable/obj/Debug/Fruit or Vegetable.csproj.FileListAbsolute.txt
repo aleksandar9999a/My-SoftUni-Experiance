@@ -1,0 +1,6 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit or Vegetable\bin\Debug\Fruit or Vegetable.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit or Vegetable\bin\Debug\Fruit or Vegetable.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit or Vegetable\bin\Debug\Fruit or Vegetable.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit or Vegetable\obj\Debug\Fruit or Vegetable.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit or Vegetable\obj\Debug\Fruit or Vegetable.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Fruit or Vegetable\obj\Debug\Fruit or Vegetable.pdb

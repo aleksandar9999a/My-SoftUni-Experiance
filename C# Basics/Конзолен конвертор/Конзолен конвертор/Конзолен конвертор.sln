@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Конзолен конвертор", "Конзолен конвертор\Конзолен конвертор.csproj", "{43326CAE-F9B1-49D9-BB7D-1253D51F767C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43326CAE-F9B1-49D9-BB7D-1253D51F767C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43326CAE-F9B1-49D9-BB7D-1253D51F767C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43326CAE-F9B1-49D9-BB7D-1253D51F767C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43326CAE-F9B1-49D9-BB7D-1253D51F767C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E29F8EA6-1E2D-4771-890C-6AE082FA2418}
+	EndGlobalSection
+EndGlobal

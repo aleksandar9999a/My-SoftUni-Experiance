@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Toy Shop\bin\Debug\Toy Shop.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Toy Shop\bin\Debug\Toy Shop.exe
+E:\C#\Условни конструкции\Conditional-Statements\Toy Shop\bin\Debug\Toy Shop.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Toy Shop\obj\Debug\Toy Shop.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Toy Shop\obj\Debug\Toy Shop.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Toy Shop\obj\Debug\Toy Shop.exe
+E:\C#\Условни конструкции\Conditional-Statements\Toy Shop\obj\Debug\Toy Shop.pdb

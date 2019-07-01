@@ -1,0 +1,6 @@
+E:\C#\For-Loop - Lab\Histogram\bin\Debug\Histogram.exe.config
+E:\C#\For-Loop - Lab\Histogram\bin\Debug\Histogram.exe
+E:\C#\For-Loop - Lab\Histogram\bin\Debug\Histogram.pdb
+E:\C#\For-Loop - Lab\Histogram\obj\Debug\Histogram.csprojResolveAssemblyReference.cache
+E:\C#\For-Loop - Lab\Histogram\obj\Debug\Histogram.exe
+E:\C#\For-Loop - Lab\Histogram\obj\Debug\Histogram.pdb

@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Bonus Score\bin\Debug\Bonus Score.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Bonus Score\bin\Debug\Bonus Score.exe
+E:\C#\Условни конструкции\Conditional-Statements\Bonus Score\bin\Debug\Bonus Score.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Bonus Score\obj\Debug\Bonus Score.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Bonus Score\obj\Debug\Bonus Score.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Bonus Score\obj\Debug\Bonus Score.exe
+E:\C#\Условни конструкции\Conditional-Statements\Bonus Score\obj\Debug\Bonus Score.pdb

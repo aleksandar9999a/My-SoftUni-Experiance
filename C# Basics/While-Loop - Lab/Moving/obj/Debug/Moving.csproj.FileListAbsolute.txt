@@ -1,0 +1,6 @@
+E:\C#\While-Loop - Lab\Moving\bin\Debug\Moving.exe.config
+E:\C#\While-Loop - Lab\Moving\bin\Debug\Moving.exe
+E:\C#\While-Loop - Lab\Moving\bin\Debug\Moving.pdb
+E:\C#\While-Loop - Lab\Moving\obj\Debug\Moving.csproj.CoreCompileInputs.cache
+E:\C#\While-Loop - Lab\Moving\obj\Debug\Moving.exe
+E:\C#\While-Loop - Lab\Moving\obj\Debug\Moving.pdb

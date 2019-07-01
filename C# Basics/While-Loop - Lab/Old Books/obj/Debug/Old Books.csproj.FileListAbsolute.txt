@@ -1,0 +1,7 @@
+E:\C#\While-Loop - Lab\Old Books\bin\Debug\Old Books.exe.config
+E:\C#\While-Loop - Lab\Old Books\bin\Debug\Old Books.exe
+E:\C#\While-Loop - Lab\Old Books\bin\Debug\Old Books.pdb
+E:\C#\While-Loop - Lab\Old Books\obj\Debug\Old Books.csprojAssemblyReference.cache
+E:\C#\While-Loop - Lab\Old Books\obj\Debug\Old Books.csproj.CoreCompileInputs.cache
+E:\C#\While-Loop - Lab\Old Books\obj\Debug\Old Books.exe
+E:\C#\While-Loop - Lab\Old Books\obj\Debug\Old Books.pdb

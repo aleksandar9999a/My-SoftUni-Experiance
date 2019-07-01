@@ -1,0 +1,7 @@
+E:\C#\While-Loop - Lab\Vacation\bin\Debug\Vacation.exe.config
+E:\C#\While-Loop - Lab\Vacation\bin\Debug\Vacation.exe
+E:\C#\While-Loop - Lab\Vacation\bin\Debug\Vacation.pdb
+E:\C#\While-Loop - Lab\Vacation\obj\Debug\Vacation.csprojAssemblyReference.cache
+E:\C#\While-Loop - Lab\Vacation\obj\Debug\Vacation.csproj.CoreCompileInputs.cache
+E:\C#\While-Loop - Lab\Vacation\obj\Debug\Vacation.exe
+E:\C#\While-Loop - Lab\Vacation\obj\Debug\Vacation.pdb

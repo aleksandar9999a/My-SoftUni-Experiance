@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Day of Week\bin\Debug\Day of Week.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Day of Week\bin\Debug\Day of Week.exe
+E:\C#\Условни конструкции\Conditional-Statements\Day of Week\bin\Debug\Day of Week.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Day of Week\obj\Debug\Day of Week.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Day of Week\obj\Debug\Day of Week.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Day of Week\obj\Debug\Day of Week.exe
+E:\C#\Условни конструкции\Conditional-Statements\Day of Week\obj\Debug\Day of Week.pdb

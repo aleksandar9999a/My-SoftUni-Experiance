@@ -1,0 +1,10 @@
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\bin\Debug\netcoreapp2.1\Tennis Equipment.deps.json
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\bin\Debug\netcoreapp2.1\Tennis Equipment.runtimeconfig.json
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\bin\Debug\netcoreapp2.1\Tennis Equipment.runtimeconfig.dev.json
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\bin\Debug\netcoreapp2.1\Tennis Equipment.dll
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\bin\Debug\netcoreapp2.1\Tennis Equipment.pdb
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\obj\Debug\netcoreapp2.1\Tennis Equipment.csproj.CoreCompileInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\obj\Debug\netcoreapp2.1\Tennis Equipment.AssemblyInfoInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\obj\Debug\netcoreapp2.1\Tennis Equipment.AssemblyInfo.cs
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\obj\Debug\netcoreapp2.1\Tennis Equipment.dll
+E:\C#\Exam - 9 and 10 March 2019\Tennis Equipment\obj\Debug\netcoreapp2.1\Tennis Equipment.pdb

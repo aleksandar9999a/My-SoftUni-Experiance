@@ -1,0 +1,11 @@
+E:\C#\Exam - 9 and 10 March 2019\Football Results\bin\Debug\netcoreapp2.1\Football Results.deps.json
+E:\C#\Exam - 9 and 10 March 2019\Football Results\bin\Debug\netcoreapp2.1\Football Results.runtimeconfig.json
+E:\C#\Exam - 9 and 10 March 2019\Football Results\bin\Debug\netcoreapp2.1\Football Results.runtimeconfig.dev.json
+E:\C#\Exam - 9 and 10 March 2019\Football Results\bin\Debug\netcoreapp2.1\Football Results.dll
+E:\C#\Exam - 9 and 10 March 2019\Football Results\bin\Debug\netcoreapp2.1\Football Results.pdb
+E:\C#\Exam - 9 and 10 March 2019\Football Results\obj\Debug\netcoreapp2.1\Football Results.csprojAssemblyReference.cache
+E:\C#\Exam - 9 and 10 March 2019\Football Results\obj\Debug\netcoreapp2.1\Football Results.csproj.CoreCompileInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Football Results\obj\Debug\netcoreapp2.1\Football Results.AssemblyInfoInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Football Results\obj\Debug\netcoreapp2.1\Football Results.AssemblyInfo.cs
+E:\C#\Exam - 9 and 10 March 2019\Football Results\obj\Debug\netcoreapp2.1\Football Results.dll
+E:\C#\Exam - 9 and 10 March 2019\Football Results\obj\Debug\netcoreapp2.1\Football Results.pdb

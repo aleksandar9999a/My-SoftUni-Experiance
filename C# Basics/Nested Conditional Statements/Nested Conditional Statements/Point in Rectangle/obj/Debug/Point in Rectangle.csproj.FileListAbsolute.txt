@@ -1,0 +1,6 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point in Rectangle\bin\Debug\Point in Rectangle.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point in Rectangle\bin\Debug\Point in Rectangle.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point in Rectangle\bin\Debug\Point in Rectangle.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point in Rectangle\obj\Debug\Point in Rectangle.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point in Rectangle\obj\Debug\Point in Rectangle.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Point in Rectangle\obj\Debug\Point in Rectangle.pdb

@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Metric Converter\bin\Debug\Metric Converter.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Metric Converter\bin\Debug\Metric Converter.exe
+E:\C#\Условни конструкции\Conditional-Statements\Metric Converter\bin\Debug\Metric Converter.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Metric Converter\obj\Debug\Metric Converter.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Metric Converter\obj\Debug\Metric Converter.exe
+E:\C#\Условни конструкции\Conditional-Statements\Metric Converter\obj\Debug\Metric Converter.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Metric Converter\obj\Debug\Metric Converter.csprojAssemblyReference.cache

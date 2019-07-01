@@ -1,0 +1,6 @@
+E:\C#\Simple-Calculations\Trapeziod Area\bin\Debug\Trapeziod Area.exe.config
+E:\C#\Simple-Calculations\Trapeziod Area\bin\Debug\Trapeziod Area.exe
+E:\C#\Simple-Calculations\Trapeziod Area\bin\Debug\Trapeziod Area.pdb
+E:\C#\Simple-Calculations\Trapeziod Area\obj\Debug\Trapeziod Area.csproj.CoreCompileInputs.cache
+E:\C#\Simple-Calculations\Trapeziod Area\obj\Debug\Trapeziod Area.exe
+E:\C#\Simple-Calculations\Trapeziod Area\obj\Debug\Trapeziod Area.pdb

@@ -1,0 +1,5 @@
+E:\C#\For-Loop - Lab\Number sequence\bin\Debug\Number sequence.exe.config
+E:\C#\For-Loop - Lab\Number sequence\bin\Debug\Number sequence.exe
+E:\C#\For-Loop - Lab\Number sequence\bin\Debug\Number sequence.pdb
+E:\C#\For-Loop - Lab\Number sequence\obj\Debug\Number sequence.exe
+E:\C#\For-Loop - Lab\Number sequence\obj\Debug\Number sequence.pdb

@@ -1,0 +1,7 @@
+E:\C#\Условни конструкции\Conditional-Statements\Three brothers\bin\Debug\Three brothers.exe.config
+E:\C#\Условни конструкции\Conditional-Statements\Three brothers\bin\Debug\Three brothers.exe
+E:\C#\Условни конструкции\Conditional-Statements\Three brothers\bin\Debug\Three brothers.pdb
+E:\C#\Условни конструкции\Conditional-Statements\Three brothers\obj\Debug\Three brothers.csprojAssemblyReference.cache
+E:\C#\Условни конструкции\Conditional-Statements\Three brothers\obj\Debug\Three brothers.csproj.CoreCompileInputs.cache
+E:\C#\Условни конструкции\Conditional-Statements\Three brothers\obj\Debug\Three brothers.exe
+E:\C#\Условни конструкции\Conditional-Statements\Three brothers\obj\Debug\Three brothers.pdb

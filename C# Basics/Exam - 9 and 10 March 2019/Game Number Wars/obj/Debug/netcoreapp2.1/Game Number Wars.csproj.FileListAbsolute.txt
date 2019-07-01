@@ -1,0 +1,11 @@
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\bin\Debug\netcoreapp2.1\Game Number Wars.deps.json
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\bin\Debug\netcoreapp2.1\Game Number Wars.runtimeconfig.json
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\bin\Debug\netcoreapp2.1\Game Number Wars.runtimeconfig.dev.json
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\bin\Debug\netcoreapp2.1\Game Number Wars.dll
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\bin\Debug\netcoreapp2.1\Game Number Wars.pdb
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\obj\Debug\netcoreapp2.1\Game Number Wars.csprojAssemblyReference.cache
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\obj\Debug\netcoreapp2.1\Game Number Wars.csproj.CoreCompileInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\obj\Debug\netcoreapp2.1\Game Number Wars.AssemblyInfoInputs.cache
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\obj\Debug\netcoreapp2.1\Game Number Wars.AssemblyInfo.cs
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\obj\Debug\netcoreapp2.1\Game Number Wars.dll
+E:\C#\Exam - 9 and 10 March 2019\Game Number Wars\obj\Debug\netcoreapp2.1\Game Number Wars.pdb

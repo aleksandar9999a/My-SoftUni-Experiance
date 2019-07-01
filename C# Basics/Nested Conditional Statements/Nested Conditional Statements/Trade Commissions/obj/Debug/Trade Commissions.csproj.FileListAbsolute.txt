@@ -1,0 +1,7 @@
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Trade Commissions\bin\Debug\Trade Commissions.exe.config
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Trade Commissions\bin\Debug\Trade Commissions.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Trade Commissions\bin\Debug\Trade Commissions.pdb
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Trade Commissions\obj\Debug\Trade Commissions.csprojAssemblyReference.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Trade Commissions\obj\Debug\Trade Commissions.csproj.CoreCompileInputs.cache
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Trade Commissions\obj\Debug\Trade Commissions.exe
+E:\C#\Nested Conditional Statements\Nested Conditional Statements\Trade Commissions\obj\Debug\Trade Commissions.pdb

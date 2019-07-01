@@ -1,0 +1,10 @@
+E:\C#\Nested Loops\Even Powers of 2\bin\Debug\netcoreapp2.1\Even Powers of 2.deps.json
+E:\C#\Nested Loops\Even Powers of 2\bin\Debug\netcoreapp2.1\Even Powers of 2.runtimeconfig.json
+E:\C#\Nested Loops\Even Powers of 2\bin\Debug\netcoreapp2.1\Even Powers of 2.runtimeconfig.dev.json
+E:\C#\Nested Loops\Even Powers of 2\bin\Debug\netcoreapp2.1\Even Powers of 2.dll
+E:\C#\Nested Loops\Even Powers of 2\bin\Debug\netcoreapp2.1\Even Powers of 2.pdb
+E:\C#\Nested Loops\Even Powers of 2\obj\Debug\netcoreapp2.1\Even Powers of 2.csproj.CoreCompileInputs.cache
+E:\C#\Nested Loops\Even Powers of 2\obj\Debug\netcoreapp2.1\Even Powers of 2.AssemblyInfoInputs.cache
+E:\C#\Nested Loops\Even Powers of 2\obj\Debug\netcoreapp2.1\Even Powers of 2.AssemblyInfo.cs
+E:\C#\Nested Loops\Even Powers of 2\obj\Debug\netcoreapp2.1\Even Powers of 2.dll
+E:\C#\Nested Loops\Even Powers of 2\obj\Debug\netcoreapp2.1\Even Powers of 2.pdb

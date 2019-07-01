@@ -1,0 +1,6 @@
+E:\C#\For-Loop - Lab\Left and Right Sum\bin\Debug\Left and Right Sum.exe.config
+E:\C#\For-Loop - Lab\Left and Right Sum\bin\Debug\Left and Right Sum.exe
+E:\C#\For-Loop - Lab\Left and Right Sum\bin\Debug\Left and Right Sum.pdb
+E:\C#\For-Loop - Lab\Left and Right Sum\obj\Debug\Left and Right Sum.csprojResolveAssemblyReference.cache
+E:\C#\For-Loop - Lab\Left and Right Sum\obj\Debug\Left and Right Sum.exe
+E:\C#\For-Loop - Lab\Left and Right Sum\obj\Debug\Left and Right Sum.pdb

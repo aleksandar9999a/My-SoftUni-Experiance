@@ -1,0 +1,6 @@
+E:\C#\For-Loop - Lab\Equal Pairs\bin\Debug\Equal Pairs.exe.config
+E:\C#\For-Loop - Lab\Equal Pairs\bin\Debug\Equal Pairs.exe
+E:\C#\For-Loop - Lab\Equal Pairs\bin\Debug\Equal Pairs.pdb
+E:\C#\For-Loop - Lab\Equal Pairs\obj\Debug\Equal Pairs.csprojResolveAssemblyReference.cache
+E:\C#\For-Loop - Lab\Equal Pairs\obj\Debug\Equal Pairs.exe
+E:\C#\For-Loop - Lab\Equal Pairs\obj\Debug\Equal Pairs.pdb
