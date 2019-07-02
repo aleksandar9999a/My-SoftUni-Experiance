@@ -1,14 +1,7 @@
 function phoneBook(arr) {
     let bookWithNumber = {};
-
-    arr.forEach((currentPerson) => {
-        currentPerson = currentPerson.split(` `);
-        bookWithNumber[currentPerson[0]] = currentPerson[1];
-    })
-
-    Object.keys(bookWithNumber).forEach((person) => {
-        console.log(person + ` -> ` + bookWithNumber[person]);
-    });
+    arr.forEach(person => {person = person.split(` `); bookWithNumber[person[0]] = person[1];});
+    Object.keys(bookWithNumber).forEach((person) => {console.log(person + ` -> ` + bookWithNumber[person]);});
 }
 phoneBook(['Tim 0834212554',
 'Peter 0877547887',
