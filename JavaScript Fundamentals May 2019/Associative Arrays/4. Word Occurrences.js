@@ -8,14 +8,16 @@ function wordOccurrences(wordArr) {
             map.set(currentWord, 1);
         }
         else{
-            
+            let currQuantity = map.get(currentWord);
+            let newQuantity = currQuantity += 1;
+            map.set(currentWord, newQuantity);
         }
-        
     }
 
-    for (const [currentWord, grades] of map) {
-        console.log(`${currentWord}: ${grades}`);
+    let sorted = [...map].sort((a, b) => b[1] - a[1]);
+
+    for (const [currentWord, count] of sorted) {
+        console.log(`${currentWord} -> ${count} times`);
     }
-    
 }
 wordOccurrences(["Here", "is", "the", "first", "sentence", "Here", "is", "another", "sentence", "And", "finally", "the", "third", "sentence"])
