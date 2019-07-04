@@ -34,7 +34,7 @@ function schoolGrades(arr) {
     }
     
     for (const [student, grades] of sorted) {
-        console.log(`${student}: ${grades}`);
+        console.log(`${student}: ${grades.join(`, `)}`);
     }
 }
 schoolGrades(['Lilly 4 6 6 5',
