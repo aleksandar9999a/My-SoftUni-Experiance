@@ -18,8 +18,8 @@ function neighborhoods(neighborArr) {
 
     for (const [street, people] of output) {
         console.log(`${street}: ${people.length}`);
-        for (const men of people) {
-            console.log(`--${men}`);
+        for (const person of people) {
+            console.log(`--${person}`);
         }
     }
 }
