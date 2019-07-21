@@ -1,5 +1,5 @@
 function matchPhoneNumber(phonesArr) {
-    let pattern = /(?<!\d)[+]359([ -])2\1\d{3}\1\d{4}\b/g;;
+    let pattern = /\+359( |-)2\1\d{3}\1\d{4}\b/g;
     let validNumbers = [];
     let validNumber = null;
 
