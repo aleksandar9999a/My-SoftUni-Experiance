@@ -9,7 +9,7 @@ function songEncryption(songsArr) {
             }
     
             let [artist, song] = line.split(':');
-            if (artistValidation(artist) && artistValidation(song)) {
+            if (artistValidation(artist) && songValidation(song)) {
                 let encryptedArtist = encryptionArtist(artist);
                 let encryptedSong = encryptionSong(song, artist);
                 console.log(`Successful encryption: ${encryptedArtist}@${encryptedSong}`);
@@ -21,11 +21,11 @@ function songEncryption(songsArr) {
     }
     
     function artistValidation(artist) {
-        let artistPattern = /[A-Z][a-z]+/g;
+        let artistPattern = /[A-Z][a-z ']+/g;
         let validArtist = null;
     
         while ((validArtist = artistPattern.exec(artist)) !== null) {
-            if (validArtist === artist) {
+            if (validArtist.toString() === artist) {
                 return true;
             }
             else{
@@ -34,14 +34,12 @@ function songEncryption(songsArr) {
         }
     }
     
-    function artistValidation(song) {
-        let songPattern = /[A-Z]+/g;
+    function songValidation(song) {
+        let songPattern = /[A-Z ]+/g;
         let validSong = null;
     
         while ((validSong = songPattern.exec(song)) !== null) {
-            console.log(validSong);
-            
-            if (validSong.join(' ') === song) {
+            if (validSong.toString() === song) {
                 return true;
             }
             else{
@@ -64,7 +62,7 @@ function songEncryption(songsArr) {
                 let asciiIndex = artist.charCodeAt(i) + artist.length;
     
                 if (artist[i] === artist[i].toUpperCase() && asciiIndex > 90) {
-                    asciiIndex -= 25;
+                    asciiIndex -= 26;
                     encrypt += String.fromCharCode(asciiIndex);
                 }
                 else if (artist[i] === artist[i].toUpperCase() && asciiIndex <= 90) {
@@ -72,7 +70,7 @@ function songEncryption(songsArr) {
                 }
                 else{
                     if (asciiIndex > 122) {
-                        asciiIndex -= 25;
+                        asciiIndex -= 26;
                         encrypt += String.fromCharCode(asciiIndex);
                     }
                     else{
@@ -96,7 +94,7 @@ function songEncryption(songsArr) {
                 let asciiIndex = song.charCodeAt(i) + artist.length;
     
                 if (asciiIndex > 90) {
-                    asciiIndex -= 25;
+                    asciiIndex -= 26;
                     encrypt += String.fromCharCode(asciiIndex);
                 }
                 else if (asciiIndex <= 90) {
