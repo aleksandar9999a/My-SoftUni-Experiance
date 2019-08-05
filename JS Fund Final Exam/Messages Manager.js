@@ -79,6 +79,7 @@ function sortUsers(a, b) {
 
     return result;
 }
+
 // messagesManager([ '10',
 // 'Add=Mark=5=4',
 // 'Add=Clark=3=5',
