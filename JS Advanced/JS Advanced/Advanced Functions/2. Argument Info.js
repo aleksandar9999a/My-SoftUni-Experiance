@@ -3,13 +3,7 @@ function argumentInfo() {
 
     for (let element of arguments) {
         let type = typeof element;
-
-        if (type === 'object') {
-            console.log(`${type}: `);
-            
-        }else{
-            console.log(`${type}: ${element}`);
-        }
+        console.log(`${type}: ${element}`);
         
         if (typeCounter[type]) {
             typeCounter[type]++;
