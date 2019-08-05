@@ -13,7 +13,7 @@ function personalBMI(pName, pAge, pWeight, pHeight) {
     }
 
     function calculateBMI(personalInfo){
-        let myBMI = personalInfo[`weight`]/(personalInfo[`height`] * personalInfo[`height`]) * 10000;
+        let myBMI = personalInfo[`weight`]/Math.pow(personalInfo[`height`]/100, 2);
         return myBMI;
     }
 
