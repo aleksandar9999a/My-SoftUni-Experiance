@@ -34,7 +34,6 @@ function messagesManager(input) {
 
 function senderMessages(currCommand, map, maxMessages) {
     let [sent, receiv] = map.get(currCommand[1]).map(Number);
-
     sent++;
 
     if (sent + receiv >= maxMessages) {
