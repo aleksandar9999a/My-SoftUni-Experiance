@@ -5,7 +5,6 @@ function starEnigma(input) {
     processInput(input, messagesCount);
     printingPlanets(attackedPlanetsArr, destroyedPlanetsArr);
     
-
     function processInput(input, messagesCount) {
         for (let i = 0; i < messagesCount; i++) {
             let currMessage = input[i];
