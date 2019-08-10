@@ -1,3 +1,8 @@
 function notify(message) {
-    console.log('TODO:...');
+    document.getElementById('notification').textContent = message;
+    document.getElementById('notification').style.display = 'block';
+    
+    setTimeout(function(){
+        document.getElementById('notification').style.display = 'none';
+    }, 2000)
 }
