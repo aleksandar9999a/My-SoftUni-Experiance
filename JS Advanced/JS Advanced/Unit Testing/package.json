@@ -1,16 +1,18 @@
 {
-  "name": "tests",
+  "name": "unit-testing",
   "version": "1.0.0",
-  "description": "Unit Tests",
-  "main": "1. Sub Sum.js",
-  "dependencies": {},
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+  "description": "",
+  "main": "test.js",
+  "directories": {
+    "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Alexandar Todorov",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
 }

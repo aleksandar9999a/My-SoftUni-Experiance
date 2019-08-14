@@ -1,5 +1,5 @@
 const {expect} = require('chai');
-const {sum, subtract} = require('./calculator');
+const {sum, subtract} = require('../calculator');
 
 it('expect sum(1, 2) to be equal to 3', () => {
     const expected = 3;
