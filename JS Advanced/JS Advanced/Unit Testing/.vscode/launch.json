@@ -13,7 +13,7 @@
                 "--timeout",
                 "999999",
                 "--colors",
-                "${workspaceFolder}/test/Char Lookup.test"
+                "${workspaceFolder}/test/Math Enforcer.test"
             ],
             "internalConsoleOptions": "openOnSessionStart"
         },
