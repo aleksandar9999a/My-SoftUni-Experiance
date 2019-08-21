@@ -15,6 +15,7 @@ class Calculator {
         this.subtractBtn = document.querySelector(SELECTOR.SUBTRACT_BUTTON);
         this.handleAddClick = this.handleAddClick.bind(this);
         this.handleSubtractClick = this.handleSubtractClick.bind(this);
+        this.clear = this.clear.bind(this);
 
         this._initEvents();
     }
@@ -31,9 +32,17 @@ class Calculator {
         this.result.value = +x - +y;
     }
 
-    _initEvents(){
+    clear() {
+        this.num1.value = '';
+        this.num2.value = '';
+    }
+
+    _initEvents() {
         this.addBtn.addEventListener('click', this.handleAddClick);
         this.subtractBtn.addEventListener('click', this.handleSubtractClick);
+
+        this.addBtn.addEventListener('click', this.clear);
+        this.subtractBtn.addEventListener('click', this.clear);
     }
 }
 
