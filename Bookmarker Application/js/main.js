@@ -28,7 +28,7 @@ function addBookmark(e) {
             localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
         }
         else{
-            let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+            bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
             bookmarks.push(currentBookmark);
             localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
         }
@@ -39,10 +39,33 @@ function addBookmark(e) {
 }
 
 function printBookmarks(){
+    let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    bookmarksDiv.innerHTML = '';
 
+    for (let i = 0; i < currentBookmarks.length; i++) {
+        let name = currentBookmarks[i].name;
+        let url = currentBookmarks[i].url;
+        bookmarksDiv.innerHTML += '<div class="well">'+
+        '<h3>'+name+
+        ' <a class="btn btn-default" target="_blank" href="'+addhttp(url)+'">Visit</a> ' +
+        ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
+        '</h3>'+
+        '</div>';
+    }
+}
+
+function deleteBookmark() {
+    
 }
 
 function clear(){
     siteNameInput.value = '';
     siteURL.value = '';
 }
+
+function addhttp(url) {
+    if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+        url = "http://" + url;
+    }
+    return url;
+  }
