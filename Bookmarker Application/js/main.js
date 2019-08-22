@@ -6,12 +6,23 @@ const SELECTOR = {
     bookmarksDiv: '#bookmarksResults',
 }
 
-class Submit {
-    constructor(){
-        this.submitForm = document.querySelector(SELECTOR.submitForm);
-        this.siteNameInput = document.querySelector(SELECTOR.siteNameInput);
-        this.siteURL = document.querySelector(SELECTOR.siteURL);
-        this.submitBtn = document.querySelector(SELECTOR.submitBtn);
-        this.bookmarksDiv = document.querySelector(SELECTOR.bookmarksDiv);
-    }
+const submitForm = document.querySelector(SELECTOR.submitForm);
+const siteNameInput = document.querySelector(SELECTOR.siteNameInput);
+const siteURL = document.querySelector(SELECTOR.siteURL);
+const submitBtn = document.querySelector(SELECTOR.submitBtn);
+const bookmarksDiv = document.querySelector(SELECTOR.bookmarksDiv);
+
+submitBtn.addEventListener('click', addBookmark);
+
+function addBookmark(e) {
+    let p = document.createElement('p');
+    p.textContent = siteNameInput.value;
+    bookmarksDiv.appendChild(p);
+    clear();
+    e.preventDefault();
+}
+
+function clear(){
+    siteNameInput.value = '';
+    siteURL.value = '';
 }
