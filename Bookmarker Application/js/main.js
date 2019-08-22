@@ -54,8 +54,10 @@ function printBookmarks(){
     }
 }
 
-function deleteBookmark() {
-    
+function deleteBookmark(url) {
+    let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    currentBookmarks = currentBookmarks.filter(u => u.url != url);
+    localStorage.setItem('bookmarks', JSON.stringify(currentBookmarks));
 }
 
 function clear(){
