@@ -14,12 +14,32 @@ const bookmarksDiv = document.querySelector(SELECTOR.bookmarksDiv);
 
 submitBtn.addEventListener('click', addBookmark);
 
+let bookmarks = [];
+
 function addBookmark(e) {
-    let p = document.createElement('p');
-    p.textContent = siteNameInput.value;
-    bookmarksDiv.appendChild(p);
-    clear();
-    e.preventDefault();
+    if (siteNameInput.value != '' && siteURL.value != '') {
+        let currentBookmark = {
+            name: siteNameInput.value,
+            url: siteURL.value,
+        };
+    
+        if (localStorage.getItem('bookmarks') === null) {
+            bookmarks.push(currentBookmark);
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+        }
+        else{
+            let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+            bookmarks.push(currentBookmark);
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+        }
+        
+        clear();
+        e.preventDefault();
+    }
+}
+
+function printBookmarks(){
+
 }
 
 function clear(){
