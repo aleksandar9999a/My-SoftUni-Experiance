@@ -16,41 +16,41 @@ submitBtn.addEventListener('click', addBookmark);
 
 let bookmarks = [];
 
-function addBookmark(e) {
+function addBookmark() {
     if (siteNameInput.value != '' && siteURL.value != '') {
         let currentBookmark = {
             name: siteNameInput.value,
             url: siteURL.value,
         };
-    
+
         if (localStorage.getItem('bookmarks') === null) {
             bookmarks.push(currentBookmark);
             localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
         }
-        else{
+        else {
             bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
             bookmarks.push(currentBookmark);
             localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
         }
-        
+
         clear();
-        e.preventDefault();
+        printBookmarks();
     }
 }
 
-function printBookmarks(){
+function printBookmarks() {
     let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     bookmarksDiv.innerHTML = '';
 
     for (let i = 0; i < currentBookmarks.length; i++) {
         let name = currentBookmarks[i].name;
         let url = currentBookmarks[i].url;
-        bookmarksDiv.innerHTML += '<div class="well">'+
-        '<h3>'+name+
-        ' <a class="btn btn-default" target="_blank" href="'+addhttp(url)+'">Visit</a> ' +
-        ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
-        '</h3>'+
-        '</div>';
+        bookmarksDiv.innerHTML += '<div class="well">' +
+            '<h3>' + name +
+            ' <a class="btn btn-default" target="_blank" href="' + addhttp(url) + '">Visit</a> ' +
+            ' <a onclick="deleteBookmark(\'' + url + '\')" class="btn btn-danger" href="#">Delete</a> ' +
+            '</h3>' +
+            '</div>';
     }
 }
 
@@ -58,9 +58,10 @@ function deleteBookmark(url) {
     let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     currentBookmarks = currentBookmarks.filter(u => u.url != url);
     localStorage.setItem('bookmarks', JSON.stringify(currentBookmarks));
+    printBookmarks();
 }
 
-function clear(){
+function clear() {
     siteNameInput.value = '';
     siteURL.value = '';
 }
@@ -70,4 +71,4 @@ function addhttp(url) {
         url = "http://" + url;
     }
     return url;
-  }
+}
