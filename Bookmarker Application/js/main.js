@@ -9,10 +9,9 @@ const siteNameInput = document.querySelector(SELECTOR.siteNameInput);
 const siteURL = document.querySelector(SELECTOR.siteURL);
 const submitBtn = document.querySelector(SELECTOR.submitBtn);
 const bookmarksDiv = document.querySelector(SELECTOR.bookmarksDiv);
+let bookmarks = [];
 
 submitBtn.addEventListener('click', addBookmark);
-
-let bookmarks = [];
 
 function addBookmark() {
     if (siteNameInput.value != '' && siteURL.value != '') {
