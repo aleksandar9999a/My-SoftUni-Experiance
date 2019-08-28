@@ -15,15 +15,33 @@
 </head>
 
 <body>
-    <h1>AJAX jQuery.load()</h1>
-    <button onclick="onButtonClick()">Load</button>
-    <div class="result">
-
-    </div>
+    <h1>GitHub Username:</h1>
+    <input type="text" id="username"/>
+    <button onclick = "loadRepos()">Load Repos</button>
+    
+    <ul id="repos"></ul>
 
     <script>
-        function onButtonClick() {
-            $('.result').load("http://localhost:3000/text.html");
+        function loadRepos() {
+            let userName = $("#username").val();
+            let url = `https://api.github.com/users/${userName}/repos`;
+
+            $.ajax({
+                method: 'GET',
+                url,
+                success: onLoadReposSuccess,
+                error: (err) => console.log('Pedal'),
+            })
+
+            function onLoadReposSuccess(data) {
+                let $repos = $('#repos');
+
+                data.forEach(r => {
+                    let $li = $('<li>');
+                    $li.text(r.name);
+                    $repos.append($li);
+                });
+            }
         }
     </script>
 </body>
