@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    width: 30%;
+    text-align: center;
+}
+
+.createContact, .listOfContacts{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    margin: 2%;
+}
+
+.form {
+    padding: 10px 0;
+    width: 45%;
+    padding-left: 26.5%;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submitBtn {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
