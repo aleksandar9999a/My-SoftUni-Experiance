@@ -21,6 +21,8 @@ function getPerson() {
             phone: phone.value,
         };
 
+        console.log(currentPerson.phone);
+        
         if (localStorage.getItem('phoneBook') === null) {
             phoneBook.push(currentPerson);
             localStorage.setItem('phoneBook', JSON.stringify(phoneBook));
@@ -30,10 +32,23 @@ function getPerson() {
             phoneBook.push(currentPerson);
             localStorage.setItem('phoneBook', JSON.stringify(phoneBook));
         }
-
-        console.log(phoneBook);
-        
     }
 
-    
+    clear();
+    printPersons();
+}
+
+function clear() {
+    name.value = '';
+    phone.value = '';
+}
+
+function printPersons() {
+    let currentPhoneBook = JSON.parse(localStorage.getItem('phoneBook'));
+
+    for (let i = 0; i < currentPhoneBook.length; i++) {
+        let name = currentPhoneBook[i].name;
+        let phone = currentPhoneBook[i].phone;
+        list.innerHTML += `<li> ${name}: ${phone}`;
+    }
 }
