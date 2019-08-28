@@ -38,8 +38,12 @@
 
                 data.forEach(r => {
                     let $li = $('<li>');
+                    let $a = $(`<a target = "_blank" href = "${r.html_url}">`);
+
                     $li.text(r.name);
-                    $repos.append($li);
+
+                    $a.append($li);
+                    $repos.append($a);
                 });
             }
         }
