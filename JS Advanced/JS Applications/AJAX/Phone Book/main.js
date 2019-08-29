@@ -73,6 +73,9 @@ function validation(currentPerson) {
     if (isValidName && isValidPhone) {
         return true;
     }
+    else if (currentPerson.name === '' & currentPerson.phone === '') {
+        notify('Enter name and phone number!');
+    }
     else {
         if (!isValidName) {
             notify('Enter name with more characters or without digits!');
@@ -90,7 +93,7 @@ function notify(message) {
 
     setTimeout(function () {
         document.getElementById('notification').style.display = 'none';
-    }, 2000)
+    }, 4000)
 }
 
 function printPersons() {
