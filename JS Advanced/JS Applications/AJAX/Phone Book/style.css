@@ -1,33 +1,28 @@
 *{
-    margin: 0;
+    margin: 3% auto;
     padding: 0;
-}
-
-.container {
-    position: absolute;
-    left: 35%;
-    top: 30%;
-    width: 30%;
     text-align: center;
 }
 
+.container {
+    display: inline-block;
+    width: 40%;
+}
+
 .createContact, .listOfContacts{
+    width: auto;
     border-radius: 5px;
-    background-color: #f2f2f2;
-    margin: 2%;
+    background-color: #b9dcfa;
+    padding: 10px;
 }
 
 .form {
-    padding: 10px 0;
     width: 45%;
-    padding-left: 26.5%;
     text-align: left;
 }
 
 input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 10px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -42,4 +37,21 @@ input {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 100%;
+}
+
+.btn {
+    width: auto;
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 0px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
 }
