@@ -15,41 +15,39 @@ let phoneBook = [];
 btn.addEventListener('click', addPerson);
 
 function addPerson() {
-    if (personName.value != '' && personPhone.value != '') {
-        let currentPerson = {
-            name: personName.value,
-            phone: personPhone.value,
-        };
+    let currentPerson = {
+        name: personName.value,
+        phone: personPhone.value,
+    };
 
-        let isValid = validation(currentPerson);
+    let isValid = validation(currentPerson);
 
-        if (isValid) {
-            if (localStorage.getItem('phoneBook') === null) {
+    if (isValid) {
+        if (localStorage.getItem('phoneBook') === null) {
+            phoneBook.push(currentPerson);
+            localStorage.setItem('phoneBook', JSON.stringify(phoneBook));
+        }
+        else {
+            phoneBook = JSON.parse(localStorage.getItem('phoneBook'));
+            let isContent = false;
+
+            for (let i = 0; i < phoneBook.length; i++) {
+                if ((phoneBook[i].name.toLowerCase() === currentPerson.name.toLowerCase()) && (phoneBook[i].phone.toLowerCase() === currentPerson.phone.toLowerCase())) {
+                    isContent = true;
+                }
+            }
+
+            if (!isContent) {
                 phoneBook.push(currentPerson);
                 localStorage.setItem('phoneBook', JSON.stringify(phoneBook));
             }
             else {
-                phoneBook = JSON.parse(localStorage.getItem('phoneBook'));
-                let isContent = false;
-
-                for (let i = 0; i < phoneBook.length; i++) {
-                    if ((phoneBook[i].name.toLowerCase() === currentPerson.name.toLowerCase()) && (phoneBook[i].phone.toLowerCase() === currentPerson.phone.toLowerCase())) {
-                        isContent = true;
-                    }
-                }
-
-                if (!isContent) {
-                    phoneBook.push(currentPerson);
-                    localStorage.setItem('phoneBook', JSON.stringify(phoneBook));
-                }
-                else {
-                    notify('Already contained person with this name!');
-                }
+                notify('Already contained person with this name!');
             }
-
-            clear();
-            printPersons();
         }
+
+        clear();
+        printPersons();
     }
 }
 
@@ -105,8 +103,8 @@ function printPersons() {
 
         list.innerHTML += '<div>' +
             '<h3>' + name + ': ' + phone +
-            ' <a onclick="deletePersons(\'' + name + ' ' + phone  + '\')" class = "btn" href="#">Delete</a> ' +
-            '</h3>' + 
+            ' <a onclick="deletePersons(\'' + name + ' ' + phone + '\')" class = "btn" href="#">Delete</a> ' +
+            '</h3>' +
             '</div>';
     }
 }
