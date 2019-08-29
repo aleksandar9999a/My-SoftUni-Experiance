@@ -102,10 +102,6 @@ function printPersons() {
     for (let i = 0; i < currentPhoneBook.length; i++) {
         let name = currentPhoneBook[i].name;
         let phone = currentPhoneBook[i].phone;
-        let myPerson = {
-            pName: name,
-            pPhone: phone,
-        }
 
         list.innerHTML += '<div>' +
             '<h3>' + name + ': ' + phone +
