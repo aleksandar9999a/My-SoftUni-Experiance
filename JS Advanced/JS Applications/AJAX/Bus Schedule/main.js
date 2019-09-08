@@ -1,6 +1,7 @@
 function solve() {
     let baseUrl = 'https://judgetests.firebaseio.com/schedule/';
     let id = 'depot';
+    let currentReq = '';
 
     function depart() {
         $.ajax({
@@ -9,30 +10,23 @@ function solve() {
             success: logStation
         })
 
-        document.querySelector('#depart').disabled = true;
-        document.querySelector('#arrive').disabled = false;
+        function logStation(data) {
+            currentReq = data;
+            id = currentReq.next;
+            document.querySelectorAll('.info')[0].textContent = `Next stop ${data.name}`;
+        }
+
+        switchBtn('#arrive', '#depart');
     }
 
     function arrive() {
-        $.ajax({
-            url: baseUrl + id + '.json',
-            method: 'GET',
-            success: nextStop
-        })
-
+        document.querySelectorAll('.info')[0].textContent = `Arriving at ${currentReq.name}`;
+        switchBtn('#depart', '#arrive');
     }
 
-    function logStation(data) {
-        console.log(data);
-        document.querySelectorAll('.info')[0].textContent = `Next stop ${data.name}`;
-    }
-
-    function nextStop(data) {
-        console.log(data);
-        id = data.next;
-        document.querySelectorAll('.info')[0].textContent = `Arriving at ${data.name}`;
-        document.querySelector('#depart').disabled = false;
-        document.querySelector('#arrive').disabled = true;
+    function switchBtn(disable, enable) {
+        document.querySelector(enable).disabled = true;
+        document.querySelector(disable).disabled = false;
     }
 
     return {
