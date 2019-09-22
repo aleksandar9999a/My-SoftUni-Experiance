@@ -3,12 +3,10 @@ function wordsText(str) {
     let obj = {};
 
     for (let i = 0; i < data.length; i++) {
-        if (obj.hasOwnProperty(data[i])) {
-            obj[data[i]]++;
+        if (!obj.hasOwnProperty(data[i])) {
+            obj[data[i]] = 0;
         }
-        else{
-            obj[data[i]] = 1;
-        }
+        obj[data[i]]++;
     }
 
     return obj;
