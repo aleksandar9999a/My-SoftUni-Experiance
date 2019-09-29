@@ -1,15 +1,15 @@
-function solve(arr) {
-    let num = 1;
-    let result = [];
+function solve(data) {
+    let commands = {
+        counter: 1,
+        add: (arr, number) => [ ...arr, number],
+        remove: (arr) => [...arr.slice(0, arr.length - 1)]
+    };
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === 'add') {
-            result.push(num);
-        }else{
-            result.pop();
-        }
-        num++;
-    }
+    let result = data.reduce((acc, curr) => {
+        acc = commands[curr](acc, commands.counter);
+        commands.counter++;
+        return acc;
+    }, [])
 
     return result.length === 0 ? 'Empty' : result.join('\n');
 }
