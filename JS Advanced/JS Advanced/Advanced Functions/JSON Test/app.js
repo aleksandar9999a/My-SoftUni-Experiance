@@ -28,7 +28,7 @@ import { MOCK } from "./MOCK_DATA.js";
     }
 
     const fieldsMap = {
-        avatar: (x)=> createSingleTag('img', 'src', x),
+        avatar: x=> createSingleTag('img', 'src', x),
         friends: list => list.map(f => renderUl(renderLi(`${f.first_name} ${f.last_name}`)))
     }
 
@@ -48,13 +48,17 @@ import { MOCK } from "./MOCK_DATA.js";
         fieldsMap, renderTd
     )
 
-    document.getElementById('app').innerHTML = renderTable(
-        renderThead(renderTr(keys.map(key => renderTh(dict[key]))))
+     let print = renderTable(
+        renderThead(
+            renderTr(
+                keys.map(key => renderTh(dict[key]))))
         +
         renderTbody(
             data.map(row => renderTr(keys.map(cell => defaultTd(cell, row[cell]))))
         )
     );
+
+    document.getElementById('app').innerHTML = print;
 })(MOCK.slice(0, 20), document);
 
 
