@@ -7,6 +7,10 @@ import { MOCK } from "./MOCK_DATA.js";
         return `<${tag}>${Array.isArray(content) ? content.join('') : content}</${tag}>`
     }
 
+    function createSingleTag(tag, prop, val){
+        return `<${tag} ${prop}="${val}"/>`
+    }
+
     const renderTable = createTag.bind(undefined, 'table');
     const renderThead = createTag.bind(undefined, 'thead');
     const renderTbody = createTag.bind(undefined, 'tbody');
@@ -14,20 +18,27 @@ import { MOCK } from "./MOCK_DATA.js";
     const renderTh = createTag.bind(undefined, 'th');
     const renderTr = createTag.bind(undefined, 'tr');
     
-    function chooseContentType(){
-
+    function chooseContentType(map, defaultWrapper, type, content){
+        if (typeof map[type] === 'function') {
+            return defaultWrapper(map[type](content));
+        }
+        return defaultWrapper(content);
     }
 
     const fieldsMap = {
-        avatar: ''
+        avatar: (x)=> createSingleTag('img', 'src', x)
     }
 
+    const defaultTd = chooseContentType.bind(
+        undefined,
+        fieldsMap, renderTd
+    )
 
     document.getElementById('app').innerHTML = renderTable(
         renderThead(renderTr(keys.map(key => renderTh(key))))
         +
         renderTbody(
-            data.map(row => renderTr(keys.map(cell => renderTd(row[cell]))))
+            data.map(row => renderTr(keys.map(cell => defaultTd(cell, row[cell]))))
         )
     );
 })(MOCK);
