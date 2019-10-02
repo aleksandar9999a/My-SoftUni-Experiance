@@ -18,6 +18,7 @@ let test = `[{
     "email": "emaldin2@hostgator.com",
     "gender": "Male"
   }]`;
+
 function solve(json, criteria) {
     let data = JSON.parse(json);
 
@@ -31,7 +32,4 @@ function solve(json, criteria) {
     }).join('\n')
 }
 
-
 console.log(solve(test, 'gender-Female'));
-
-
