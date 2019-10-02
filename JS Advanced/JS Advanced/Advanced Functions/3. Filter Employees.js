@@ -27,9 +27,7 @@ function solve(json, criteria) {
         data = data.filter(e => e[criteriaBySplit[0]] === criteriaBySplit[1]);
     }
     
-    return data.map((x, i) => {
-        return `${i}. ${x.first_name} ${x.last_name} - ${x.email}`
-    }).join('\n')
+    return data.map((x, i) => `${i}. ${x.first_name} ${x.last_name} - ${x.email}`).join('\n');
 }
 
 console.log(solve(test, 'gender-Female'));
