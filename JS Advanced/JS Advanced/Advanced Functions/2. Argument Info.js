@@ -1,20 +1,13 @@
-function argumentInfo() {
+const printFormatterByType = x => `${typeof x}: ${x}`;
+const printFormatterNumber = x => `${x[0]} = ${x[1]}`;
+const ByDescendingOrder = (a, b) => b[1] - a[1];
+
+function argumentInfo2(...args) {
     let typeCounter = {};
+    args.map(e => typeCounter[typeof e] ? typeCounter[typeof e]++ : typeCounter[typeof e] = 1);
+    let arrByTypeCounts = Object.entries(typeCounter).sort(ByDescendingOrder).map(printFormatterNumber);
 
-    for (let element of arguments) {
-        let type = typeof element;
-        console.log(`${type}: ${element}`);
-        
-        if (typeCounter[type]) {
-            typeCounter[type]++;
-        }
-        else{
-            typeCounter[type] = 1;
-        }
-    }
-
-    typeCounter = Object.entries(typeCounter).sort((a, b) => b[1] - a[1]).forEach(element => {
-        console.log(`${element[0]} = ${element[1]}`);
-    });
+    return args.map(printFormatterByType).concat(arrByTypeCounts).join('\n')
 }
-argumentInfo('cat', 42, function () { console.log('Hello world!'); });
+
+console.log(argumentInfo2('cat', 42, function () { console.log('Hello world!'); }));
