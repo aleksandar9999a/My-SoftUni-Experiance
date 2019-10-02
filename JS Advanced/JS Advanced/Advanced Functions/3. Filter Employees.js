@@ -19,15 +19,18 @@ let test = `[{
     "gender": "Male"
   }]`;
 
+const filterByProp = (prop, value, element) => element[prop] === value;
+const splitCriteria = criteria => criteria.split('-');
+const printResult = (x, i) => `${i}. ${x.first_name} ${x.last_name} - ${x.email}`;
+
 function solve(json, criteria) {
     let data = JSON.parse(json);
 
     if (criteria != 'all') {
-        criteriaBySplit = criteria.split('-');
-        data = data.filter(e => e[criteriaBySplit[0]] === criteriaBySplit[1]);
+        data = data.filter(filterByProp.bind(undefined, ...splitCriteria(criteria)));
     }
     
-    return data.map((x, i) => `${i}. ${x.first_name} ${x.last_name} - ${x.email}`).join('\n');
+    return data.map(printResult).join('\n');
 }
 
 console.log(solve(test, 'gender-Female'));
