@@ -24,13 +24,14 @@ const splitCriteria = criteria => criteria.split('-');
 const printResult = (x, i) => `${i}. ${x.first_name} ${x.last_name} - ${x.email}`;
 
 function solve(json, criteria) {
-    let data = JSON.parse(json);
-
-    if (criteria != 'all') {
-        data = data.filter(filterByProp.bind(undefined, ...splitCriteria(criteria)));
-    }
-    
-    return data.map(printResult).join('\n');
+    return criteria === 'all'
+    ? JSON.parse(json)
+        .map(printResult)
+        .join('\n')
+    : JSON.parse(json)
+        .filter(filterByProp.bind(undefined, ...splitCriteria(criteria)))
+        .map(printResult)
+        .join('\n')
 }
 
 console.log(solve(test, 'gender-Female'));
