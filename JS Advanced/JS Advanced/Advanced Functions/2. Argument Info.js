@@ -10,4 +10,3 @@ function argumentInfo(...args) {
     return args.map(printFormatterByType).concat(arrByTypeCounts).join('\n');
 }
 console.log(argumentInfo('cat', 42, function () { console.log('Hello world!'); }));
-
