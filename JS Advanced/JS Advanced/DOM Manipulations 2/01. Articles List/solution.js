@@ -1,28 +1,34 @@
-const SELECTORS ={
+const SELECTORS = {
 	articleList: '#articles',
 	title: '#createTitle',
-	content: '#createContent'
-}
-
-function createItem (title, content) {
-	return `<article>` +
-			`<h3>${title}</h3>` +
-			`<p>${content}</p>` +
-			`</article>`;
-}
-
-function clear() {
-	document.querySelector(SELECTORS.title).value = '';
-	document.querySelector(SELECTORS.content).value = '';
+	content: '#createContent',
+	btn: '#createArticleBtn'
 }
 
 function createArticle() {
-	let title = document.querySelector(SELECTORS.title).value;
-	let content = document.querySelector(SELECTORS.content).value;
+	let articles = document.querySelector(SELECTORS.articleList);
+	let title = document.querySelector(SELECTORS.title);
+	let content = document.querySelector(SELECTORS.content);
 
-	if (title != '' && content != '') {
-		document.querySelector(SELECTORS.articleList).innerHTML += (createItem(title, content));
+	if (title === null && content === null & articles === null) {
+		throw new Error("Something is wrong!")
 	}
-	
-	clear()
+
+	let article = document.createElement("article");
+	let h3 = document.createElement("h3");
+	let p = document.createElement("p");
+	h3.innerHTML = title.value;
+	p.innerHTML = content.value;
+
+	article.appendChild(h3);
+	article.appendChild(p);
+
+	articles.appendChild(article);
+
+	title.value = "";
+	content.value = "";
 }
+
+document.addEventListener('DOMContentLoaded', x => {
+	document.querySelector(SELECTORS.btn).addEventListener('click', createArticle);
+})
