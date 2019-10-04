@@ -29,6 +29,17 @@ function createArticle() {
 	content.value = "";
 }
 
+const keyMap = {
+	10: function(evt){
+		createArticle();
+	}
+}
+
 document.addEventListener('DOMContentLoaded', x => {
 	document.querySelector(SELECTORS.btn).addEventListener('click', createArticle);
+	document.addEventListener("keypress", function (evt) {
+		if (typeof keyMap[evt.keyCode] === "function") {
+			keyMap[evt.keyCode](evt);
+		}
+	})
 })
