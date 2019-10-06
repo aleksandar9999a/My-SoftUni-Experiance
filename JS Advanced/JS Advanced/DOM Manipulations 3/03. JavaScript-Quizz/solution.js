@@ -11,11 +11,8 @@ function solve() {
 
   const answer = {
     "onclick": true,
-    "onmouseclick": false,
-    "JSON.toString()": false,
     "JSON.stringify()": true,
-    "A programming API for HTML and XML documents": true,
-    "The DOM is your source HTML": false
+    "A programming API for HTML and XML documents": true
   }
 
   const addFunc = x => x.addEventListener('click', myAnswer);
@@ -40,10 +37,7 @@ function solve() {
     document.querySelector(SELECTORS.finalRes).style.display = "block";
     let h1 = document.querySelector(SELECTORS.finalRes).getElementsByTagName("h1")[0];
 
-    correctAnswerCounter === 3 ?
-      h1.innerHTML = 'You are recognized as top JavaScript fan!'
-      :
-      h1.innerHTML = `You have ${correctAnswerCounter} right answers`;
+    correctAnswerCounter === 3 ?  h1.innerHTML = 'You are recognized as top JavaScript fan!' : h1.innerHTML = `You have ${correctAnswerCounter} right answers`;
   }
 
   Array.from(document.querySelectorAll(SELECTORS.btn)).forEach(addFunc);
