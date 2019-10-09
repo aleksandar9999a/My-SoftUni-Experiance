@@ -1,3 +1,9 @@
+const ctaClickHandler = (output, elementCreator, input) => addItem(output, elementCreator, input.value);
+const addToHTML = (parent, child) => parent.appendChild(child);
+const removeFromHTMLByIndex = (parent, index) => parent.removeChild(parent.children[index]);
+const findChildIndexByRef = (children, child) => Array.prototype.findIndex.call(children, x => x === child);
+const removeItem = (output, elementLocator, element) => output(elementLocator(element));
+
 function createElement(type, content) {
     let e = document.createElement(type);
     if (typeof content === "string") {
@@ -8,15 +14,7 @@ function createElement(type, content) {
     }
     return e;
 }
-function ctaClickHandler(output, elementCreator, input) {
-    return addItem(output, elementCreator, input.value);
-}
-function addToHTML(parent, child) {
-    return parent.appendChild(child);
-}
-function removeFromHTMLByIndex(parent, index) {
-    return parent.removeChild(parent.children[index]);
-}
+
 function listClickHandler(list, e) {
     if (e.target.nodeName === "A") {
         return removeItem(
@@ -34,16 +32,6 @@ function addItem(output, elementCreator, value) {
     }
     return;
 }
-function findChildIndexByRef(children, child) {
-    return Array.prototype.findIndex.call(
-        children,
-        x => x === child
-    )
-}
-function removeItem(output, elementLocator, element) {
-    return output(elementLocator(element));
-}
-
 function main() {
     const cta = document.getElementById("addCTA");
     const list = document.getElementById("items");
@@ -69,9 +57,6 @@ function main() {
         ),
         CTAdelete: listClickHandler.bind(undefined, list),
     }
-
-    // cta.addEventListener("click", clickHandlers.CTAadd);
-    // list.addEventListener("click", clickHandlers.CTAdelete);
 
     document.body.addEventListener("click", function (e) {
         if (typeof clickHandlers[e.target.dataset.action] === "function") {
