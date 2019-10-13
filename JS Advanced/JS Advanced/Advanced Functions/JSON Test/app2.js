@@ -125,9 +125,19 @@ class DomA extends DomElement {
     render() {
         const a = super.render();
         a.href = this.href;
-        let prps = Object.entries(this.props)[0];
-        a.dataset[prps[0]] = prps[1];
+
+        if (this.props) {
+            let prps = Object.entries(this.props)[0];
+            a.dataset[prps[0]] = prps[1];
+        }
+        
         return a;
+    }
+}
+
+class MailLink extends DomA{
+    constructor(content){
+        super(content, `mailto: ${content}`)
     }
 }
 
@@ -161,7 +171,8 @@ class Grid {
     };
     cellTemplates = {
         avatar: "img",
-        friends: "ul"
+        friends: "ul",
+        email: "mail"
     };
 
     constructor(data, elements, dict, wrapper) {
@@ -265,6 +276,7 @@ class Main {
         DomElementFactory.register("ul", DomUl);
         DomElementFactory.register("li", DomLi);
         DomElementFactory.register("a", DomA);
+        DomElementFactory.register("mail", MailLink);
 
         console.log(
             new Grid(
