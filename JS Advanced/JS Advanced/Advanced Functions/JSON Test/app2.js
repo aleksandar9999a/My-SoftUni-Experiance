@@ -83,8 +83,13 @@ class DomTh extends DomElement{
 class DomUl extends DomElement{
     constructor(content){
         super("ul", content
-        .reduce((aggregate, element) => [...aggregate, Object.entries(element).map(x => x[1]).join(" ")], [])
-        .map(x => new DomLi(x)));
+            .reduce(
+                (aggregate, element) => 
+                    [...aggregate, Object.values(element).join(" ")], 
+                []
+            )
+            .map(x => new DomLi(x))
+        );
     }
 }
 class DomLi extends DomElement{
@@ -203,7 +208,7 @@ class Main {
 
         console.log(
             new Grid(
-                MOCK.slice(0, 10), 
+                MOCK.slice(0, 20), 
                 DomElementFactory,
                 document.all.app
             ).render()
