@@ -130,13 +130,13 @@ class DomA extends DomElement {
             let prps = Object.entries(this.props)[0];
             a.dataset[prps[0]] = prps[1];
         }
-        
+
         return a;
     }
 }
 
-class MailLink extends DomA{
-    constructor(content){
+class MailLink extends DomA {
+    constructor(content) {
         super(content, `mailto: ${content}`)
     }
 }
@@ -193,7 +193,7 @@ class Grid {
 
     }
 
-    sortBy(prop){
+    sortBy(prop) {
         this.data = this.data.sort((a, b) => {
             if (!isNaN(Number(a[prop]))) {
                 return Number(a[prop]) - Number(b[prop]);
@@ -202,8 +202,8 @@ class Grid {
         });
     }
 
-    cleanHTML(){
-        while(this.wrapper.firstElementChild !== null){
+    cleanHTML() {
+        while (this.wrapper.firstElementChild !== null) {
             this.wrapper.removeChild(this.wrapper.firstElementChild);
         }
     }
@@ -278,23 +278,22 @@ class Main {
         DomElementFactory.register("a", DomA);
         DomElementFactory.register("mail", MailLink);
 
-        console.log(
-            new Grid(
-                MOCK.slice(0, 20),
-                DomElementFactory,
-                {
-                    id: "Идент.",
-                    email: "Мейл",
-                    gender: "Пол",
-                    ip_address: "IP",
-                    first_name: "Име",
-                    avatar: "Картинка",
-                    friends: "Приятели",
-                    last_name: "Фамилия"
-                },
-                document.all.app
-            ).render()
-        );
+
+        new Grid(
+            MOCK.slice(0, 20),
+            DomElementFactory,
+            {
+                id: "Идент.",
+                email: "Мейл",
+                gender: "Пол",
+                ip_address: "IP",
+                first_name: "Име",
+                avatar: "Картинка",
+                friends: "Приятели",
+                last_name: "Фамилия"
+            },
+            document.all.app
+        ).render();
     }
 }
 
