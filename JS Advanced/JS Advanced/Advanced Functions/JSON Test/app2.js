@@ -81,22 +81,43 @@ class DomTh extends DomElement{
     }
 }
 
+class GenericFactory {
+    _registry = new Map();
+
+    register(key, classRef){
+        if (!this._registry.has(key)) {
+            this._registry.set(key, classRef);
+        }
+    }
+
+    create(key, ...params){
+        if (!this._registry.has(key)) {
+            return null;
+        }
+
+        const classRef = this._registry.get(key);
+        return new classRef(...params);
+    }
+}
+
 class Grid {
     keys = [];
     data = [];
     wrapper;
-    constructor(data, wrapper){
+    elements;
+    constructor(data, elements, wrapper){
         this.data = data;
         this.wrapper = wrapper;
+        this.elements = elements;
         this.keys = Object.keys(this.data[0]);
     }
 
     render(){
         return this.wrapper.appendChild(
-            new DomTable(
-                new DomThead(
-                    new DomTr(
-                        this.keys.map(x => new DomTh(x))
+            this.elements.create(
+                "table", this.elements.create(
+                    "thead", this.elements.create(
+                        "tr", this.keys.map(x => this.elements.create("th", x))
                     )
                 )
             ).render()
@@ -107,9 +128,19 @@ class Grid {
 class Main {
     handleEvent(e){
         DomElement.domFactory = document.createElement.bind(document);
+        const DomElementFactory = new GenericFactory();
+        DomElementFactory.register("table", DomTable);
+        DomElementFactory.register("thead", DomThead);
+        DomElementFactory.register("tr", DomTr);
+        DomElementFactory.register("th", DomTd);
 
-        console.log(new Grid(MOCK.slice(0, 10), document.all.app).render());
-        
+        console.log(
+            new Grid(
+                MOCK.slice(0, 10), 
+                DomElementFactory,
+                document.all.app
+            ).render()
+        );
     }
 }
 
