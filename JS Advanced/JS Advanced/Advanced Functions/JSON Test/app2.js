@@ -18,33 +18,97 @@ class DomElement{
         DomElement._domFactory = x;
     }
 
+    generateDomElement(){
+        return DomElement.domFactory(this._tag);
+    }
+
     render(){
-        const e = DomElement.domFactory(this._tag);
-        e.innerHTML = this._content;
-        return e;
+        const elementInstance = this.generateDomElement();
+
+        if (Array.isArray(this._content)) {
+            this._content.forEach(
+                x => {
+                    if (x instanceof DomElement) {
+                        elementInstance.appendChild(x.render());
+                    }else if(x instanceof HTMLElement) {
+                        elementInstance.appendChild(x);
+                    }else{
+                        elementInstance.innerHTML = x.toString();
+                    }
+                }
+            )
+        }else{
+            if (this._content instanceof DomElement) {
+                elementInstance.appendChild(this._content.render());
+            }else if(this._content instanceof HTMLElement) {
+                elementInstance.appendChild(this._content);
+            }else{
+                elementInstance.innerHTML = this._content.toString();
+            }
+        }
+        return elementInstance;
     }
 }
 
-class DomP extends DomElement{
+class DomTable extends DomElement{
     constructor(content){
-        super("p", content);
+        super("table", content);
+    }
+}
+class DomThead extends DomElement{
+    constructor(content){
+        super("thead", content);
+    }
+}
+class DomTbody extends DomElement{
+    constructor(content){
+        super("tbody", content);
+    }
+}
+class DomTr extends DomElement{
+    constructor(content){
+        super("tr", content);
+    }
+}
+class DomTd extends DomElement{
+    constructor(content){
+        super("td", content);
+    }
+}
+class DomTh extends DomElement{
+    constructor(content){
+        super("th", content);
+    }
+}
+
+class Grid {
+    keys = [];
+    data = [];
+    wrapper;
+    constructor(data, wrapper){
+        this.data = data;
+        this.wrapper = wrapper;
+        this.keys = Object.keys(this.data[0]);
+    }
+
+    render(){
+        return this.wrapper.appendChild(
+            new DomTable(
+                new DomThead(
+                    new DomTr(
+                        this.keys.map(x => new DomTh(x))
+                    )
+                )
+            ).render()
+        )
     }
 }
 
 class Main {
     handleEvent(e){
-        let keys = Object.keys(MOCK[0]);
-        let html = "";
-
         DomElement.domFactory = document.createElement.bind(document);
 
-        html += "<table>";
-        html += "<tr>";
-        html += keys.map(x => `<th>${x}</th>`).join('');
-        html += "</tr>";
-        html +="</table>";
-
-        document.all.app.appendChild(new DomP('test').render());
+        console.log(new Grid(MOCK.slice(0, 10), document.all.app).render());
         
     }
 }
