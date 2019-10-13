@@ -1,28 +1,28 @@
 import { MOCK } from "./MOCK_DATA.js";
 
-class DomElement{
+class DomElement {
     _tag;
     _content;
     static _domFactory;
 
-    constructor(tag, content){
+    constructor(tag, content) {
         this._tag = tag;
         this._content = content;
     }
 
-    static get domFactory(){
+    static get domFactory() {
         return DomElement._domFactory;
     }
 
-    static set domFactory(x){
+    static set domFactory(x) {
         DomElement._domFactory = x;
     }
 
-    generateDomElement(){
+    generateDomElement() {
         return DomElement.domFactory(this._tag);
     }
 
-    render(){
+    render() {
         const elementInstance = this.generateDomElement();
 
         if (Array.isArray(this._content)) {
@@ -30,19 +30,19 @@ class DomElement{
                 x => {
                     if (x instanceof DomElement) {
                         elementInstance.appendChild(x.render());
-                    }else if(x instanceof HTMLElement) {
+                    } else if (x instanceof HTMLElement) {
                         elementInstance.appendChild(x);
-                    }else{
+                    } else {
                         elementInstance.innerHTML = x.toString();
                     }
                 }
             )
-        }else{
+        } else {
             if (this._content instanceof DomElement) {
                 elementInstance.appendChild(this._content.render());
-            }else if(this._content instanceof HTMLElement) {
+            } else if (this._content instanceof HTMLElement) {
                 elementInstance.appendChild(this._content);
-            }else{
+            } else {
                 elementInstance.innerHTML = this._content.toString();
             }
         }
@@ -50,62 +50,62 @@ class DomElement{
     }
 }
 
-class DomTable extends DomElement{
-    constructor(content){
+class DomTable extends DomElement {
+    constructor(content) {
         super("table", content);
     }
 }
-class DomThead extends DomElement{
-    constructor(content){
+class DomThead extends DomElement {
+    constructor(content) {
         super("thead", content);
     }
 }
-class DomTbody extends DomElement{
-    constructor(content){
+class DomTbody extends DomElement {
+    constructor(content) {
         super("tbody", content);
     }
 }
-class DomTr extends DomElement{
-    constructor(content){
+class DomTr extends DomElement {
+    constructor(content) {
         super("tr", content);
     }
 }
-class DomTd extends DomElement{
-    constructor(content){
+class DomTd extends DomElement {
+    constructor(content) {
         super("td", content);
     }
 }
-class DomTh extends DomElement{
-    constructor(content){
+class DomTh extends DomElement {
+    constructor(content) {
         super("th", content);
     }
 }
-class DomUl extends DomElement{
-    constructor(content){
+class DomUl extends DomElement {
+    constructor(content) {
         super("ul", content
             .reduce(
-                (aggregate, element) => 
-                    [...aggregate, Object.values(element).join(" ")], 
+                (aggregate, element) =>
+                    [...aggregate, Object.values(element).join(" ")],
                 []
             )
             .map(x => new DomLi(x))
         );
     }
 }
-class DomLi extends DomElement{
-    constructor(content){
+class DomLi extends DomElement {
+    constructor(content) {
         super("li", content);
     }
 }
 
-class DomImg extends DomElement{
+class DomImg extends DomElement {
     src;
-    constructor(src){
+    constructor(src) {
         super("img", "");
         this.src = src;
     }
 
-    render(){
+    render() {
         const img = this.generateDomElement();
         img.src = this.src;
 
@@ -113,16 +113,20 @@ class DomImg extends DomElement{
     }
 }
 
-class DomA extends DomElement{
+class DomA extends DomElement {
     href;
-    constructor(content, href){
+    props;
+    constructor(content, href, props) {
         super('a', content);
         this.href = href;
+        this.props = props;
     }
 
-    render(){
+    render() {
         const a = super.render();
         a.href = this.href;
+        let prps = Object.entries(this.props)[0];
+        a.dataset[prps[0]] = prps[1];
         return a;
     }
 }
@@ -130,13 +134,13 @@ class DomA extends DomElement{
 class GenericFactory {
     _registry = new Map();
 
-    register(key, classRef){
+    register(key, classRef) {
         if (!this._registry.has(key)) {
             this._registry.set(key, classRef);
         }
     }
 
-    create(key, ...params){
+    create(key, ...params) {
         if (!this._registry.has(key)) {
             return null;
         }
@@ -160,7 +164,7 @@ class Grid {
         friends: "ul"
     };
 
-    constructor(data, elements, dict, wrapper){
+    constructor(data, elements, dict, wrapper) {
         this.data = data;
         this.wrapper = wrapper;
         this.elements = elements;
@@ -170,33 +174,52 @@ class Grid {
         this.wrapper.addEventListener("click", this);
     }
 
-    handleEvent(e){
-        console.log(e);
+    handleEvent(e) {
+        if (e.target.dataset.sortBy) {
+            this.sortBy(e.target.dataset.sortBy);
+            this.render()
+        }
 
     }
 
-    render(){
+    sortBy(prop){
+        this.data = this.data.sort((a, b) => {
+            if (!isNaN(Number(a[prop]))) {
+                return Number(a[prop]) - Number(b[prop]);
+            }
+            return a[prop].localeCompare(b[prop]);
+        });
+    }
+
+    cleanHTML(){
+        while(this.wrapper.firstElementChild !== null){
+            this.wrapper.removeChild(this.wrapper.firstElementChild);
+        }
+    }
+
+    render() {
+        this.cleanHTML();
         return this.wrapper.appendChild(this.buildTable(this.buildContent()).render());
     }
 
-    buildTable(x){
+    buildTable(x) {
         return this.elements.create("table", x);
     }
-    buildContent(){
+    buildContent() {
         return [
             this.buildHead(),
             this.buildBody()
         ]
     }
-    buildHead(){
-        return this.elements.create("thead", 
+    buildHead() {
+        return this.elements.create("thead",
             this.buildTr(
                 this.buildHeadCells(this.keys, "th")
             )
         );
     }
-    buildBody(){
-        return this.elements.create("tbody", 
+    buildBody() {
+        return this.elements.create("tbody",
             this.data.map(row => this.buildTr(
                 this.keys.map(cell => this.buildCell(
                     "td", this.buildCellBody(cell, row[cell]
@@ -205,28 +228,31 @@ class Grid {
             ))
         );
     }
-    buildCellBody(type, content){
+    buildCellBody(type, content) {
         return this.elements.create(this.cellTemplates[type], content) || content;
     }
-    buildTr(x){
+    buildTr(x) {
         return this.elements.create("tr", x);
     }
-    buildCell(type, x){
+    buildCell(type, x) {
         return this.elements.create(type, x);
     }
-    buildCells(arr, type){
+    buildCells(arr, type) {
         return arr.map(x => this.elements.buildCell(type, x));
     }
-    buildHeadCell(type, x){
-        return this.elements.create(type, x);
+    buildHeadLink(key, x) {
+        return this.elements.create("a", x, "javascript:;", { sortBy: key });
     }
-    buildHeadCells(arr, type){
-        return arr.map(x => this.buildHeadCell(type, this.dict[x] || x));
+    buildHeadCell(type, x) {
+        return this.elements.create(type, this.buildHeadLink(x, this.dict[x] || x));
+    }
+    buildHeadCells(arr, type) {
+        return arr.map(x => this.buildHeadCell(type, x));
     }
 }
 
 class Main {
-    handleEvent(e){
+    handleEvent(e) {
         DomElement.domFactory = document.createElement.bind(document);
         const DomElementFactory = new GenericFactory();
         DomElementFactory.register("table", DomTable);
@@ -242,7 +268,7 @@ class Main {
 
         console.log(
             new Grid(
-                MOCK.slice(0, 20), 
+                MOCK.slice(0, 20),
                 DomElementFactory,
                 {
                     id: "Идент.",
