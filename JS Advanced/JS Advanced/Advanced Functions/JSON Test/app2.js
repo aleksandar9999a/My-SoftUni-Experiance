@@ -113,6 +113,20 @@ class DomImg extends DomElement{
     }
 }
 
+class DomA extends DomElement{
+    href;
+    constructor(content, href){
+        super('a', content);
+        this.href = href;
+    }
+
+    render(){
+        const a = super.render();
+        a.href = this.href;
+        return a;
+    }
+}
+
 class GenericFactory {
     _registry = new Map();
 
@@ -138,10 +152,13 @@ class Grid {
     dict;
     wrapper;
     elements;
+    headTemplates = {
+        first_name: "a"
+    };
     cellTemplates = {
         avatar: "img",
         friends: "ul"
-    }
+    };
 
     constructor(data, elements, dict, wrapper){
         this.data = data;
@@ -149,6 +166,13 @@ class Grid {
         this.elements = elements;
         this.dict = dict;
         this.keys = Object.keys(this.data[0]);
+
+        this.wrapper.addEventListener("click", this);
+    }
+
+    handleEvent(e){
+        console.log(e);
+
     }
 
     render(){
@@ -165,8 +189,9 @@ class Grid {
         ]
     }
     buildHead(){
-        return this.elements.create("thead", this.buildTr(
-            this.buildCells( this.keys, "th")
+        return this.elements.create("thead", 
+            this.buildTr(
+                this.buildHeadCells(this.keys, "th")
             )
         );
     }
@@ -187,10 +212,16 @@ class Grid {
         return this.elements.create("tr", x);
     }
     buildCell(type, x){
-        return this.elements.create(type, x)
+        return this.elements.create(type, x);
     }
     buildCells(arr, type){
-        return arr.map(x => this.elements.create(type, this.dict[x] || x));
+        return arr.map(x => this.elements.buildCell(type, x));
+    }
+    buildHeadCell(type, x){
+        return this.elements.create(type, x);
+    }
+    buildHeadCells(arr, type){
+        return arr.map(x => this.buildHeadCell(type, this.dict[x] || x));
     }
 }
 
@@ -207,6 +238,7 @@ class Main {
         DomElementFactory.register("img", DomImg);
         DomElementFactory.register("ul", DomUl);
         DomElementFactory.register("li", DomLi);
+        DomElementFactory.register("a", DomA);
 
         console.log(
             new Grid(
