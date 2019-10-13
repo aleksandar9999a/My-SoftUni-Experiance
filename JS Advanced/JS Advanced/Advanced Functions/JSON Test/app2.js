@@ -81,6 +81,21 @@ class DomTh extends DomElement{
     }
 }
 
+class DomImg extends DomElement{
+    src;
+    constructor(src){
+        super("img", "");
+        this.src = src;
+    }
+
+    render(){
+        const img = this.generateDomElement();
+        img.src = this.src;
+
+        return img;
+    }
+}
+
 class GenericFactory {
     _registry = new Map();
 
@@ -105,6 +120,10 @@ class Grid {
     data = [];
     wrapper;
     elements;
+    cellTemplates = {
+        avatar: "img"
+    }
+
     constructor(data, elements, wrapper){
         this.data = data;
         this.wrapper = wrapper;
@@ -134,7 +153,12 @@ class Grid {
     buildBody(){
         return this.elements.create("tbody", 
         this.data.map(row => this.buildTr( 
-                this.keys.map(cell => this.buildCell("td", row[cell])))));
+                this.keys.map(cell => this.buildCell("td", this.buildCellBody(cell, row[cell])))
+            ))
+        );
+    }
+    buildCellBody(type, content){
+        return this.elements.create(this.cellTemplates[type], content) || content;
     }
     buildTr(x){
         return this.elements.create("tr", x);
@@ -157,6 +181,7 @@ class Main {
         DomElementFactory.register("tr", DomTr);
         DomElementFactory.register("th", DomTh);
         DomElementFactory.register("td", DomTd);
+        DomElementFactory.register("img", DomImg);
 
         console.log(
             new Grid(
