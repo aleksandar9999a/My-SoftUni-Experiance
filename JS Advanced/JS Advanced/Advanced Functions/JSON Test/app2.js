@@ -80,6 +80,23 @@ class DomTh extends DomElement{
         super("th", content);
     }
 }
+class DomUl extends DomElement{
+    constructor(content){
+        super("ul", content);
+    }
+    render(){
+        const ul = this.generateDomElement();
+        this._content.reduce(
+            (aggregate, element) => [...aggregate, Object.entries(element).map(x => x[1]).join(" ")], [])
+            .map(x => new DomLi(x).render()).forEach(x => ul.appendChild(x));
+        return ul;
+    }
+}
+class DomLi extends DomElement{
+    constructor(content){
+        super("li", content);
+    }
+}
 
 class DomImg extends DomElement{
     src;
@@ -121,7 +138,8 @@ class Grid {
     wrapper;
     elements;
     cellTemplates = {
-        avatar: "img"
+        avatar: "img",
+        friends: "ul"
     }
 
     constructor(data, elements, wrapper){
@@ -152,8 +170,11 @@ class Grid {
     }
     buildBody(){
         return this.elements.create("tbody", 
-        this.data.map(row => this.buildTr( 
-                this.keys.map(cell => this.buildCell("td", this.buildCellBody(cell, row[cell])))
+            this.data.map(row => this.buildTr(
+                this.keys.map(cell => this.buildCell(
+                    "td", this.buildCellBody(cell, row[cell]
+                    )
+                ))
             ))
         );
     }
@@ -182,6 +203,8 @@ class Main {
         DomElementFactory.register("th", DomTh);
         DomElementFactory.register("td", DomTd);
         DomElementFactory.register("img", DomImg);
+        DomElementFactory.register("ul", DomUl);
+        DomElementFactory.register("li", DomLi);
 
         console.log(
             new Grid(
