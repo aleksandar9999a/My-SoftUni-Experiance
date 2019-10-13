@@ -82,14 +82,9 @@ class DomTh extends DomElement{
 }
 class DomUl extends DomElement{
     constructor(content){
-        super("ul", content);
-    }
-    render(){
-        const ul = this.generateDomElement();
-        this._content.reduce(
-            (aggregate, element) => [...aggregate, Object.entries(element).map(x => x[1]).join(" ")], [])
-            .map(x => new DomLi(x).render()).forEach(x => ul.appendChild(x));
-        return ul;
+        super("ul", content
+        .reduce((aggregate, element) => [...aggregate, Object.entries(element).map(x => x[1]).join(" ")], [])
+        .map(x => new DomLi(x)));
     }
 }
 class DomLi extends DomElement{
