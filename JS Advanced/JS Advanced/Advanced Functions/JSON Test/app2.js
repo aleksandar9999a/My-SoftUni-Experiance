@@ -135,6 +135,7 @@ class GenericFactory {
 class Grid {
     keys = [];
     data = [];
+    dict;
     wrapper;
     elements;
     cellTemplates = {
@@ -142,10 +143,11 @@ class Grid {
         friends: "ul"
     }
 
-    constructor(data, elements, wrapper){
+    constructor(data, elements, dict, wrapper){
         this.data = data;
         this.wrapper = wrapper;
         this.elements = elements;
+        this.dict = dict;
         this.keys = Object.keys(this.data[0]);
     }
 
@@ -188,7 +190,7 @@ class Grid {
         return this.elements.create(type, x)
     }
     buildCells(arr, type){
-        return arr.map(x => this.elements.create(type, x));
+        return arr.map(x => this.elements.create(type, this.dict[x] || x));
     }
 }
 
@@ -210,6 +212,16 @@ class Main {
             new Grid(
                 MOCK.slice(0, 20), 
                 DomElementFactory,
+                {
+                    id: "Идент.",
+                    email: "Мейл",
+                    gender: "Пол",
+                    ip_address: "IP",
+                    first_name: "Име",
+                    avatar: "Картинка",
+                    friends: "Приятели",
+                    last_name: "Фамилия"
+                },
                 document.all.app
             ).render()
         );
