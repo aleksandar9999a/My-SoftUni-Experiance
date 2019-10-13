@@ -113,15 +113,37 @@ class Grid {
     }
 
     render(){
-        return this.wrapper.appendChild(
-            this.elements.create(
-                "table", this.elements.create(
-                    "thead", this.elements.create(
-                        "tr", this.keys.map(x => this.elements.create("th", x))
-                    )
-                )
-            ).render()
-        )
+        return this.wrapper.appendChild(this.buildTable(this.buildContent()).render());
+    }
+
+    buildTable(x){
+        return this.elements.create("table", x);
+    }
+    buildContent(){
+        return [
+            this.buildHead(),
+            this.buildBody()
+        ]
+    }
+    buildHead(){
+        return this.elements.create("thead", this.buildTr(
+            this.buildCells( this.keys, "th")
+            )
+        );
+    }
+    buildBody(){
+        return this.elements.create("tbody", 
+        this.data.map(row => this.buildTr( 
+                this.keys.map(cell => this.buildCell("td", row[cell])))));
+    }
+    buildTr(x){
+        return this.elements.create("tr", x);
+    }
+    buildCell(type, x){
+        return this.elements.create(type, x)
+    }
+    buildCells(arr, type){
+        return arr.map(x => this.elements.create(type, x));
     }
 }
 
@@ -131,8 +153,10 @@ class Main {
         const DomElementFactory = new GenericFactory();
         DomElementFactory.register("table", DomTable);
         DomElementFactory.register("thead", DomThead);
+        DomElementFactory.register("tbody", DomTbody);
         DomElementFactory.register("tr", DomTr);
-        DomElementFactory.register("th", DomTd);
+        DomElementFactory.register("th", DomTh);
+        DomElementFactory.register("td", DomTd);
 
         console.log(
             new Grid(
