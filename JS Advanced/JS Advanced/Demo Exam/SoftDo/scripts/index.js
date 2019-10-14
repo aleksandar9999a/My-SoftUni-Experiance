@@ -24,6 +24,15 @@ function generateElement(type, content, attrName, attrValue) {
     return e;
 }
 
+function getParent(e) {
+    return e.parentElement.parentElement;
+}
+
+function removeElement() {
+    getParent(this).remove();
+    
+}
+
 function createPendingQuest(user, question) {
     let pendingDiv = generateElement('div', undefined, "class", "pendingQuestion");
     let img = generateElement('img');
@@ -32,10 +41,11 @@ function createPendingQuest(user, question) {
     let actionDiv = generateElement('div', undefined, "class", "actions");
     let openBtn = generateElement('button', 'Open', "class", "open");
     let archiveBtn = generateElement('button', 'Archive', "class", "archive");
-    
+
     img.src = "./images/user.png";
     img.setAttribute("width", "32");
     img.setAttribute("height", "32");
+    archiveBtn.addEventListener('click', removeElement);
     
     actionDiv.appendChild(archiveBtn);
     actionDiv.appendChild(openBtn);
