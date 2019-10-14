@@ -35,6 +35,12 @@ function removeElement() {
     getParent(this).remove();
 }
 
+function replyToTheQuestion(){
+    const currDiv = getParent(this);
+
+    console.log(currDiv);
+    
+}
 
 function moveToOpenQuestions() {
     const currDiv = getParent(this);
@@ -43,17 +49,33 @@ function moveToOpenQuestions() {
     const user = currDiv.getElementsByTagName('span')[0].innerHTML;
     const question = currDiv.getElementsByTagName('p')[0].innerHTML;
 
-
     const movedQuestion = createNewQuest(
         user, 
         question, 
         ['div', undefined, "class", "openQuestion"],
         ['div', undefined, "class", "actions"],
-        [['button', 'Reply', "class", "reply"]]
+        [['button', 'Reply', "class", "reply", replyToTheQuestion]]
         )
 
     openQuestion.appendChild(movedQuestion);
     currDiv.remove();
+}
+
+function createReplyDiv(){
+    let replyDiv = generateElement("div", undefined, "class", "replySection");
+    let input = generateElement("input", undefined, "class", "replyInput");
+    input.setAttribute("type", "text");
+    input.setAttribute("placeholder", "Reply to this question here...");
+    let btn = generateElement("button", "Send", "class", "replyButton");
+    let ol = generateElement("ol", undefined, "class", "reply");
+    ol.setAttribute("type", "1");
+
+    replyDiv.appendChild(input);
+    replyDiv.appendChild(btn);
+    replyDiv.appendChild(ol);
+
+    replyDiv.style.display = "none";
+    return replyDiv;
 }
 
 function createNewQuest(user, question, divParams, secDivParams, btnParams) {
@@ -75,6 +97,11 @@ function createNewQuest(user, question, divParams, secDivParams, btnParams) {
     pendingDiv.appendChild(span);
     pendingDiv.appendChild(p);
     pendingDiv.appendChild(actionDiv);
+
+    if (btnParams[0][3] === 'reply') {
+        const replyDiv = createReplyDiv();
+        pendingDiv.appendChild(replyDiv);
+    }
 
     return pendingDiv;
 }
@@ -98,6 +125,5 @@ function createValidQuestion(){
 }
 
 function mySolution(){
-
     document.getElementsByTagName("button")[0].addEventListener('click', createValidQuestion)
 }
