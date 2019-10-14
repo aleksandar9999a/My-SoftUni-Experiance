@@ -40,10 +40,23 @@ function moveToOpenQuestions() {
     const currDiv = getParent(this);
     const openQuestion = document.getElementById('openQuestions');
 
-    
+    const user = currDiv.getElementsByTagName('span')[0].innerHTML;
+    const question = currDiv.getElementsByTagName('p')[0].innerHTML;
+
+
+    const movedQuestion = createNewQuest(
+        user, 
+        question, 
+        ['div', undefined, "class", "openQuestion"],
+        ['div', undefined, "class", "actions"],
+        [['button', 'Reply', "class", "reply"]]
+        )
+
+    openQuestion.appendChild(movedQuestion);
+    currDiv.remove();
 }
 
-function createPendingQuest(user, question, divParams, secDivParams, btnParams) {
+function createNewQuest(user, question, divParams, secDivParams, btnParams) {
     let pendingDiv = generateElement(divParams[0], divParams[1], divParams[2], divParams[3]);
     let actionDiv = generateElement(secDivParams[0], secDivParams[1], secDivParams[2], secDivParams[3]);
 
@@ -56,7 +69,6 @@ function createPendingQuest(user, question, divParams, secDivParams, btnParams) 
     img.src = "./images/user.png";
     img.setAttribute("width", "32");
     img.setAttribute("height", "32");
-    //archiveBtn.addEventListener('click', removeElement);
     
     btns.map(x => actionDiv.appendChild(x));
     pendingDiv.appendChild(img);
@@ -72,15 +84,13 @@ function createValidQuestion(){
 
     if (question !== '') {
         const userName = getUserName();
-        const newQuest = createPendingQuest(
+        const newQuest = createNewQuest(
             userName, 
             question, 
             ['div', undefined, "class", "pendingQuestion"],
             ['div', undefined, "class", "actions"],
-            [['button', 'Archive', "class", "archive", removeElement], ['button', 'Open', "class", "open"]]
-            )
-
-
+            [['button', 'Archive', "class", "archive", removeElement], ['button', 'Open', "class", "open", moveToOpenQuestions]]
+            );
 
         const outputSection = document.getElementById('pendingQuestions');
         outputSection.appendChild(newQuest);
