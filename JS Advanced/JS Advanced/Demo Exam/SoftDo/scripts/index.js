@@ -37,9 +37,18 @@ function removeElement() {
 
 function replyToTheQuestion(){
     const currDiv = getParent(this);
+    let replySection = currDiv.getElementsByClassName("replySection")[0];
+    let btn = currDiv.getElementsByTagName("button")[0];
 
-    console.log(currDiv);
-    
+    if (replySection.style.display === "block") {
+        replySection.style.display = "none";
+        btn.innerHTML = "Reply";
+    }else{
+        replySection.style.display = "block";
+        btn.innerHTML = "Back";
+    }
+
+
 }
 
 function moveToOpenQuestions() {
