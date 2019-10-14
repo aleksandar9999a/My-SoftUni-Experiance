@@ -47,8 +47,6 @@ function replyToTheQuestion(){
         replySection.style.display = "block";
         btn.innerHTML = "Back";
     }
-
-
 }
 
 function moveToOpenQuestions() {
@@ -70,12 +68,20 @@ function moveToOpenQuestions() {
     currDiv.remove();
 }
 
+function sendReply(){
+    let currDiv = this.parentElement;
+    let ol = currDiv.getElementsByClassName("reply")[0];
+    let message = currDiv.getElementsByTagName("input")[0];
+    let li = generateElement("li", message.value);
+    ol.appendChild(li);
+}
+
 function createReplyDiv(){
     let replyDiv = generateElement("div", undefined, "class", "replySection");
     let input = generateElement("input", undefined, "class", "replyInput");
     input.setAttribute("type", "text");
     input.setAttribute("placeholder", "Reply to this question here...");
-    let btn = generateElement("button", "Send", "class", "replyButton");
+    let btn = generateElement("button", "Send", "class", "replyButton", sendReply);
     let ol = generateElement("ol", undefined, "class", "reply");
     ol.setAttribute("type", "1");
 
