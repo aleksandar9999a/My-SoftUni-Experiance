@@ -2,19 +2,15 @@ const { expect } = require(`chai`);
 const solve = require("./solution");
 
 describe("Extract User Data Tests", () => {
-    it(`Martin Chaov +359-0-000-000 martin@martin.martin => Name: Martin Chaov`, () => {
-        expect(solve(["Martin Chaov +359-0-000-000 martin@martin.martin"])).to.equal(`Name: Martin Chaov
-Phone number: +359-0-000-000
-Email: martin@martin.martin`);
-    })
-
-    it(`Martin +359-0-000-000 martin@martin.martin => Invalid`, () => {
-        expect(solve(["Martin +359-0-000-000 martin@martin.martin"])).to.equal(`Invalid`);
-    })
-    it(`Martin Chaov +359 0-000-000 martin@martin.martin => Invalid`, () => {
-        expect(solve(["Martin +359 0-000-000 martin@martin.martin"])).to.equal(`Invalid`);
-    })
-    it(`Martin Chaov +359-0-000-000 Martin@martin.martin => Invalid`, () => {
-        expect(solve(["Martin +359-0-000-000 Martin@martin.martin"])).to.equal(`Invalid`);
+    it(`Test with multi data`, () => {
+        expect(solve(["George Smith +359 2 123 456 George@gmail.com", "G S +359-5-759-684 valid@gmail.com", "Smith +359-5 789 654 smith@gmail.com"]))
+        .to.equal(`Invalid data
+- - -
+Name: G S
+Phone Number: +359-5-759-684
+Email: valid@gmail.com
+- - -
+Invalid data
+- - -`);
     })
 })
