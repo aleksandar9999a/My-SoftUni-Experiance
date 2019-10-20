@@ -1,4 +1,4 @@
-const  getBinaryCode = () => document.getElementsByTagName('input')[0].value;
+const getBinaryCode = () => document.getElementsByTagName('input')[0].value;
 const binCodeReducer = (binCode, number) => binCode.substring(number, binCode.length - number);
 const binCodeReducerBySegments = binCode => binCode.match(/.{8}/gim);
 const parseBinToDecimal = binCodeArr => binCodeArr.map(x => parseInt(x, 2));
