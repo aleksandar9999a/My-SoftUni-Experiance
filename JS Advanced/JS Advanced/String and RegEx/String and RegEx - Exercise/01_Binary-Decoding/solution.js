@@ -1,12 +1,9 @@
-function getBinaryCode(){
-	return document.getElementsByTagName('input')[0].value;
-}
-
-function solve() {
-	let binCode = getBinaryCode();
-	
-	
-}
+const  getBinaryCode = () => document.getElementsByTagName('input')[0].value;
+const binCodeReducer = (binCode, number) => binCode.substring(number, binCode.length - number);
+const binCodeReducerBySegments = binCode => binCode.match(/.{8}/gim);
+const parseBinToDecimal = binCodeArr => binCodeArr.map(x => parseInt(x, 2));
+const parseAsciiToText = arr =>arr.map(x => String.fromCharCode(x));
+const printResult = str => document.getElementById('resultOutput').textContent = str;
 
 function getBinCodeReduceNumber(binCode) {
 	while (binCode.toString().length > 1) {
@@ -15,23 +12,7 @@ function getBinCodeReduceNumber(binCode) {
 	return binCode
 }
 
-function binCodeReducer(binCode, number) {
-	return binCode.substring(number, binCode.length - number)
-}
-
-function binCodeReducerBySegments(binCode) {
-	return binCode.match(/.{8}/gim);
-}
-
-function parseBinToDecimal(binCodeArr) {
-	return binCodeArr.map(x => parseInt(x, 2));
-}
-
-function parseAsciiToText(arr) {
-	return arr.map(x => String.fromCharCode(x));
-}
-
-module.exports = function binDecode(binCode){
+function binDecode(binCode){
 	let binCodeReducerNumber = getBinCodeReduceNumber(binCode);
 	let reducedBinCode = binCodeReducer(binCode, binCodeReducerNumber);
 	let reduceBinCodeBySegments = binCodeReducerBySegments(reducedBinCode);
@@ -39,4 +20,10 @@ module.exports = function binDecode(binCode){
 	let text = parseAsciiToText(decimalCode)
 
 	return text.join('')
+}
+
+function solve() {
+	let binCode = getBinaryCode();
+	let text = binDecode(binCode);
+	printResult(text)
 }
