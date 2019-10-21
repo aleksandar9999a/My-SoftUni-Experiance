@@ -69,4 +69,13 @@ describe("Tests PizzUni", () => {
             expect(actual.completeOrder()).to.be.equal(actual.orders[0])
         })
     })
+    describe("detailsAboutMyOrder", () => {
+        it("Returns the status of order", () => {
+            let actual = new PizzUni();
+            actual.registerUser("alex@gmail.com");
+            actual.makeAnOrder("alex@gmail.com", "Italian Style", "Fanta");
+            actual.completeOrder();
+            expect(actual.detailsAboutMyOrder(0)).to.be.equal("Status of your order: completed")
+        })
+    })
 })
