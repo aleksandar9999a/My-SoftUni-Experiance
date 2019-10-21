@@ -71,10 +71,7 @@ describe("Computer Tests", () => {
 `Name - Word | Usage - CPU: 3%, RAM: 3%
 Name - Excel | Usage - CPU: 4%, RAM: 4%
 Name - PowerPoint | Usage - CPU: 5%, RAM: 5%
-Name - Solitare | Usage - CPU: 1%, RAM: 1%`
-                
-            )
-
+Name - Solitare | Usage - CPU: 1%, RAM: 1%`)
         })
     })
 })

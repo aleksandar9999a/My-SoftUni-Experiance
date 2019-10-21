@@ -11,11 +11,12 @@ class Computer {
         if (this.hddMemory < requiredSpace) {
             throw new Error("There is not enough space on the hard drive")
         }else{
-            this.installedPrograms.push({name: name,
-                requiredSpace: requiredSpace});
+            let currFormat = {name: name,
+                requiredSpace: requiredSpace};
+
+            this.installedPrograms.push(currFormat);
             this.hddMemory -= requiredSpace;
-            return {name: name,
-                requiredSpace: requiredSpace}
+            return currFormat;
         }
     }
 
@@ -24,8 +25,8 @@ class Computer {
         if (!res[0]) {
             throw new Error("Control panel is not responding")
         }else{
-            let value = Object.values(this.installedPrograms[res[1]]);
-            this.hddMemory += value[0];
+            let value = res[2].requiredSpace;
+            this.hddMemory += value;
             this.installedPrograms.splice(res[1], 1);
         }
 
@@ -55,26 +56,25 @@ class Computer {
         let ram = (currProgramSpace[1] / this.ramMemory) * 1.5;
         let cpu = ((currProgramSpace[1] / this.cpuGHz) / 500) * 1.5;
         
-        this.taskManager.push( {name: name,
+        let currFormat = {name: name,
             ramUsage: ram,
-            cpuUsage: cpu});
+            cpuUsage: cpu};
 
-        this.checkRam(name);
-
-        return {name: name,
-                ramUsage: ram,
-                cpuUsage: cpu}
+        this.taskManager.push(currFormat);
+        this.checkRamAndCpu(name);
+        return currFormat
     }
 
-    checkRam(name){
+    checkRamAndCpu(name){
         let ram = this.taskManager.map(x => x.ramUsage).reduce((a, b) => a + b, 0);
-        if (ram >= 100) {
-            throw new Error(`${name} caused out of memory exception`)
-        }
-
         let cpu = this.taskManager.map(x => x.cpuUsage).reduce((a, b) => a + b, 0);
-        if (cpu >= 100) {
-            throw new Error(`${name} caused out of cpu exception`)
+
+        if (ram >= 100 && cpu >= 100) {
+            throw new Error(`${name} caused out of memory exception`);
+        }else if(ram >= 100 && cpu < 100){
+            throw new Error(`${name} caused out of memory exception`);
+        }else if(ram < 100 && cpu >= 100){
+            throw new Error(`${name} caused out of cpu exception`);
         }
     }
 
