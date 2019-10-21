@@ -23,7 +23,7 @@ describe("Computer Tests", () => {
             let actual = new Computer(4096, 7.5, 250000);
             actual.installAProgram('Word', 7300);
             actual.uninstallAProgram('Word');
-            
+
             expect(actual.installedPrograms[0]).to.be.equal(undefined)
         })
         it("Throw error if program not exist", () => {
@@ -53,6 +53,28 @@ describe("Computer Tests", () => {
         it("there is no opened program, the function returns All running smooth so far", () => {
             let actual = new Computer(4096, 7.5, 250000);
             expect(actual.taskManagerView()).to.be.equal("All running smooth so far")
+        })
+        it("If there is at least one opened program, visualize it", () => {
+            let actual = new Computer(4096, 7.5, 250000);
+
+            actual.installAProgram('Word', 7300);
+            actual.installAProgram('Excel', 10240);
+            actual.installAProgram('PowerPoint', 12288);
+            actual.installAProgram('Solitare', 1500);
+
+            actual.openAProgram('Word');
+            actual.openAProgram('Excel');
+            actual.openAProgram('PowerPoint');
+            actual.openAProgram('Solitare');
+
+            expect(actual.taskManagerView()).to.be.equal(
+`Name - Word | Usage - CPU: 3%, RAM: 3%
+Name - Excel | Usage - CPU: 4%, RAM: 4%
+Name - PowerPoint | Usage - CPU: 5%, RAM: 5%
+Name - Solitare | Usage - CPU: 1%, RAM: 1%`
+                
+            )
+
         })
     })
 })

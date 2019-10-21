@@ -82,6 +82,7 @@ class Computer {
         if (this.taskManager.length === 0) {
             return "All running smooth so far";
         }
+        return this.taskManager.map(x => `Name - ${x.name} | Usage - CPU: ${x.cpuUsage.toFixed(0)}%, RAM: ${x.ramUsage.toFixed(0)}%`).join('\n')
     }
 }
 
