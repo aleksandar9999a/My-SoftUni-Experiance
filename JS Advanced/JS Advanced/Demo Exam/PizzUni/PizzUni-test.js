@@ -54,4 +54,19 @@ describe("Tests PizzUni", () => {
             expect(actual.orders[0].status).to.be.equal("pending");
         })
     })
+    describe("completeOrder", () => {
+        it("Should change the order status from pending to completed", () => {
+            let actual = new PizzUni();
+            actual.registerUser("alex@gmail.com");
+            actual.makeAnOrder("alex@gmail.com", "Italian Style", "Fanta");
+            actual.completeOrder();
+            expect(actual.orders[0].status).to.be.equal("completed")
+        })
+        it("Should return current order", () => {
+            let actual = new PizzUni();
+            actual.registerUser("alex@gmail.com");
+            actual.makeAnOrder("alex@gmail.com", "Italian Style", "Fanta");
+            expect(actual.completeOrder()).to.be.equal(actual.orders[0])
+        })
+    })
 })
