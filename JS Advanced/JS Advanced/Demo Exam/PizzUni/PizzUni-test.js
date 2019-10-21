@@ -12,7 +12,8 @@ describe("Tests PizzUni", () => {
         it("If email exist throw error", () => {
             let actual = new PizzUni();
             actual.registerUser("alex@gmail.com");
-            expect(() => actual.registerUser("alex@gmail.com")).to.throw(Error, 'This email address (alex@gmail.com) is already being used!');
+            let errF = () => actual.registerUser("alex@gmail.com");
+            expect(errF).to.throw(Error, 'This email address (alex@gmail.com) is already being used!');
         })
         it("If email doesn't exist then add to register", () => {
             let actual = new PizzUni();
@@ -76,6 +77,13 @@ describe("Tests PizzUni", () => {
             actual.makeAnOrder("alex@gmail.com", "Italian Style", "Fanta");
             actual.completeOrder();
             expect(actual.detailsAboutMyOrder(0)).to.be.equal("Status of your order: completed")
+        })
+        it("Returns the status of order => undefined", () => {
+            let actual = new PizzUni();
+            actual.registerUser("alex@gmail.com");
+            actual.makeAnOrder("alex@gmail.com", "Italian Style", "Fanta");
+            actual.completeOrder();
+            expect(actual.detailsAboutMyOrder(1)).to.be.equal(undefined)
         })
     })
 })
