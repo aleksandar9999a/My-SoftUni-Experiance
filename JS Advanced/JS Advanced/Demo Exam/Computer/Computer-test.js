@@ -75,4 +75,3 @@ Name - Solitare | Usage - CPU: 1%, RAM: 1%`)
         })
     })
 })
-
