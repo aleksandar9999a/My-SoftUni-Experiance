@@ -35,5 +35,11 @@ describe("BookStore Tests", () => {
             actual.hire('George', 'seller');
             expect(actual.fire('George')).to.be.equal('George is fired');
         })
+        it("Otherwise, an error is thrown", () => {
+            let actual = new BookStore('Store');
+            actual.stockBooks(['Inferno-Dan Braun']);
+            let errF = () => actual.fire('George')
+            expect(errF).to.throw(Error, "George doesn't work here");
+        })
     })
 })
