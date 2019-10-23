@@ -50,5 +50,12 @@ describe("BookStore Tests", () => {
             actual.sellBook('Inferno', 'George');
             expect(actual.workers[0]).to.have.property("booksSold", 1);
         })
+        it("If books is not in stock throw error", () => {
+            let actual = new BookStore('Store');
+            actual.stockBooks(['Inferno-Dan Braun']);
+            actual.hire('George', 'seller');
+            let errF = () => actual.sellBook('Harry Potter', 'George');
+            expect(errF).to.throw(Error, "This book is out of stock");
+        })
     })
 })
