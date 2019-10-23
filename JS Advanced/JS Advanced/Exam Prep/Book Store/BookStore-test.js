@@ -42,4 +42,13 @@ describe("BookStore Tests", () => {
             expect(errF).to.throw(Error, "George doesn't work here");
         })
     })
+    describe("sellBook", () => {
+        it("If the book is in stock and the given worker name is present in the workers property, the book is sold, and the current worker books sold counter is increased by 1", () => {
+            let actual = new BookStore('Store');
+            actual.stockBooks(['Inferno-Dan Braun']);
+            actual.hire('George', 'seller');
+            actual.sellBook('Inferno', 'George');
+            expect(actual.workers[0]).to.have.property("booksSold", 1);
+        })
+    })
 })
