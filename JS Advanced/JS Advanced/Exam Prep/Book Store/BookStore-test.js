@@ -65,4 +65,11 @@ describe("BookStore Tests", () => {
             expect(errF).to.throw(Error, "Ivan is not working here");
         })
     })
+    describe("printWorkers", () => {
+        it("Prints all workers", () => {
+            let actual = new BookStore('Store');
+            actual.hire('George', 'seller');
+            expect(actual.printWorkers()).to.be.equal(`Name:George Position:seller BooksSold:0`)
+        })
+    })
 })
