@@ -28,4 +28,12 @@ describe("BookStore Tests", () => {
             expect(errF).to.throw(Error, "This person is our employee");
         })
     })
+    describe("fire", () => {
+        it("If there is an employee with that name, he is fired", () => {
+            let actual = new BookStore('Store');
+            actual.stockBooks(['Inferno-Dan Braun']);
+            actual.hire('George', 'seller');
+            expect(actual.fire('George')).to.be.equal('George is fired');
+        })
+    })
 })
