@@ -14,4 +14,11 @@ describe("BookStore Tests", () => {
             expect(actual.stockBooks(['Inferno-Dan Braun'])).to.be.a("array");
         })
     })
+    describe("hire", () => {
+        it("The worker is hired, and a proper message is returned", () => {
+            let actual = new BookStore('Store');
+            actual.stockBooks(['Inferno-Dan Braun']);
+            expect(actual.hire('George', 'seller')).to.be.equal('George started work at Store as seller');
+        })
+    })
 })
