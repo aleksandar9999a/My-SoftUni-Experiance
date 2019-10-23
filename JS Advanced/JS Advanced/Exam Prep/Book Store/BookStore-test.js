@@ -9,6 +9,9 @@ describe("BookStore Tests", () => {
         })
     })
     describe("stockBooks", () => {
-        
+        it("Adds each of the elements from the input into the book's property", () => {
+            let actual = new BookStore('Store');
+            expect(actual.stockBooks(['Inferno-Dan Braun'])).to.be.a("array");
+        })
     })
 })
