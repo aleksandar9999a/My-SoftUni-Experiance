@@ -6,12 +6,15 @@ describe("BookStore Tests", () => {
         it("String representing the bookstore name", () => {
             let actual = new BookStore('Store');
             expect(actual).to.have.property('name', 'Store');
+            expect(actual.books).to.be.a("array");
+            expect(actual.workers).to.be.a("array");
         })
     })
     describe("stockBooks", () => {
         it("Adds each of the elements from the input into the book's property", () => {
             let actual = new BookStore('Store');
             expect(actual.stockBooks(['Inferno-Dan Braun'])).to.be.a("array");
+            expect(actual.stockBooks(['Harry Potter-J.Rowling'])).to.have.length(2);
         })
     })
     describe("hire", () => {
@@ -19,6 +22,7 @@ describe("BookStore Tests", () => {
             let actual = new BookStore('Store');
             actual.stockBooks(['Inferno-Dan Braun']);
             expect(actual.hire('George', 'seller')).to.be.equal('George started work at Store as seller');
+            expect(actual.workers).to.have.length(1);
         })
         it("If the worker is already hired the function throws an error", () => {
             let actual = new BookStore('Store');
@@ -34,6 +38,7 @@ describe("BookStore Tests", () => {
             actual.stockBooks(['Inferno-Dan Braun']);
             actual.hire('George', 'seller');
             expect(actual.fire('George')).to.be.equal('George is fired');
+            expect(actual.workers).to.have.length(0);
         })
         it("Otherwise, an error is thrown", () => {
             let actual = new BookStore('Store');
