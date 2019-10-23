@@ -20,5 +20,12 @@ describe("BookStore Tests", () => {
             actual.stockBooks(['Inferno-Dan Braun']);
             expect(actual.hire('George', 'seller')).to.be.equal('George started work at Store as seller');
         })
+        it("If the worker is already hired the function throws an error", () => {
+            let actual = new BookStore('Store');
+            actual.stockBooks(['Inferno-Dan Braun']);
+            actual.hire('George', 'seller');
+            let errF = () => actual.hire('George', 'seller');
+            expect(errF).to.throw(Error, "This person is our employee");
+        })
     })
 })
