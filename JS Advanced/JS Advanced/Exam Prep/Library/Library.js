@@ -13,9 +13,9 @@ class Library{
         return this.subscribers.find(x => x.name === name);
     }
 
-    removeSubscriber(name, x, i){
+    removeSubscriber(name, subs, x, i){
         if (x.name === name) {
-            this.subscribers.splice(i, 1);
+            subs.splice(i, 1);
         }
     }
     
@@ -36,11 +36,10 @@ class Library{
     }
 
     unsubscribe(name) {
-        let subscriber = this.foudSubscriber(name);
-        if (!subscriber) {
+        if (!this.foudSubscriber(name)) {
             throw new Error(`There is no such subscriber as ${name}`);
         }
-        this.subscribers.map((x, i) => this.removeSubscriber(name, x, i));
+        this.subscribers.map(this.removeSubscriber.bind(undefined, name, this.subscribers));
 
         return this.subscribers;
     }
@@ -76,13 +75,5 @@ class Library{
         return this.noInfo()
     }
 }
-
-let lib = new Library('Lib');
-
-lib.subscribe('Peter', 'normal');
-lib.receiveBook('Peter', 'Lord of the rings', 'J. R. R. Tolkien');
-
-console.log(lib.unsubscribe('Peter'));
-
 
 module.exports = Library;
