@@ -3,8 +3,8 @@ class Library{
         this.libraryName = libraryName;
         this.subscribers = [];
         this.subscriptionTypes = {
-            normal: libraryName.length,
-            special: libraryName.length * 2,
+            normal: this.libraryName.length,
+            special: this.libraryName.length * 2,
             vip: Number.MAX_SAFE_INTEGER
         }
     }
@@ -22,7 +22,7 @@ class Library{
             isThere.type = type;
         }
 
-        return newSubscriber;
+        return isThere ? isThere : this.subscribers[this.subscribers.length - 1];
     }
 
     unsubscribe(name) {
@@ -45,7 +45,7 @@ class Library{
             throw new Error(`There is no such subscriber as ${subscriberName}`);
         }
 
-        let isContainMaxBooks = isThere.books.length < this.subscriptionTypes[isThere.type];
+        let isContainMaxBooks = isThere.books.length >= this.subscriptionTypes[isThere.type];
         if (isContainMaxBooks) {
             throw new Error(`You have reached your subscription limit ${this.subscriptionTypes[isThere.type]}!`)
         }
@@ -60,16 +60,22 @@ class Library{
     showInfo(){
         let hasSubscribers = this.subscribers.length > 0;
         if (hasSubscribers) {
-            return this.subscribers.map(x => `Subscriber: ${x.name}, Type: ${x.type}
-            Received books: ${x.books.map(b => `${b.title} by ${b.author}`).join(' ')}`);
+            return this.subscribers.map(x => `Subscriber: ${x.name}, Type: ${x.type}\nReceived books: ${x.books.map(b => `${b.title} by ${b.author}`).join(', ')}\n`).join('');
         }
         return `${this.libraryName} has no information about any subscribers`
     }
 }
 
-let myLibrary = new Library('Lib');
-myLibrary.subscribe('Alex', 'normal');
-myLibrary.subscribe('Alex', 'vip');
-console.log(myLibrary.subscribers[0]);
+let lib = new Library('Lib');
+
+lib.subscribe('Peter', 'normal');
+lib.subscribe('John', 'special');
+
+lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin');
+lib.receiveBook('Peter', 'Lord of the rings', 'J. R. R. Tolkien');
+lib.receiveBook('John', 'Harry Potter', 'J. K. Rowling');
+
+console.log(lib.showInfo());
+
 
 module.exports = Library;
