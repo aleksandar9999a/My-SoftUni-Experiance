@@ -9,73 +9,80 @@ class Library{
         }
     }
 
+    foudSubscriber(name){
+        return this.subscribers.find(x => x.name === name);
+    }
+
+    removeSubscriber(name, x, i){
+        if (x.name === name) {
+            this.subscribers.splice(i, 1);
+        }
+    }
+    
     subscribe(name, type){
         if (!this.subscriptionTypes[type]) {
             throw new Error(`The type ${type} is invalid`);
         }
 
         let newSubscriber = {name, type, books: []}
-        let isThere = this.subscribers.find(x => x.name === name);
-        if (!isThere) {
+        let subscriber = this.foudSubscriber(name);
+        if (!subscriber) {
             this.subscribers.push(newSubscriber);
         }else{
-            isThere.type = type;
+            subscriber.type = type;
         }
 
-        return isThere ? isThere : this.subscribers[this.subscribers.length - 1];
+        return subscriber ? subscriber : this.subscribers[this.subscribers.length - 1];
     }
 
     unsubscribe(name) {
-        let isThere = this.subscribers.find(x => x.name === name);
-        if (!isThere) {
+        let subscriber = this.foudSubscriber(name);
+        if (!subscriber) {
             throw new Error(`There is no such subscriber as ${name}`);
         }
-        this.subscribers.map((x, i) => {
-            if (x.name === name) {
-                this.subscribers.splice(i, 1);
-            }
-        })
+        this.subscribers.map((x, i) => this.removeSubscriber(name, x, i));
 
         return this.subscribers;
     }
 
-    receiveBook(subscriberName, bookTitle, bookAuthor){
-        let isThere = this.subscribers.find(x => x.name === subscriberName);
-        if (!isThere) {
-            throw new Error(`There is no such subscriber as ${subscriberName}`);
+    receiveBook(name, title, author){
+        let subscriber = this.foudSubscriber(name);
+        if (!subscriber) {
+            throw new Error(`There is no such subscriber as ${name}`);
         }
 
-        let isContainMaxBooks = isThere.books.length >= this.subscriptionTypes[isThere.type];
-        if (isContainMaxBooks) {
-            throw new Error(`You have reached your subscription limit ${this.subscriptionTypes[isThere.type]}!`)
+        if (subscriber.books.length >= this.subscriptionTypes[subscriber.type]) {
+            throw new Error(`You have reached your subscription limit ${this.subscriptionTypes[subscriber.type]}!`)
         }
 
-        let bookData = {title: bookTitle,
-        author: bookAuthor};
+        let bookData = {title, author};
 
-        isThere.books.push(bookData);
-        return isThere;
+        subscriber.books.push(bookData);
+        return subscriber;
+    }
+
+    subscriberDataFormat(x){
+        return `Subscriber: ${x.name}, Type: ${x.type}\nReceived books: ${x.books.map(b => `${b.title} by ${b.author}`).join(', ')}\n`
+    }
+
+    noInfo(){
+        return `${this.libraryName} has no information about any subscribers`;
     }
 
     showInfo(){
-        let hasSubscribers = this.subscribers.length > 0;
-        if (hasSubscribers) {
-            return this.subscribers.map(x => `Subscriber: ${x.name}, Type: ${x.type}\nReceived books: ${x.books.map(b => `${b.title} by ${b.author}`).join(', ')}\n`).join('');
+        if (this.subscribers.length > 0) {
+            return this.subscribers.map(this.subscriberDataFormat).join('');
         }
-        return `${this.libraryName} has no information about any subscribers`
+        return this.noInfo()
     }
 }
 
 let lib = new Library('Lib');
 
 lib.subscribe('Peter', 'normal');
-lib.subscribe('John', 'special');
-
-lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin');
 lib.receiveBook('Peter', 'Lord of the rings', 'J. R. R. Tolkien');
-lib.receiveBook('John', 'Harry Potter', 'J. K. Rowling');
 
-console.log(lib.showInfo());
+console.log(lib.unsubscribe('Peter'));
 
 
 module.exports = Library;
