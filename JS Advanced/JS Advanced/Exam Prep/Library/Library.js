@@ -56,6 +56,15 @@ class Library{
         isThere.books.push(bookData);
         return isThere;
     }
+
+    showInfo(){
+        let hasSubscribers = this.subscribers.length > 0;
+        if (hasSubscribers) {
+            return this.subscribers.map(x => `Subscriber: ${x.name}, Type: ${x.type}
+            Received books: ${x.books.map(b => `${b.title} by ${b.author}`).join(' ')}`);
+        }
+        return `${this.libraryName} has no information about any subscribers`
+    }
 }
 
 let myLibrary = new Library('Lib');
