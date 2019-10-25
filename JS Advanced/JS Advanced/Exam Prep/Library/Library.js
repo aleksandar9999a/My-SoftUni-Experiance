@@ -38,6 +38,24 @@ class Library{
 
         return this.subscribers;
     }
+
+    receiveBook(subscriberName, bookTitle, bookAuthor){
+        let isThere = this.subscribers.find(x => x.name === subscriberName);
+        if (!isThere) {
+            throw new Error(`There is no such subscriber as ${subscriberName}`);
+        }
+
+        let isContainMaxBooks = isThere.books.length < this.subscriptionTypes[isThere.type];
+        if (isContainMaxBooks) {
+            throw new Error(`You have reached your subscription limit ${this.subscriptionTypes[isThere.type]}!`)
+        }
+
+        let bookData = {title: bookTitle,
+        author: bookAuthor};
+
+        isThere.books.push(bookData);
+        return isThere;
+    }
 }
 
 let myLibrary = new Library('Lib');
