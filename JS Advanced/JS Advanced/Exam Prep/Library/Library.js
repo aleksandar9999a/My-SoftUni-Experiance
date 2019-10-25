@@ -75,5 +75,3 @@ class Library{
         return this.noInfo()
     }
 }
-
-module.exports = Library;
