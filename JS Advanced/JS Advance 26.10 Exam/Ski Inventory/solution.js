@@ -1,5 +1,9 @@
 let availableProducts = [];
 let myProducts = [];
+let filters = {
+   default: (_, x) => x.quantity > 0,
+   filterByStr: (str, product) => product.name.includes(str)
+}
 
 function getCurrProductData(btn) {
    let div = btn.parentElement.parentElement;
@@ -15,11 +19,8 @@ function generateLiFoMyProducts(product) {
    return li;
 }
 
-function showMyProducts() {
-   let list = document.getElementById('myProducts').getElementsByTagName('ul')[0];
-   list.innerHTML = '';
-   myProducts.map(generateLiFoMyProducts).map(x => list.appendChild(x));
-   let totalPrice =document.getElementsByTagName('h1')[1];
+function showTotalPrice() {
+   let totalPrice = document.getElementsByTagName('h1')[1];
    let price = myProducts.reduce((r, x) => r += Number(x.price), 0);
    totalPrice.innerHTML = `Total Price: ${price.toFixed(2)}`;
 }
@@ -28,9 +29,10 @@ function moveToMyProducts() {
    let currProduct = getCurrProductData(this);
    myProducts.push(currProduct);
    availableProducts.filter(x => x.name === currProduct.name).map(x => x.quantity--);
-   
-   showAvailableProducts();
-   showMyProducts();
+
+   showProducts(availableProducts, 'products', filters.default, genarateLiForAvProducts);
+   showProducts(myProducts, 'myProducts', '', generateLiFoMyProducts);
+   showTotalPrice();
 }
 
 function getProductData() {
@@ -78,10 +80,13 @@ function genarateLiForAvProducts(product) {
    return li;
 }
 
-function showAvailableProducts() {
-   let list = document.getElementById('products').getElementsByTagName('ul')[0];
-   list.innerHTML = '';
-   availableProducts.filter(x => x.quantity > 0).map(genarateLiForAvProducts).map(x => list.appendChild(x));
+function showProducts(prodcuctList, section, filterType, generateFunction, str) {
+   let ul = document.getElementById(section).getElementsByTagName('ul')[0];
+   ul.innerHTML = '';
+   if (filterType != '') {
+      return prodcuctList.filter(filterType.bind(undefined, str)).map(generateFunction).map(x => ul.appendChild(x));
+   }
+   return prodcuctList.map(generateFunction).map(x => ul.appendChild(x));
 }
 
 function init(e) {
@@ -90,12 +95,13 @@ function init(e) {
       availableProducts.push(productData);
    }
    e.preventDefault()
-   showAvailableProducts();
+   showProducts(availableProducts, 'products', filters.default, genarateLiForAvProducts);
 }
 
 function clearMyProducts() {
    myProducts = [];
-   showMyProducts();
+   showProducts(myProducts, 'myProducts', '', generateLiFoMyProducts);
+   showTotalPrice();
 }
 
 document.getElementsByTagName('button')[1].addEventListener('click', init);
