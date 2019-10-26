@@ -104,5 +104,11 @@ function clearMyProducts() {
    showTotalPrice();
 }
 
+function filterItems() {
+   let string = document.getElementById('filter');
+   showProducts(availableProducts, 'products', filters.filterByStr, genarateLiForAvProducts, string.value);
+}
+
 document.getElementsByTagName('button')[1].addEventListener('click', init);
-document.getElementById('myProducts').getElementsByTagName('button')[0].addEventListener('click', clearMyProducts)
+document.getElementById('myProducts').getElementsByTagName('button')[0].addEventListener('click', clearMyProducts);
+document.querySelector('.filter').getElementsByTagName('button')[0].addEventListener('click', filterItems)
