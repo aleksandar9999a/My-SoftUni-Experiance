@@ -27,7 +27,20 @@ class Vacation {
         } else {
             this.kids[grade] = [`${name}-${budget}`]
         }
+    }
 
+    removeChild(name, grade){
+        if (!this.isRegistered(name, grade)) {
+            return `We couldn't find ${name} in ${grade} grade.`
+        }
+
+        this.kids[grade].map((x, i) => {
+            if (x.includes(name)) {
+                this.kids[grade].splice(i, 1);
+            }
+        })
+
+        return this.kids[grade]
     }
 }
 

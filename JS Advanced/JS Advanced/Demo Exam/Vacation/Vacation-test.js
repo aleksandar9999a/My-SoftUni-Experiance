@@ -32,4 +32,17 @@ describe('Vacation Tests', () => {
             expect(actual.kids[5]).to.be.have.length(1);
         })
     })
+
+    describe('removeChild', () => {
+        it('If kid does not exist return string', () => {
+            let actual = new Vacation('Mr Pesho', 'San diego', 2000);
+            expect(actual.removeChild('Ivan', 5)).to.be.equal("We couldn't find Ivan in 5 grade.")
+        })
+        it('If exist then remove it', () => {
+            let actual = new Vacation('Mr Pesho', 'San diego', 2000);
+            actual.registerChild('Ivan', 5, 5000);
+            expect(actual.removeChild('Ivan', 5)).to.be.equal(actual.kids[5]);
+            expect(actual.kids[5]).to.have.length(0);
+        })
+    })
 })
