@@ -1,6 +1,7 @@
+let totalPrice = calculateTotalPrice();
 
 function isValidInput(product, price) {
-    if (product === '' || price < 0) {
+    if (product === '' || price <= 0) {
         return false;
     }
     return true
@@ -24,6 +25,18 @@ function appendElements(parent, elements) {
     }
     return parent.appendChild(elements)
 }
+
+function calculateTotalPrice() {
+    let money = 0;
+
+    function refresh(price) {
+        money += Number(price);
+        document.getElementById('newPrice').innerHTML = money;
+    }
+
+    return {refresh}
+}
+
 function init() {
     let [product, price] = document.getElementsByTagName('input');
 
@@ -33,6 +46,7 @@ function init() {
         let tr = createElements('tr');
         appendElements(tr, [productTd, priceTd]);
         appendElements(document.getElementById('product-list'), tr)
+        totalPrice.refresh(price.value);
     }
 }
 
