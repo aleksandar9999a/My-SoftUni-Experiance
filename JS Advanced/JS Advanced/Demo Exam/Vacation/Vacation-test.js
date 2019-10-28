@@ -14,4 +14,12 @@ describe('Vacation Tests', () => {
             expect(actual.budget).to.be.equal(2000);
         })
     })
+
+    describe('registerChild', () => {
+        it('If the budget is not enough throw error', () => {
+            let actual = new Vacation('Mr Pesho', 'San diego', 2000);
+            let errF = () => actual.registerChild('Ivan', '5', 1500);
+            expect(errF).to.throw(Error, "Ivan's money is not enough to go on vacation to San diego.")
+        })
+    })
 })
