@@ -7,14 +7,19 @@ class Person {
         this._last = last;
     }
 
-    get firstName(){
-        return this._first;
-    }
-    get lastName(){
-        return this._last;
-    }
+    get firstName(){ return this._first; }
+    set firstName(x){ return this._first = x; }
 
-    get fullName(){
+    get lastName(){ return this._last; }
+    set lastName(x){ return this._last = x; }
+
+    get fullName(){ return `${this.firstName} ${this.lastName}`; }
+    set fullName(x){ 
+        let names = x.split(' ');
+        if (names.length === 2) {
+            this.firstName = names[0];
+            this.lastName = names[1];
+        }
         return `${this.firstName} ${this.lastName}`
     }
 }
