@@ -18,8 +18,7 @@ describe('Vacation Tests', () => {
     describe('registerChild', () => {
         it('If the budget is not enough throw error', () => {
             let actual = new Vacation('Mr Pesho', 'San diego', 2000);
-            let errF = () => actual.registerChild('Ivan', '5', 1500);
-            expect(errF).to.throw(Error, "Ivan's money is not enough to go on vacation to San diego.");
+            expect(actual.registerChild('Ivan', '5', 1500)).to.be.equal("Ivan's money is not enough to go on vacation to San diego.");
         })
         it('If current kid is already into that grade the method should return string', () => {
             let actual = new Vacation('Mr Pesho', 'San diego', 2000);
@@ -43,6 +42,25 @@ describe('Vacation Tests', () => {
             actual.registerChild('Ivan', 5, 5000);
             expect(actual.removeChild('Ivan', 5)).to.be.equal(actual.kids[5]);
             expect(actual.kids[5]).to.have.length(0);
+        })
+    })
+
+    describe('toString', () => {
+        it('If no kids for the trip', () => {
+            let actual = new Vacation('Mr Pesho', 'San diego', 2000);
+            expect(actual.toString()).to.be.equal(`No children are enrolled for the trip and the organization of Mr Pesho falls out...`)
+        })
+        it('If have kids', () => {
+            let vacation = new Vacation('Miss. Elizabeth', 'The bahamas', 400);
+
+            vacation.registerChild('Gosho', 12, 3400);
+            vacation.registerChild('Pesho', 12, 400);
+            vacation.registerChild('Pesho', 12, 400);
+            vacation.registerChild('Skaro', 11, 400);
+            vacation.registerChild('Gosho', 11, 3444);
+
+
+            expect(vacation.toString()).to.be.equal("Miss. Elizabeth will take 4 children on trip to The bahamas\nGrade: 11\n1. Skaro-400\n2. Gosho-3444\nGrade: 12\n1. Gosho-3400\n2. Pesho-400\n")
         })
     })
 })
