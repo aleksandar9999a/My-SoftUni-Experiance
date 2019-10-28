@@ -14,10 +14,19 @@
 // }
 
 function spy(object, method) {
+    let res = {
+        count: 0
+    }
+
+    object.res = res;
+
     return new Proxy(
         object, {
             get: function (obj, prop) {
                 if (Reflect.get(obj, prop)) {
+                    if (method === prop) {
+                        res.count++;
+                    }
                     return Reflect.get(obj, prop);
                 }else{
                     console.log(`Prop ${prop} not found!`);
@@ -42,8 +51,8 @@ spy1.method();
 spy1.method();
 spy1.method();
 
-spy1.notAMethod();
-obj.notAMethod();
+console.log(spy1.res);
+
 
 
 
