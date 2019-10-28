@@ -31,11 +31,16 @@ function acceptance() {
 		return parent.appendChild(elements);
 	}
 
+	function removeParent() {
+		this.parentElement.remove();
+	}
+
 	function createItem(company, product, quantity, scrape) {
 		let div = createElement('div');
 		let p = createElement('p', `[${company}] ${product} - ${quantity - scrape} pieces`);
 		let btn = createElement('button', 'Out of stock');
 		btn.type = 'button';
+		btn.addEventListener('click', removeParent);
 
 		appendElements(div, [p, btn]);
 		return div;
