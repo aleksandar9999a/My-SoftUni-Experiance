@@ -40,4 +40,17 @@ describe('SoftUniFy Tests', () => {
             expect(actual.songsList).to.be.equal('Venom - Knock, Knock...');
         })
     })
+
+    describe('rateArtist', () => {
+        it('Return message if song not exist', () => {
+            let actual = new SoftUniFy();
+            expect(actual.rateArtist('Eminem')).to.be.equal('The Eminem is not on your artist list.')
+        })
+        it('If input is valid', () => {
+            let actual = new SoftUniFy();
+            actual.downloadSong('Eminem', 'Venom', 'Knock, Knock...');
+            console.log();
+            expect(actual.rateArtist('Eminem', 50)).to.be.equal(50)
+        })
+    })
 })
