@@ -1,5 +1,4 @@
 function acceptance() {
-
 	function validateInput(company, product, quantity, scrape) {
 		if (company === '' || product === '' || quantity === '' || scrape === '' || isNaN(quantity) || isNaN(scrape)) {
 			return false;
@@ -46,13 +45,18 @@ function acceptance() {
 		return div;
 	}
 
+	function resetInput(...args) {
+		args.map(x => x.value = '');
+	}
+
 	function init() {
 		let [company, product, quantity, scrape] = document.getElementsByTagName('input');
 
-		if (validateInput(company.value, product.value, quantity.value, scrape.value)) {
-			let newItem = createItem(company.value, product.value, quantity.value, scrape.value);
+		if (validateInput(company.value, product.value, Number(quantity.value), Number(scrape.value))) {
+			let newItem = createItem(company.value, product.value, Number(quantity.value), Number(scrape.value));
 			let section = document.getElementById('warehouse');
 			appendElements(section, newItem);
+			resetInput(company, product, quantity, scrape);
 		}
 	}
 
