@@ -5,6 +5,10 @@ function acceptance() {
 			return false;
 		}
 
+		if (quantity <= 0 || quantity <= scrape || scrape < 0) {
+			return false;
+		}
+
 		return true;
 	}
 
@@ -39,7 +43,7 @@ function acceptance() {
 
 	function init() {
 		let [company, product, quantity, scrape] = document.getElementsByTagName('input');
-		
+
 		if (validateInput(company.value, product.value, quantity.value, scrape.value)) {
 			let newItem = createItem(company.value, product.value, quantity.value, scrape.value);
 			let section = document.getElementById('warehouse');
