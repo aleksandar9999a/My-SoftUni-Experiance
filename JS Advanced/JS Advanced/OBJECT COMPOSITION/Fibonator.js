@@ -1,5 +1,5 @@
-const getFibonator = () =>{
-    let currFibNum = 0;
+function getFibonator(){
+    let currFibNum = 1;
     let nextNum = 1;
 
     return () => {
@@ -12,6 +12,11 @@ const getFibonator = () =>{
 
 const fib = getFibonator();
 
+console.log(fib());
+console.log(fib());
+console.log(fib());
+console.log(fib());
+console.log(fib());
 console.log(fib());
 console.log(fib());
 console.log(fib());
