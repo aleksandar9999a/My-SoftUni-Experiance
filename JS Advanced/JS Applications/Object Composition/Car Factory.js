@@ -1,24 +1,14 @@
-const engineTypes = {
-    small: { power: 90, volume: 1800 },
-    normal: { power: 120, volume: 2400 },
-    monster: { power: 200, volume: 3500 }
-}
+const engineTypes = [{ power: 90, volume: 1800 }, { power: 120, volume: 2400 }, { power: 200, volume: 3500 }];
 
-function newEngineDescribtion({power}) {
-    if (power <= engineTypes.small.power) {
-        return engineTypes.small;
-    }
-    if (power <= engineTypes.normal.power) {
-        return engineTypes.normal;
-    }
-    return engineTypes.monster;
+function newEngineDescribtion({ power }) {
+    return engineTypes.find(type => power <= type.power)
 }
 
 function newCarriageDescribtion({ color, carriage }) {
     return { type: carriage, color };
 }
 
-function newWheelsDescribtion({wheelsize}) {
+function newWheelsDescribtion({ wheelsize }) {
     if (wheelsize % 2 === 0) {
         wheelsize = wheelsize - 1;
     }
