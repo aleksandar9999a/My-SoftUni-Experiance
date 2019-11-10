@@ -17,7 +17,7 @@ const app = {
 
     removeContact: function (element) {
         const key = element.id;
-        fetch(BASE_URL + key + '.json', {method: 'DELETE'})
+        fetch(BASE_URL + key + '.json', { method: 'DELETE' })
             .then(res => {
                 this.notify('Contact is successful delete!');
                 this.loadList();
@@ -48,23 +48,30 @@ const app = {
 
         if (person !== '' && phone !== '') {
             const data = { person, phone };
-
             fetch(BASE_URL + '.json', { method: 'POST', body: JSON.stringify(data) })
                 .then(this.parseResult)
-                .then(res => this.notify('Successful'))
-                .catch(res => this.notify('Something is wrong!'))
+                .then(res => {
+                    this.notify('Successful');
+                    this.clearTextBoxes();
+                })
+                .catch(res => this.notify('Something is wrong!'));
         }
     },
 
-    parseResult: function(result) {
+    clearTextBoxes: function () {
+        document.getElementById('person').value = '';
+        document.getElementById('phone').value = '';
+    },
+
+    parseResult: function (result) {
         return result.json()
     },
 
-    notify: function(message) {
+    notify: function (message) {
         document.getElementById('notification').textContent = message;
         document.getElementById('notification').style.display = 'block';
-        
-        setTimeout(function(){
+
+        setTimeout(function () {
             document.getElementById('notification').style.display = 'none';
         }, 2000)
     }
