@@ -26,3 +26,16 @@ button:hover {
 body{
    font-family: 'Open Sans',serif;
 }
+
+#notification {
+  float: right;
+  background: darkslateblue;
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 0.5em 2em 0.5em 2em;
+  margin: 1em;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
