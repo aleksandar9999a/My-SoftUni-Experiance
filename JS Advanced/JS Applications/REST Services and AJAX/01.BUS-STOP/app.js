@@ -24,9 +24,9 @@ function showResult(stopDiv, list, result) {
 }
 
 function generateLi(data) {
-    return `<li> Bus ${data[0]} arrives in ${data[1]} minutes</li>`
+    return `<li> Bus ${data[0]} arrives in ${data[1]} minutes</li>`;
 }
 
 function addToList(list, element) {
-    list.innerHTML += element
+    list.innerHTML += element;
 }
