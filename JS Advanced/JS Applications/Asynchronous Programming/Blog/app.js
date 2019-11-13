@@ -4,7 +4,7 @@ const BASE_URL = 'https://blog-apps-c12bf.firebaseio.com/';
 const makeUrl = x => `${BASE_URL}${x}.json`;
 
 const getPosts = fetchData.bind(undefined, undefined, undefined, makeUrl('posts'));
-window.getPost = id => fetchData(undefined, undefined, makeUrl(`posts/${id}`));
+const getPost = id => fetchData(undefined, undefined, makeUrl(`posts/${id}`));
 window.getComments = fetchData.bind(undefined, undefined, undefined, makeUrl('comments'));
 
 function displayPosts(posts) {
@@ -17,14 +17,18 @@ function displayPosts(posts) {
         fragment.appendChild(option);
     });
 
-    getSelect('posts').appendChild(fragment);
+    html.posts().appendChild(fragment);
 }
 
 const actions = {
     btnLoadPosts: async () => {
         displayPosts(await getPosts());
     },
-    btnViewPost: ''
+    btnViewPost: async () => {
+        const post = await getPost(html.posts().value);
+        console.log(post);
+        
+    }
 }
 
 function handleEvent(e) {
@@ -33,8 +37,11 @@ function handleEvent(e) {
     }
 }
 
-function getSelect(id) {
-    return document.getElementById(id);
+const html = {
+    posts: () => document.getElementById('posts'),
+    title: () => document.getElementById('post-title'),
+    body: () => document.getElementById('post-body'),
+    comments: () => document.getElementById('post-comments')
 }
 
 function attachEvents() {
