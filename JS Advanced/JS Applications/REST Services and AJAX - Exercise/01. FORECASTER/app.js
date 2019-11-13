@@ -1,5 +1,10 @@
-function attachEvents() {
-    console.log("TODO...");
+import Requester from './requester.js'
+const url = 'https://judgetests.firebaseio.com/locations.json';
+
+const App = {
+
 }
 
-attachEvents();
+document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', App)
+})
