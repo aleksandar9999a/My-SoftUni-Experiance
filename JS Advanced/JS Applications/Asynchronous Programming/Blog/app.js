@@ -9,6 +9,7 @@ const getComments = () => fetchData(undefined, undefined, makeUrl('comments'));
 
 function displayPosts(posts) {
     let fragment = document.createDocumentFragment();
+    html.posts().innerHTML = '';
     Object.keys(posts).forEach(x => {
         let option = document.createElement('option');
         option.value = x;
