@@ -1,11 +1,23 @@
 import { fetchData } from './data.js';
 
+function withCache(fn) {
+    fn.cache = new Map();
+    return function() {
+        let key = JSON.stringify(arguments);
+        if (!fn.cache.has(key)) {
+            fn.cache.set(key, fn(...arguments));
+        }
+        return fn.cache.get(key);
+    }
+}
+
 const BASE_URL = 'https://blog-apps-c12bf.firebaseio.com/';
 const makeUrl = x => `${BASE_URL}${x}.json`;
 
-const getPosts = () => fetchData(undefined, undefined, makeUrl('posts'));
-const getPost = id => fetchData(undefined, undefined, makeUrl(`posts/${id}`));
-const getComments = () => fetchData(undefined, undefined, makeUrl('comments'));
+const cacheFetct = withCache(fetchData.bind(window, undefined, undefined))
+const getPosts = () => cacheFetct(makeUrl('posts'));
+const getPost = id => cacheFetct(makeUrl(`posts/${id}`));
+const getComments = () => cacheFetct(makeUrl('comments'));
 
 function displayPosts(posts) {
     let fragment = document.createDocumentFragment();
