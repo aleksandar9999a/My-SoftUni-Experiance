@@ -7,14 +7,19 @@ function handleError(x) {
 
 function deserializeData(x) { return x.json() }
 
-function fetchData(handleError = handleError, deserializeData = deserializeData, url) {
+function fetchData(hError = handleError, dData = deserializeData, url) {
     return fetch(url)
-        .then(handleError)
-        .then(deserializeData)
-        .catch(console.error)
+        .then(hError)
+        .then(dData)
+        .catch(console.error);
 }
 
-const BASE_URL = 'https://blog-apps-c12bf.firebaseio.com/.json';
+const BASE_URL = 'https://blog-apps-c12bf.firebaseio.com/';
+const makeUrl = x => `${BASE_URL}${x}.json`
+const getPosts = fetchData.bind(undefined, undefined, undefined, makeUrl('posts'));
+const getPost = id => fetchData(undefined, undefined, makeUrl(`posts/${id}`));
+const getComments = fetchData.bind(undefined, undefined, undefined, makeUrl('comments'));
+
 
 function attachEvents() {
 
