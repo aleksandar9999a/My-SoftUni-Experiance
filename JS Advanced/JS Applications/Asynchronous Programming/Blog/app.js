@@ -17,14 +17,13 @@ function displayPosts(posts) {
         fragment.appendChild(option);
     });
 
-    document.getElementById('posts').appendChild(fragment);
+    getSelect('posts').appendChild(fragment);
 }
 
 const actions = {
     btnLoadPosts: async () => {
         displayPosts(await getPosts());
     },
-    posts: '',
     btnViewPost: ''
 }
 
@@ -32,6 +31,10 @@ function handleEvent(e) {
     if (typeof actions[e.target.id] === 'function') {
         actions[e.target.id]();
     }
+}
+
+function getSelect(id) {
+    return document.getElementById(id);
 }
 
 function attachEvents() {
