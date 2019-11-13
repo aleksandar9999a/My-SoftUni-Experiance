@@ -26,8 +26,11 @@ const actions = {
     },
     btnViewPost: async () => {
         const post = await getPost(html.posts().value);
-        console.log(post);
-        
+        Object.keys(post).forEach(x => {
+            if (typeof html[x] === 'function') {
+                html[x]().innerHTML = post[x];
+            }
+        });
     }
 }
 
