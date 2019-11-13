@@ -7,10 +7,24 @@ const getPosts = fetchData.bind(undefined, undefined, undefined, makeUrl('posts'
 window.getPost = id => fetchData(undefined, undefined, makeUrl(`posts/${id}`));
 window.getComments = fetchData.bind(undefined, undefined, undefined, makeUrl('comments'));
 
+function parsePosts(){
 
+}
 
 const actions = {
-    btnLoadPosts: () => console.log(1),
+    btnLoadPosts: async () => {
+        let posts = await getPosts();
+        let fragment = document.createDocumentFragment();
+
+        Object.keys(posts).forEach(x => {
+            let option = document.createElement('option');
+            option.value = x;
+            option.innerHTML = posts[x].title;
+            fragment.appendChild(option);
+        });
+
+        document.getElementById('posts').appendChild(fragment)
+    },
     posts: '',
     btnViewPost: ''
 }
