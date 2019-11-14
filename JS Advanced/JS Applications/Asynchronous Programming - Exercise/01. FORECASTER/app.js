@@ -9,12 +9,12 @@ function handleEvent(e) {
 
 function searchCode(locationData) {
     const input = document.getElementById('location');
-    let currData = locationData.find(x => x.name = input.value);
+    let currData = locationData.find(x => x.name === input.value);
     
     if (!currData) {
         throw new Error('Location does not exist');
     }
-
+    
     return currData;
 }
 
@@ -97,15 +97,13 @@ function resetForecast() {
 const action = {
     submit: async function () {
         let currData = searchCode(await getLocation());
-        let todayWeather = await getTodayWeather.bind(undefined, currData.code)()();
-        console.log(todayWeather);
-        let upcomingWeather = await getUpcomingWeather.bind(undefined, currData.code)()();
+        let todayWeather = await getTodayWeather(currData.code)();
+        let upcomingWeather = await getUpcomingWeather(currData.code)();
         
         showForecast();
         resetForecast();
         displayTodayWeather(todayWeather, getById('current'));
         displayUpcomingWeather(upcomingWeather, getById('upcoming'));
-        
     }
 }
 
