@@ -10,7 +10,7 @@ function handleEvent(e) {
 function searchCode(locationData) {
     const input = document.getElementById('location');
     let currData = locationData.find(x => x.name = input.value);
-
+    
     if (!currData) {
         throw new Error('Location does not exist');
     }
@@ -21,13 +21,13 @@ function searchCode(locationData) {
 function createElement(type, classValue, content) {
     let e = document.createElement(type);
     e.className = classValue;
-    
+
     if (typeof content === "string") {
         e.innerHTML = content;
-     }
-     if (typeof content === "object") {
+    }
+    if (typeof content === "object") {
         e.appendChild(content);
-     }
+    }
 
     return e;
 }
@@ -47,13 +47,13 @@ function getById(id) {
 function appendElements(parent, e) {
     if (Array.isArray(e)) {
         e.forEach(x => parent.appendChild(x));
-    }else{
+    } else {
         parent.appendChild(e)
     }
 }
 
 function displayTodayWeather(data, appendDiv) {
-    let forecastDiv = createElement('div', 'forecast');
+    let forecastDiv = createElement('div', 'forecast reset');
     let condSymbolSpan = createElement('span', 'condition symbol', symbols[data.forecast.condition]);
     let condSpan = createElement('span', 'condition');
     let span1 = createElement('span', 'forecast-data', data.name);
@@ -63,26 +63,49 @@ function displayTodayWeather(data, appendDiv) {
     appendElements(condSpan, [span1, span2, span3]);
     appendElements(forecastDiv, [condSymbolSpan, condSpan]);
     appendDiv.appendChild(forecastDiv);
-
-    console.log(data);
 }
 
-function displayUpcomingWeather(data) {
-    console.log(data);
+function createUpcomingSpan(x) {
+    let upcomingSpan = createElement('span', 'upcoming');
+    let symbolSpan = createElement('span', 'symbol', symbols[x.condition]);
+    let span1 = createElement('span', 'forecast-data', `${x.high}/${x.low}`);
+    let span2 = createElement('span', 'forecast-data', x.condition);
+
+    appendElements(upcomingSpan, [symbolSpan, span1, span2]);
+    return upcomingSpan;
+}
+
+function displayUpcomingWeather(data, appendDiv) {
+    let forecastInfoDiv = createElement('div', 'forecast-info reset');
+    let upcomingSpans = data.forecast.map(createUpcomingSpan);
+
+    appendElements(forecastInfoDiv, upcomingSpans);
+    appendDiv.appendChild(forecastInfoDiv)
 }
 
 function showForecast() {
     getById('forecast').style.display = 'block';
 }
+
+function resetForecast() {
+    let sections = document.getElementsByClassName('reset');
+    if (sections) {
+        Array.from(sections).forEach(x => x.remove());
+    }
+}
+
 const action = {
     submit: async function () {
         let currData = searchCode(await getLocation());
         let todayWeather = await getTodayWeather.bind(undefined, currData.code)()();
+        console.log(todayWeather);
         let upcomingWeather = await getUpcomingWeather.bind(undefined, currData.code)()();
-
-        showForecast()
+        
+        showForecast();
+        resetForecast();
         displayTodayWeather(todayWeather, getById('current'));
-        displayUpcomingWeather(upcomingWeather);
+        displayUpcomingWeather(upcomingWeather, getById('upcoming'));
+        
     }
 }
 
