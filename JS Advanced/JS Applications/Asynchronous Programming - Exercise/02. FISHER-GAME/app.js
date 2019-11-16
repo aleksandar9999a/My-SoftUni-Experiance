@@ -12,8 +12,8 @@ const action = {
         const data = await requester.get(url);
         if (data !== null) {
             Object.entries(data)
-            .map(x => catchForm.generateCatch(x))
-            .map(x => catchesDiv.appendChild(x));
+                .map(x => catchForm.generateCatch(x))
+                .map(x => catchesDiv.appendChild(x));
         }
     },
     'add': async function () {
@@ -31,11 +31,24 @@ const action = {
         this.load();
         addCatchForm.reset();
     },
-    'update': function(currCatch){
+    'update': async function (currCatch) {
         const id = currCatch.getAttribute('data-id');
+        const url = BASE_URL + id + '.json';
+        const data = currCatch.getElementsByTagName('input');
 
+        const body = {
+            angler: data[0].value,
+            weight: data[1].value,
+            species: data[2].value,
+            location: data[3].value,
+            bait: data[4].value,
+            captureTime: data[5].value,
+        };
+
+        await requester.update(url, body);
+        this.load();
     },
-    'delete': async function(currCatch){
+    'delete': async function (currCatch) {
         const id = currCatch.getAttribute('data-id');
         await requester.delete(`${BASE_URL}${id}.json`);
         this.load();
