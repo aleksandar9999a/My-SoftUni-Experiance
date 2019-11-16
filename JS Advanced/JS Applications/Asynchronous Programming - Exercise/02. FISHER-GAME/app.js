@@ -1,6 +1,1 @@
-function attachEvents() {
-    console.log('TODO...');
-}
-
-attachEvents();
-
+import requester from './components/Requester.js'
