@@ -9,9 +9,12 @@ const action = {
     'load': async function () {
         const url = BASE_URL + '.json';
         catchesDiv.innerHTML = '';
-        Object.entries(await requester.get(url))
+        const data = await requester.get(url);
+        if (data !== null) {
+            Object.entries()
             .map(x => catchForm.generateCatch(x))
             .map(x => catchesDiv.appendChild(x));
+        }
     },
     'add': async function () {
         const url = BASE_URL + '.json';
@@ -29,12 +32,16 @@ const action = {
         addCatchForm.reset();
     },
     'update': '',
-    'delete': '',
+    'delete': async function(currCatch){
+        const id = currCatch.getAttribute('data-id');
+        await requester.delete(`${BASE_URL}${id}.json`);
+        this.load();
+    },
 }
 
 function handleEvent(e) {
     if (typeof action[e.target.id] === 'function') {
-        action[e.target.id]();
+        action[e.target.id](e.target.parentElement);
     }
 }
 

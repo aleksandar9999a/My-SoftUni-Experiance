@@ -29,8 +29,8 @@ const Requester = {
         return this.myFetcher(url, { method: 'PUT', body: JSON.stringify(body) });
     },
 
-    delete: function (url, body) {
-        return this.myFetcher(url, { method: 'DELETE', body: JSON.stringify(body) });
+    delete: function (url) {
+        return this.myFetcher(url, { method: 'DELETE' });
     }
 }
 
