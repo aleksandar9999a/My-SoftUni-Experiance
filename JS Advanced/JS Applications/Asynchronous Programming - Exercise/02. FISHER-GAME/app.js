@@ -11,7 +11,7 @@ const action = {
         catchesDiv.innerHTML = '';
         const data = await requester.get(url);
         if (data !== null) {
-            Object.entries()
+            Object.entries(data)
             .map(x => catchForm.generateCatch(x))
             .map(x => catchesDiv.appendChild(x));
         }
@@ -31,7 +31,10 @@ const action = {
         this.load();
         addCatchForm.reset();
     },
-    'update': '',
+    'update': function(currCatch){
+        const id = currCatch.getAttribute('data-id');
+
+    },
     'delete': async function(currCatch){
         const id = currCatch.getAttribute('data-id');
         await requester.delete(`${BASE_URL}${id}.json`);
