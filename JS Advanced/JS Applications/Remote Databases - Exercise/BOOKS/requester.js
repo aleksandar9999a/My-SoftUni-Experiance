@@ -18,14 +18,13 @@ function desterializeData(x) {
 }
 
 const requester = {
-    makeHeaders: function (method, data, body, username = user, password = pass) {
+    makeHeaders: function (method, data, username = user, password = pass) {
         const headers = {
             method,
             headers: {
                 'Authorization': `Basic ${btoa(`${username}:${password}`)}`,
                 'Content-Type': 'application/json'
-            },
-            body
+            }
         }
 
         if (method === 'POST' || method === 'PUT') {
@@ -47,14 +46,14 @@ const requester = {
         return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData);
     },
 
-    post: function (kinveyModule, endpoint, data, body, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('POST', data, body);
+    post: function (kinveyModule, endpoint, data, baseUrl, appKey, hError, dData) {
+        const headers = this.makeHeaders('POST', data);
         return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData)
     },
 
-    put: function (kinveyModule, endpoint, data, baseUrl, appKey, hError, dData) {
+    put: function (kinveyModule, endpoint, id, data, baseUrl, appKey, hError, dData) {
         const headers = this.makeHeaders('PUT', data);
-        return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData);
+        return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
     },
 
     del: function (kinveyModule, endpoint, id, baseUrl, appKey, hError, dData) {
