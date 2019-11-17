@@ -21,8 +21,7 @@ const action = {
         resetHTMLElement(tableBody);
         data.map(x => trGenerator.createTr(x)).forEach(x => { tableBody.appendChild(x) });
     },
-    'delete': async function(target){
-        const id = target.getAttribute('data-id');
+    'delete': async function(id){
         await requester.del('appdata', 'books', id);
         this.loadBooks();
     }
@@ -38,7 +37,8 @@ function handleEvent(e) {
         action[e.target.id]();
     }
     if (typeof action[e.target.className] === 'function') {
-        action[e.target.className](e.target.parentElement.parentElement);
+        const id = e.target.parentElement.parentElement.getAttribute('data-id');
+        action[e.target.className](id);
     }
 }
 
