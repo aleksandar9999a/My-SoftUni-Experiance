@@ -35,8 +35,8 @@ const requester = {
         return headers;
     },
 
-    fetchData: function (kinveyModule, endpoint, headers, baseUrl = BASE_URL, appKey = key, hError = handleError, dData = desterializeData) {
-        const url = `${baseUrl}/${kinveyModule}/${appKey}/${endpoint}`;
+    fetchData: function (kinveyModule, endpoint, headers, id = '', baseUrl = BASE_URL, appKey = key, hError = handleError, dData = desterializeData) {
+        const url = `${baseUrl}/${kinveyModule}/${appKey}/${endpoint}/${id}`;
         return fetch(url, headers)
             .then(hError)
             .then(dData);
@@ -57,9 +57,9 @@ const requester = {
         return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData);
     },
 
-    del: function (kinveyModule, endpoint, baseUrl, appKey, hError, dData) {
+    del: function (kinveyModule, endpoint, id, baseUrl, appKey, hError, dData) {
         const headers = this.makeHeaders('DELETE');
-        return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData);
+        return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
     }
 }
 

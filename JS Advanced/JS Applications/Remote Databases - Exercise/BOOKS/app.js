@@ -20,6 +20,11 @@ const action = {
         let data = await requester.get('appdata', 'books');
         resetHTMLElement(tableBody);
         data.map(x => trGenerator.createTr(x)).forEach(x => { tableBody.appendChild(x) });
+    },
+    'delete': async function(target){
+        const id = target.getAttribute('data-id');
+        await requester.del('appdata', 'books', id);
+        this.loadBooks();
     }
 }
 
@@ -31,6 +36,9 @@ function handleEvent(e) {
     e.preventDefault();
     if (typeof action[e.target.id] === 'function') {
         action[e.target.id]();
+    }
+    if (typeof action[e.target.className] === 'function') {
+        action[e.target.className](e.target.parentElement.parentElement);
     }
 }
 
