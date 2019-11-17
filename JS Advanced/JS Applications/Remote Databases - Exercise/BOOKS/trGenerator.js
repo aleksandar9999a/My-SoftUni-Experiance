@@ -34,7 +34,6 @@ const tr = {
 
     createTr: function (data) {
         const currTr = this.tr();
-        currTr.setAttribute('data-id', data._id)
         const title = this.td(data.title);
         const author = this.td(data.author);
         const isbn = this.td(data.isbn);
@@ -42,8 +41,10 @@ const tr = {
         const btnTd = this.td();
 
         const edit = this.button('Edit');
+        edit.setAttribute('data-id', data._id)
         edit.className = 'edit';
         const del = this.button('Delete');
+        del.setAttribute('data-id', data._id)
         del.className = 'delete';
 
         this.appendElements(btnTd, [edit, del]);

@@ -3,9 +3,11 @@ const submitForm = {
     title: document.getElementById('title'),
     author: document.getElementById('author'),
     isbn: document.getElementById('isbn'),
+    button: document.getElementById('submit'),
 
     reset: function () {
-        this.formTitle.innerHTML = 'FORM';
+        this.formTitle.innerHTML = 'Create Form';
+        this.button.innerHTML = 'Create';
         this.title.value = '';
         this.author.value = '';
         this.isbn.value = '';

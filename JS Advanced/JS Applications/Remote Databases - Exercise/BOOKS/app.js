@@ -38,6 +38,7 @@ const action = {
     },
     'edit': async function (id) {
         submitForm.formTitle.innerHTML = 'EDIT FORM';
+        submitForm.button.innerHTML = 'Edit';
         state.isEdit = true;
         state.id = id;
         const data = await requester.get('appdata', 'books', id);
@@ -57,7 +58,7 @@ function handleEvent(e) {
         action[e.target.id]();
     }
     if (typeof action[e.target.className] === 'function') {
-        const id = e.target.parentElement.parentElement.getAttribute('data-id');
+        const id = e.target.getAttribute('data-id');
         action[e.target.className](id);
     }
 }
