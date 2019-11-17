@@ -1,10 +1,18 @@
 import requester from './requester.js';
+import trGenerator from './trGenerator.js';
 
-
+const tableBody = document.getElementById('body');
 
 const action = {
     'submit': function(){
         console.log('pedal');
+        
+    },
+    'loadBooks': async function(){
+        let data = await requester.get('appdata', 'books');
+        data.map(x => trGenerator.createTr(x)).forEach(x => {
+            tableBody.appendChild(x)
+        });
         
     }
 }
