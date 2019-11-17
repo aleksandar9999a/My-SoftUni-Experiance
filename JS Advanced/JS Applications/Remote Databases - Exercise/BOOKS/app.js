@@ -10,11 +10,16 @@ const action = {
     },
     'loadBooks': async function(){
         let data = await requester.get('appdata', 'books');
+        resetHTMLElement(tableBody);
         data.map(x => trGenerator.createTr(x)).forEach(x => {
             tableBody.appendChild(x)
         });
         
     }
+}
+
+function resetHTMLElement(e){
+    e.innerHTML = '';
 }
 
 function handleEvent(e) {
