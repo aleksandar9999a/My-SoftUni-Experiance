@@ -4,7 +4,7 @@ const submitForm = {
     author: document.getElementById('author'),
     isbn: document.getElementById('isbn'),
 
-    reset: function(){
+    reset: function () {
         this.formTitle.innerHTML = 'FORM';
         this.title.value = '';
         this.author.value = '';

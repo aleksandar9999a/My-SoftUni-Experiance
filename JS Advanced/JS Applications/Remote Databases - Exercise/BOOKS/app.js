@@ -3,10 +3,10 @@ import trGenerator from './trGenerator.js';
 import submitForm from './submitForm.js';
 
 const tableBody = document.getElementById('body');
-const formTitle = document.getElementById('formTitle');
 
 let state = {
-    id: ''
+    id: '',
+    isEdit: false
 }
 
 const action = {
@@ -17,10 +17,9 @@ const action = {
             isbn: submitForm.isbn.value
         }
 
-        if (formTitle.innerHTML === 'EDIT FORM') {
-            console.log(state.id);
-            
+        if (state.isEdit) {
             await requester.put('appdata', 'books', state.id, body);
+            state.isEdit = false;
         } else {
             await requester.post('appdata', 'books', body)
         }
@@ -38,8 +37,13 @@ const action = {
         this.loadBooks();
     },
     'edit': async function (id) {
-        formTitle.innerHTML = 'EDIT FORM';
+        submitForm.formTitle.innerHTML = 'EDIT FORM';
+        state.isEdit = true;
         state.id = id;
+        const data = await requester.get('appdata', 'books', id);
+        submitForm.title.value = data.title;
+        submitForm.author.value = data.author;
+        submitForm.isbn.value = data.isbn;
     }
 }
 

@@ -41,9 +41,9 @@ const requester = {
             .then(dData);
     },
 
-    get: function (kinveyModule, endpoint, baseUrl, appKey, hError, dData) {
+    get: function (kinveyModule, endpoint, id, baseUrl, appKey, hError, dData) {
         const headers = this.makeHeaders('GET');
-        return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData);
+        return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
     },
 
     post: function (kinveyModule, endpoint, data, baseUrl, appKey, hError, dData) {

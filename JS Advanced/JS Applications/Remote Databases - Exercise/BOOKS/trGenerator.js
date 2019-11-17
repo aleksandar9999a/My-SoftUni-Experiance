@@ -1,5 +1,5 @@
 const tr = {
-    createElement: function(type, content){
+    createElement: function (type, content) {
         let e = document.createElement(type);
 
         if (typeof content === "string") {
@@ -8,31 +8,31 @@ const tr = {
         if (typeof content === "object") {
             e.appendChild(content);
         }
-    
+
         return e;
     },
 
-    appendElements: function(parent, e){
+    appendElements: function (parent, e) {
         if (Array.isArray(e)) {
             e.map(x => parent.appendChild(x));
-        }else{
+        } else {
             parent.appendChild(e);
         }
     },
 
-    tr: function(content){
+    tr: function (content) {
         return this.createElement('tr', content);
     },
 
-    td: function(content){
+    td: function (content) {
         return this.createElement('td', content);
     },
 
-    button: function(content){
+    button: function (content) {
         return this.createElement('button', content);
     },
 
-    createTr: function(data){
+    createTr: function (data) {
         const currTr = this.tr();
         currTr.setAttribute('data-id', data._id)
         const title = this.td(data.title);
