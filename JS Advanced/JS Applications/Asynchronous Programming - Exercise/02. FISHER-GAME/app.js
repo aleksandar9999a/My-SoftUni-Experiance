@@ -36,6 +36,10 @@ const action = {
         const url = BASE_URL + id + '.json';
         const data = currCatch.getElementsByTagName('input');
 
+        if (data.length != 6) {
+            throw new Error('Input is invalid!')
+        }
+
         const body = {
             angler: data[0].value,
             weight: data[1].value,

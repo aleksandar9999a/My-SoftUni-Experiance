@@ -53,6 +53,9 @@ const catchForm = {
     },
 
     generateCatch: function (data) {
+        if (data.length != 2) {
+            throw new Error('Input data is invalid!');
+        }
         let newCatch = this.div(data[0]);
         this.appendElements(newCatch,
             [
