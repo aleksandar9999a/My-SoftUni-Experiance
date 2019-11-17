@@ -12,10 +12,20 @@ function searchCode(locationData) {
     let currData = locationData.find(x => x.name === input.value);
     
     if (!currData) {
+        displayError();
         throw new Error('Location does not exist');
     }
     
     return currData;
+}
+
+function displayError(){
+    const conditionDiv = getById('current');
+    const errText = createElement('h1', 'error', 'Error');
+
+    showForecast();
+    resetForecast();
+    conditionDiv.appendChild(errText);
 }
 
 function createElement(type, classValue, content) {
@@ -91,6 +101,11 @@ function resetForecast() {
     let sections = document.getElementsByClassName('reset');
     if (sections) {
         Array.from(sections).forEach(x => x.remove());
+    }
+
+    let error = document.getElementsByClassName('error')[0];
+    if (error != undefined) {
+        error.remove();
     }
 }
 
