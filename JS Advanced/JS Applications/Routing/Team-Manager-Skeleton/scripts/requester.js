@@ -47,23 +47,23 @@ const requester = {
             .then(dData);
     },
 
-    get: function (kinveyModule, endpoint, id, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('GET');
+    get: function (kinveyModule, endpoint, type, id, baseUrl, appKey, hError, dData) {
+        const headers = this.makeHeaders('GET', '', type);
         return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
     },
 
-    post: function (kinveyModule, endpoint, data, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('POST', data);
+    post: function (kinveyModule, endpoint, data, type, baseUrl, appKey, hError, dData) {
+        const headers = this.makeHeaders('POST', data, type);
         return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData)
     },
 
-    put: function (kinveyModule, endpoint, id, data, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('PUT', data);
+    put: function (kinveyModule, endpoint, id, data, type, baseUrl, appKey, hError, dData) {
+        const headers = this.makeHeaders('PUT', data, type);
         return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
     },
 
-    del: function (kinveyModule, endpoint, id, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('DELETE');
+    del: function (kinveyModule, endpoint, type, id, baseUrl, appKey, hError, dData) {
+        const headers = this.makeHeaders('DELETE', '', type);
         return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
     }
 }
