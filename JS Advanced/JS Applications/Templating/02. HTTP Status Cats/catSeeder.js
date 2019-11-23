@@ -30,6 +30,19 @@ export default class Cat {
         }
     }
 
+    showStatus(){
+        const myId = this.dataset.id
+        const statusDiv = document.getElementById(myId);
+
+        if (statusDiv.style.display === 'none' ) {
+            statusDiv.style.display = 'block';
+            this.innerHTML = 'Hide status code';
+        }else{
+            statusDiv.style.display = 'none'
+            this.innerHTML = 'Show status code';
+        }
+    }
+
     render() {
         const li = this.createElement('li');
 
@@ -38,9 +51,12 @@ export default class Cat {
 
         const infoDiv = this.createElement('div', '', 'info');
         const btn = this.createElement('button', 'Show status code', 'showBtn');
+        btn.addEventListener('click', this.showStatus);
+        btn.dataset.id = this.id;
 
         const statusDiv = this.createElement('div', '', 'status');
         statusDiv.id = this.id;
+        statusDiv.style.display = 'none';
 
         const h4 = this.createElement('h4', `Status Code: ${this.statusCode}`)
         const p = this.createElement('p', this.statusMessage)
