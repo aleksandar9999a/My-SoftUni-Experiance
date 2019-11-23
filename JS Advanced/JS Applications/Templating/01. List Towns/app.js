@@ -10,14 +10,17 @@ function makeTemplate(towns, data){
     return template(context);
 }
 
+function addToHTML(id, data){
+    document.getElementById(id).innerHTML = data;
+}
+
 document.addEventListener('DOMContentLoaded', function(){
     document.addEventListener('click', async function(e){
         if (e.target.id === 'btnLoadTowns') {
             const towns = getDataFromElementById('towns');
             const list = await fetch('./list.hbs').then(x => x.text());
             const template = makeTemplate(towns, list);
-            console.log(template);
-            
+            addToHTML('root', template);
         }
     })
 })
