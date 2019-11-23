@@ -1,16 +1,22 @@
-let template = fetch('./list.hbs').then(x => x.text());
-
 function getDataFromElementById(id){
     let data = document.getElementById(id);
     return data.value.split(', ');
 }
 
+function makeTemplate(towns, data){
+    const template = Handlebars.compile(data);
+    const context = { towns };
+
+    return template(context);
+}
+
 document.addEventListener('DOMContentLoaded', function(){
-    document.addEventListener('click', function(e){
+    document.addEventListener('click', async function(e){
         if (e.target.id === 'btnLoadTowns') {
-            const data = getDataFromElementById('towns');
-            
-            
+            const towns = getDataFromElementById('towns');
+            const list = await fetch('./list.hbs').then(x => x.text());
+            const template = makeTemplate(towns, list);
+            console.log(template);
             
         }
     })
