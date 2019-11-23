@@ -1,26 +1,39 @@
-(function () {
-    class Cat {
-        constructor(id, statusCode, statusMessage, imageLocation) {
-            this.id = id;
-            this.statusCode = statusCode;
-            this.statusMessage = statusMessage;
-            this.imageLocation = imageLocation;
-        }
+export default class Cat {
+    constructor(id, statusCode, statusMessage, imageLocation) {
+        this.id = id;
+        this.statusCode = statusCode;
+        this.statusMessage = statusMessage;
+        this.imageLocation = imageLocation;
     }
 
-    let cats = [
-        new Cat('100', 100, 'Continue', 'cat100'),
-        new Cat('200', 200, 'Ok', 'cat200'),
-        new Cat('204', 204, 'No content', 'cat204'),
-        new Cat('301', 301, 'Moved permanently', 'cat301'),
-        new Cat('304', 304, 'Not modified', 'cat304'),
-        new Cat('400', 400, 'Bad request', 'cat400'),
-        new Cat('404', 404, 'Not Found', 'cat404'),
-        new Cat('406', 406, 'Not Acceptable', 'cat406'),
-        new Cat('410', 410, 'Gone', 'cat410'),
-        new Cat('500', 500, 'Internal Server Error', 'cat500'),
-        new Cat('511', 500, 'Network Authentication Required', 'cat511')
-    ];
+    createElement(type, content, className) {
+        let e = document.createElement(type);
 
-    window.cats = cats;
-})()
+        if (typeof content === "string") {
+            e.innerHTML = content;
+        }
+        if (typeof content === "object") {
+            e.appendChild(content);
+        }
+        if (className !== undefined) {
+            e.className = className;
+        }
+
+        return e;
+    }
+
+    render() {
+        const li = this.createElement('li');
+        const img = this.createElement('img');
+        img.src = this.imageLocation;
+        const infoDiv = this.createElement('div', '', 'info');
+        const btn = this.createElement('button', 'Show status code', 'showBtn')
+
+        infoDiv.appendChild(btn);
+
+        li.appendChild(img);
+        li.appendChild(infoDiv);
+
+        return li;
+    }
+}
