@@ -12,20 +12,28 @@
 
         this.get('#/about', function (ctx) {
             addHeaderInfo(ctx);
-            this.loadPartials(partials).then(function(){
+            this.loadPartials(partials).then(function () {
                 this.partial('./templates/about/about.hbs')
+            });
+        })
+
+        this.get('#/login', function (ctx) {
+            addHeaderInfo(ctx);
+            partials['loginForm'] = './templates/login/loginForm.hbs'
+            this.loadPartials(partials).then(function () {
+                this.partial('./templates/login/loginPage.hbs')
             });
         })
     });
 
-    function addHeaderInfo(ctx){
-        ctx.loggedIn = true;
+    function addHeaderInfo(ctx) {
+        ctx.loggedIn = false;
         ctx.username = 'Alexandar';
     }
 
     function loadHome(ctx) {
         addHeaderInfo(ctx);
-        this.loadPartials(partials).then(function(){
+        this.loadPartials(partials).then(function () {
             this.partial('./templates/home/home.hbs')
         });
     }
