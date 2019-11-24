@@ -15,6 +15,7 @@ const app = Sammy('#main', function () {
     this.get('#/catalog', loadCatalog);
     this.get('#/logout', logOut);
     this.get('#/create', loadCreateForm);
+    this.get('#/catalog/:id', loadTeam)
 
     this.post('#/register', createUser);
     this.post('#/login', login);
@@ -76,6 +77,25 @@ function loadCreateForm(ctx) {
     this.loadPartials(partials).then(function () {
         this.partial('./templates/create/createPage.hbs')
     });
+}
+
+function loadTeam(ctx){
+    getSessionInfo(ctx);
+    const id = ctx.params.id;
+    get('appdata', `teams/${id}`, 'Kinvey')
+        .then(x => {
+            ctx.name = x.name;
+            ctx.description = x.description;
+
+            partials['teamMember'] = './templates/catalog/teamMember.hbs';
+            partials['teamControls'] = './templates/catalog/teamControls.hbs';
+
+            this.loadPartials(partials).then(function () {
+                this.partial('./templates/catalog/details.hbs')
+            });
+        })
+        .catch(console.error)
+    
 }
 
 function createUser(ctx) {
