@@ -1,9 +1,7 @@
-const user = 'Ivan';
-const pass = '0000';
+const kinveyBaseUrl = "https://baas.kinvey.com";
+const kinveyAppKey = "kid_BJ-OK2DhH";
+const kinveyAppSecret = "5a219227be684393b32d9a4fde0459c4";
 
-const BASE_URL = 'https://baas.kinvey.com';
-const key = 'kid_Bk183FRoS';
-const secret = 'f132f0d2772b44939c2dc158bbf016e5';
 
 function handleError(x) {
     if (!x.ok) {
@@ -17,55 +15,48 @@ function desterializeData(x) {
     return x.json();
 }
 
-const requester = {
-    createAuthorization(type, username = user, password = pass){
-        return type === 'Basic'
-        ? `Basic ${btoa(`${username}:${password}`)}`
-        : `Kinvey ${sessionStorage.getItem('authtoken')}`
-    },
+function fetchData(kinveyModule, endpoint, header){
+    const url = `${kinveyBaseUrl}/${kinveyModule}/${kinveyAppKey}/${endpoint}`;
 
-    makeHeaders: function (method, data, authorizationType = 'Basic') {
-        const headers = {
-            method,
-            headers: {
-                'Authorization': this.createAuthorization(authorizationType),
-                'Content-Type': 'application/json'
-            }
-        }
-
-        if (method === 'POST' || method === 'PUT') {
-            headers.body = JSON.stringify(data);
-        }
-
-        return headers;
-    },
-
-    fetchData: function (kinveyModule, endpoint, headers, id = '', baseUrl = BASE_URL, appKey = key, hError = handleError, dData = desterializeData) {
-        const url = `${baseUrl}/${kinveyModule}/${appKey}/${endpoint}/${id}`;
-        return fetch(url, headers)
-            .then(hError)
-            .then(dData);
-    },
-
-    get: function (kinveyModule, endpoint, type, id, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('GET', '', type);
-        return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
-    },
-
-    post: function (kinveyModule, endpoint, data, type, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('POST', data, type);
-        return this.fetchData(kinveyModule, endpoint, headers, baseUrl, appKey, hError, dData)
-    },
-
-    put: function (kinveyModule, endpoint, id, data, type, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('PUT', data, type);
-        return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
-    },
-
-    del: function (kinveyModule, endpoint, type, id, baseUrl, appKey, hError, dData) {
-        const headers = this.makeHeaders('DELETE', '', type);
-        return this.fetchData(kinveyModule, endpoint, headers, id, baseUrl, appKey, hError, dData);
-    }
+    return fetch(url, header)
+                .then(handleError)
+                .then(desterializeData);
 }
 
-export default requester;
+function makeAuth(authType = 'Basic'){
+    return authType === 'Basic' 
+                ? `Basic ${btoa(`${kinveyAppKey}:${kinveyAppSecret}`)}`
+                : `Kinvey  + ${sessionStorage.getItem('authtoken')}`
+}
+
+function createHeader(method, authType, data){
+    const headers = {
+        method,
+        headers: {
+            'Authorization': makeAuth(authType),
+            'Content-Type': 'application/json'
+        }
+    }
+
+    if (method === 'POST' || method === 'PUT') {
+        headers.body = JSON.stringify(data);
+    }
+
+    return headers;
+}
+
+function get(kinveyModule, endpoint, authType){
+    const header = createHeader('GET', authType);
+    return fetchData(kinveyModule, endpoint, header);
+}
+
+function post(kinveyModule, endpoint, data, authType){
+    const header = createHeader('POST', authType, data);
+    return fetchData(kinveyModule, endpoint, header);
+}
+
+export default {
+    get,
+    post
+}
+//post('user', '', 'Basic', { username: 'ivan', password: '0000' }).then(console.log)

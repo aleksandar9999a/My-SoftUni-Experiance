@@ -1,50 +1,50 @@
-(() => {
-    const partials = {
-        header: './templates/common/header.hbs',
-        footer: './templates/common/footer.hbs'
-    };
+const partials = {
+    header: './templates/common/header.hbs',
+    footer: './templates/common/footer.hbs'
+};
 
-    const app = Sammy('#main', function () {
-        this.use('Handlebars', 'hbs');
+const app = Sammy('#main', function () {
+    this.use('Handlebars', 'hbs');
+    this.get('#/', loadHome);
+    this.get('#/home', loadHome);
+    this.get('#/about', loadAbout);
+    this.get('#/login', loadLogin);
+    this.get('#/register', loadRegister);
 
-        this.get('#/', loadHome);
-        this.get('#/home', loadHome);
+    this.post('#/register', createUser);
+});
 
-        this.get('#/about', function (ctx) {
-            addHeaderInfo(ctx);
-            this.loadPartials(partials).then(function () {
-                this.partial('./templates/about/about.hbs')
-            });
-        })
+function addHeaderInfo(ctx) {
+    ctx.loggedIn = false;
+    ctx.username = 'Alexandar';
+}
 
-        this.get('#/login', function (ctx) {
-            partials['loginForm'] = './templates/login/loginForm.hbs'
-            this.loadPartials(partials).then(function () {
-                this.partial('./templates/login/loginPage.hbs')
-            });
-        })
-
-        this.get('#/register', function (ctx) {
-            partials['registerForm'] = './templates/register/registerForm.hbs'
-            this.loadPartials(partials).then(function () {
-                this.partial('./templates/register/registerPage.hbs')
-            });
-        })
+function loadHome(ctx) {
+    addHeaderInfo(ctx);
+    this.loadPartials(partials).then(function () {
+        this.partial('./templates/home/home.hbs')
     });
+}
 
-    function addHeaderInfo(ctx) {
-        ctx.loggedIn = false;
-        ctx.username = 'Alexandar';
-    }
+function loadAbout(ctx) {
+    addHeaderInfo(ctx);
+    this.loadPartials(partials).then(function () {
+        this.partial('./templates/about/about.hbs')
+    });
+}
 
-    function loadHome(ctx) {
-        addHeaderInfo(ctx);
-        this.loadPartials(partials).then(function () {
-            this.partial('./templates/home/home.hbs')
-        });
-    }
+function loadLogin(ctx) {
+    partials['loginForm'] = './templates/login/loginForm.hbs'
+    this.loadPartials(partials).then(function () {
+        this.partial('./templates/login/loginPage.hbs')
+    });
+}
 
-    app.run();
-})()
+function loadRegister(ctx) {
+    partials['registerForm'] = './templates/register/registerForm.hbs'
+    this.loadPartials(partials).then(function () {
+        this.partial('./templates/register/registerPage.hbs')
+    });
+}
 
-// sessionStorage.getItem('authtoken') !== null
+app.run();
