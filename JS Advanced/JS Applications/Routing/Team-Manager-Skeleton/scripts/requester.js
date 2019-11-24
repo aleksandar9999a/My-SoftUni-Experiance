@@ -45,18 +45,14 @@ function createHeader(method, authType, data){
     return headers;
 }
 
-function get(kinveyModule, endpoint, authType){
+export function get(kinveyModule, endpoint, authType){
     const header = createHeader('GET', authType);
     return fetchData(kinveyModule, endpoint, header);
 }
 
-function post(kinveyModule, endpoint, data, authType){
+export function post(kinveyModule, endpoint, data, authType){
     const header = createHeader('POST', authType, data);
     return fetchData(kinveyModule, endpoint, header);
 }
 
-export default {
-    get,
-    post
-}
 //post('user', '', 'Basic', { username: 'ivan', password: '0000' }).then(console.log)

@@ -1,3 +1,5 @@
+import { get, post } from './requester.js';
+
 const partials = {
     header: './templates/common/header.hbs',
     footer: './templates/common/footer.hbs'
@@ -47,4 +49,12 @@ function loadRegister(ctx) {
     });
 }
 
+function createUser(ctx) {
+    const { username, password, repeatPassword } = ctx.params;
+    if (password === repeatPassword && password != '') {
+        post('user', '', { username, password })
+            .then(x => ctx.redirect('#/login'))
+            .catch(console.error)
+    }
+}
 app.run();
