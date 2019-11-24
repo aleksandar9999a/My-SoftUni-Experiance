@@ -23,9 +23,10 @@ function fetchData(kinveyModule, endpoint, header){
 }
 
 function makeAuth(authType = 'Basic'){
-    return authType === 'Basic' 
-                ? `Basic ${btoa(`${kinveyAppKey}:${kinveyAppSecret}`)}`
-                : `Kinvey  + ${sessionStorage.getItem('authtoken')}`
+    if (authType === 'Basic') {
+        return `Basic ${btoa(`${kinveyAppKey}:${kinveyAppSecret}`)}`
+    }
+    return `Kinvey ${sessionStorage.getItem('authtoken')}`
 }
 
 function createHeader(method, authType, data){
@@ -49,7 +50,8 @@ export function get(kinveyModule, endpoint, authType){
     return fetchData(kinveyModule, endpoint, header);
 }
 
-export function post(kinveyModule, endpoint, data, authType){
+export function post(kinveyModule, endpoint, authType, data){
     const header = createHeader('POST', authType, data);
+    console.log(header);
     return fetchData(kinveyModule, endpoint, header);
 }

@@ -12,6 +12,8 @@ const app = Sammy('#main', function () {
     this.get('#/about', loadAbout);
     this.get('#/login', loadLogin);
     this.get('#/register', loadRegister);
+    this.get('#/catalog', loadCatalog);
+    this.get('#/logout', logOut);
 
     this.post('#/register', createUser);
     this.post('#/login', login);
@@ -38,6 +40,19 @@ function loadAbout(ctx) {
     });
 }
 
+function loadCatalog(ctx) {
+    getSessionInfo(ctx);
+
+    partials['team'] = './templates/catalog/team.hbs';
+    partials['details'] = './templates/catalog/details.hbs';
+    partials['teamControls'] = './templates/catalog/teamControls.hbs';
+    partials['teamMember'] = './templates/catalog/teamMember.hbs';
+
+    this.loadPartials(partials).then(function () {
+        this.partial('./templates/catalog/teamCatalog.hbs')
+    });
+}
+
 function loadLogin(ctx) {
     partials['loginForm'] = './templates/login/loginForm.hbs'
     this.loadPartials(partials).then(function () {
@@ -55,16 +70,16 @@ function loadRegister(ctx) {
 function createUser(ctx) {
     const { username, password, repeatPassword } = ctx.params;
     if (password === repeatPassword && password !== '' && username !== '') {
-        post('user', '', { username, password })
+        post('user', '', 'Basic', { username, password })
             .then(x => ctx.redirect('#/login'))
             .catch(console.error)
     }
 }
 
-function login(ctx){
+function login(ctx) {
     const { username, password } = ctx.params;
     if (username !== '' && password !== '') {
-        post('user', 'login', { username, password })
+        post('user', 'login', 'Basic', { username, password })
             .then(x => {
                 sessionStorage.setItem('username', x.username);
                 sessionStorage.setItem('authtoken', x._kmd.authtoken);
@@ -72,6 +87,11 @@ function login(ctx){
             })
             .catch(console.error)
     }
+}
+
+function logOut(ctx) {
+    sessionStorage.clear();
+    ctx.redirect('#/');
 }
 
 app.run();
