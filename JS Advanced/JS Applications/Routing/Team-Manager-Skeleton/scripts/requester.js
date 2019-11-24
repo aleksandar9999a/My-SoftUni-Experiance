@@ -2,7 +2,6 @@ const kinveyBaseUrl = "https://baas.kinvey.com";
 const kinveyAppKey = "kid_BJ-OK2DhH";
 const kinveyAppSecret = "5a219227be684393b32d9a4fde0459c4";
 
-
 function handleError(x) {
     if (!x.ok) {
         throw new Error(x.statusText);
@@ -54,5 +53,3 @@ export function post(kinveyModule, endpoint, data, authType){
     const header = createHeader('POST', authType, data);
     return fetchData(kinveyModule, endpoint, header);
 }
-
-//post('user', '', 'Basic', { username: 'ivan', password: '0000' }).then(console.log)
