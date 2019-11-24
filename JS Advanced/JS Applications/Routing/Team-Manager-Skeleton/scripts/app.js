@@ -18,10 +18,16 @@
         })
 
         this.get('#/login', function (ctx) {
-            addHeaderInfo(ctx);
             partials['loginForm'] = './templates/login/loginForm.hbs'
             this.loadPartials(partials).then(function () {
                 this.partial('./templates/login/loginPage.hbs')
+            });
+        })
+
+        this.get('#/register', function (ctx) {
+            partials['registerForm'] = './templates/register/registerForm.hbs'
+            this.loadPartials(partials).then(function () {
+                this.partial('./templates/register/registerPage.hbs')
             });
         })
     });
