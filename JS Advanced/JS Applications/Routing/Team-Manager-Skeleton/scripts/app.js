@@ -14,9 +14,11 @@ const app = Sammy('#main', function () {
     this.get('#/register', loadRegister);
     this.get('#/catalog', loadCatalog);
     this.get('#/logout', logOut);
+    this.get('#/create', loadCreateForm);
 
     this.post('#/register', createUser);
     this.post('#/login', login);
+    this.post('#/create', createTeam);
 });
 
 function getSessionInfo(ctx) {
@@ -68,11 +70,28 @@ function loadRegister(ctx) {
     });
 }
 
+function loadCreateForm(ctx) {
+    getSessionInfo(ctx);
+    partials['createForm'] = './templates/create/createForm.hbs'
+    this.loadPartials(partials).then(function () {
+        this.partial('./templates/create/createPage.hbs')
+    });
+}
+
 function createUser(ctx) {
     const { username, password, repeatPassword } = ctx.params;
     if (password === repeatPassword && password !== '' && username !== '') {
         post('user', '', 'Basic', { username, password })
             .then(x => ctx.redirect('#/login'))
+            .catch(console.error)
+    }
+}
+
+function createTeam(ctx) {
+    const { name, description } = ctx.params;
+    if (name !== '' && description !== '') {
+        post('appdata', 'teams', 'Kinvey', { name, description })
+            .then(x => ctx.redirect('#/catalog'))
             .catch(console.error)
     }
 }
