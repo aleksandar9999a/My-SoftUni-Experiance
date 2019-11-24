@@ -44,13 +44,14 @@ function loadCatalog(ctx) {
     getSessionInfo(ctx);
 
     partials['team'] = './templates/catalog/team.hbs';
-    partials['details'] = './templates/catalog/details.hbs';
-    partials['teamControls'] = './templates/catalog/teamControls.hbs';
-    partials['teamMember'] = './templates/catalog/teamMember.hbs';
-
-    this.loadPartials(partials).then(function () {
-        this.partial('./templates/catalog/teamCatalog.hbs')
-    });
+    get('appdata', 'teams', 'Kinvey')
+        .then(x => {
+            ctx.teams = x;
+            this.loadPartials(partials).then(function () {
+                this.partial('./templates/catalog/teamCatalog.hbs')
+            });
+        })
+        .catch(console.error);
 }
 
 function loadLogin(ctx) {

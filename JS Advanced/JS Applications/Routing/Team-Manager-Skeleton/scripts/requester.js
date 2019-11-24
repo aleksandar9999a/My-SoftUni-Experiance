@@ -52,6 +52,5 @@ export function get(kinveyModule, endpoint, authType){
 
 export function post(kinveyModule, endpoint, authType, data){
     const header = createHeader('POST', authType, data);
-    console.log(header);
     return fetchData(kinveyModule, endpoint, header);
 }
