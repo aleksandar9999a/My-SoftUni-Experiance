@@ -1,45 +1,47 @@
 function dungeonestDark(inputCommands) {
-    var arrFromCommands = inputCommands[0].split(`|`);
+    var arrFromCommands = inputCommands[0].split(`|`).map(x => x.split(' ')).map(([command, points]) => [command, Number(points)]);
     let health = 100;
     let coins = 0;
-    let ifWin = true;
+    let isWin = true;
 
-    for (let i = 0; i < arrFromCommands.length; i++) {
-        let commandsByCommandsInArr = arrFromCommands[i].split(` `);
-        let itemOrMonster = commandsByCommandsInArr[0];
-        let points = Number(commandsByCommandsInArr[1]);
-
-        if (itemOrMonster == `potion`) {
+    const commands = {
+        potion: function (points) {
+            const healed = points > (100 - health) ? 100 - health : points;
             health += points;
+            
+            if (health > 100) { health = 100; }
 
-            if (health > 100) {
-                health = 100;
-            }
-
-            console.log(`You healed for ${points} hp.`);
+            console.log(`You healed for ${healed} hp.`);
             console.log(`Current health: ${health} hp.`);
-        }
-        else if (itemOrMonster == `chest`) {
+        },
+        chest: function (points) {
             coins += points;
-
             console.log(`You found ${points} coins.`);
-        }
-        else{
+        },
+        monster: function (points, monster, i) {
             health -= points;
 
             if (health > 0) {
-                console.log(`You slayed ${itemOrMonster}.`);
+                console.log(`You slayed ${monster}.`);
             }
-            else{
-                console.log(`You died! Killed by ${itemOrMonster}.`);
+            else {
+                console.log(`You died! Killed by ${monster}.`);
                 console.log(`Best room: ${++i}`);
-                ifWin = false;
-                break;
+                isWin = false;
             }
         }
     }
 
-    if (ifWin) {
+    arrFromCommands.forEach(([command, points], i) => {
+        if (health > 0) {
+            if (typeof commands[command] === 'function' ) {
+                commands[command](points);
+            } else {
+                commands.monster(points, command, i);
+            }
+        }
+    })
+    if (isWin) {
         console.log(`You've made it!`);
         console.log(`Coins: ${coins}`);
         console.log(`Health: ${health}`);

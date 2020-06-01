@@ -3,7 +3,6 @@ function reverseAnArrayOfNumbers(numberOfElementsForNewArr, firstArr) {
 
     for (let i = numberOfElementsForNewArr - 1; i >= 0; i--) {
         secondArr += firstArr[i] + ` `;
-        
     }
 
     console.log(secondArr);

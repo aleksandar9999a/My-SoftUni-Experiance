@@ -1,18 +1,13 @@
-function evenAndOddSubtraction (numberArr) {
-    let evenSum = 0;
-    let oddSum = 0;
-
-    for (let i = 0; i < numberArr.length; i++) {
-        let number = Number(numberArr[i]);
-
-        if (number % 2 == 0) {
-            evenSum += number;
+function evenAndOddSubtraction(arr) {
+    const res = arr.reduce((acc, x) => {
+        if (x % 2 == 0) {
+            acc.even += x;
         }
-        else{
-            oddSum += number;
+        else {
+            acc.odd += x;
         }
-    }
-
-    console.log(evenSum - oddSum);
+        return acc;
+    }, { even: 0, odd: 0 });
+    return res.even - res.odd;
 }
-evenAndOddSubtraction([3,5,7,9])
+evenAndOddSubtraction([3, 5, 7, 9])

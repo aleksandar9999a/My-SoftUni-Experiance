@@ -1,11 +1,4 @@
-function reverseAnArrayOfStrings (whatIsYourArr) {
-    let secondArr = ``;
-
-    for (let i = whatIsYourArr.length - 1; i >= 0; i--) {
-        secondArr += whatIsYourArr[i] + ` `;
-        
-    }
-
-    console.log(secondArr);
+function reverseAnArrayOfStrings (arr) {
+    return arr.reverse().join(' ');
 }
 reverseAnArrayOfStrings(['a', 'b', 'c', 'd', 'e'])
