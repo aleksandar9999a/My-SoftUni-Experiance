@@ -33,7 +33,7 @@ function gladiatorInventory(inventoryPlusCommands) {
         }
     })
 
-    console.log(inventory.join(` `));
+    return inventory.join(` `);
 }
 gladiatorInventory(['SWORD Shield Spear',
     'Buy Bag',
