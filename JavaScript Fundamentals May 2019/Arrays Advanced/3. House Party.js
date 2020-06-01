@@ -1,50 +1,26 @@
-function houseParty(whoWillComeToTheParty) {
-    let whoWillCome = [];
-
-    for (let i = 0; i < whoWillComeToTheParty.length; i++) {
-        let namePlusWillCame = whoWillComeToTheParty[i].split(` `);
-        let name = namePlusWillCame.shift();
-        let goingOrNot = namePlusWillCame.join(` `);
-
-        if (goingOrNot == `is not going!`) {
-            let isThere = false;
-            let nameIndex = 0;
-
-            for (let x = 0; x < whoWillCome.length; x++) {
-                if (whoWillCome[x] == name) {
-                    isThere = true;
-                    nameIndex = x;
-                }
+function houseParty(arr) {
+    return arr.reduce((acc, x) => {
+        const data = x.split(' ');
+        const indexOfName = acc.indexOf(data[0]);
+        if (data.includes('not')) {
+            if (indexOfName >= 0) {
+                acc = [...acc.slice(0, indexOfName), ...acc.slice(indexOfName + 1)];
+            } else {
+                console.log(`${data[0]} is not in the list!`);
             }
-
-            if (isThere) {
-                whoWillCome.splice(nameIndex, 1);
-            }
-            else{
-                console.log(`${name} is not in the list!`);
+        } else {
+            if (indexOfName >= 0) {
+                console.log(`${data[0]} is already in the list!`);
+            } else {
+                acc.push(data[0]);
             }
         }
-        else if (goingOrNot == `is going!`) {
-            let isThere = false;
-
-            for (let x = 0; x < whoWillCome.length; x++) {
-                if (whoWillCome[x] == name) {
-                    isThere = true;
-                }
-            }
-
-            if (isThere) {
-                console.log(`${name} is already in the list!`);
-            }
-            else{
-                whoWillCome.push(name);
-            }
-        }
-    }
-
-    console.log(whoWillCome.join(`\n`));
+        
+        return acc;
+    }, []).join('\n')
 }
-houseParty(['Allie is going!',
+
+console.log(houseParty(['Allie is going!',
 'George is going!',
 'John is not going!',
-'George is not going!'])
+'George is not going!']));

@@ -1,42 +1,12 @@
-function bombNumbers(sequenceOfNumbers, specialBombNumber) {
-    sequenceOfNumbers = bombBombBomb(sequenceOfNumbers, specialBombNumber);
-    let sum = sumAfterSplice(sequenceOfNumbers);
-
-    function bombBombBomb(sequenceOfNumbers, specialBombNumber) {
-        for (let i = 0; i < sequenceOfNumbers.length; i++) {
-            if (sequenceOfNumbers[i] == specialBombNumber[0]) {
-                sequenceOfNumbers[i] = 0;
-
-                for (let x = i - specialBombNumber[1]; x < i; x++) {
-                    if (x < 0) {
-                        x = 0;
-                    }
-                    sequenceOfNumbers[x] = 0;
-                }
-
-                for (let x1 = i + 1; x1 < i + specialBombNumber[1] + 1; x1++) {
-                    if (x1 >= sequenceOfNumbers.length) {
-                        break;
-                    }
-                    sequenceOfNumbers[x1] = 0;
-                }
-            }
-        }
-
-        return sequenceOfNumbers;
+function solve(arr, detonateParams) {
+    while (arr.includes(detonateParams[0])) {
+        let index = arr.indexOf(detonateParams[0]);
+        arr = arr.filter((x, i) => i < index - detonateParams[1] || i > index + detonateParams[1]);
     }
 
-    function sumAfterSplice(sequenceOfNumbers){
-        let mySum = 0
-
-        for (let i = 0; i < sequenceOfNumbers.length; i++) {
-            mySum += Number(sequenceOfNumbers[i]);
-        }
-
-        return mySum;
-    }
-
-    console.log(sum);
+    return arr.reduce((acc, x) => acc += x, 0)
 }
-bombNumbers([1, 1, 2, 1, 1, 1, 2, 1, 1, 1],
-    [2, 1]);
+
+solve([1, 1, 2, 1, 1, 1, 2, 1, 1, 1], [2, 1])
+solve([1, 2, 2, 4, 2, 2, 2, 9], [4, 2])
+solve([1, 4, 4, 2, 8, 9, 1], [9, 3])

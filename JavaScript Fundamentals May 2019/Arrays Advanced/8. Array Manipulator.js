@@ -1,101 +1,83 @@
-function arrayManipulator(arrForManipulating, commandsArr) {
-
-    for (let i = 0; i < commandsArr.length; i++) {
-        let currentCommand = commandsArr[i].split(` `)
-        
-        if (currentCommand[0] == `add`) {
-            addElements(currentCommand, arrForManipulating);
-        }
-        else if (currentCommand[0] == `addMany`) {
-            addManyElements(currentCommand, arrForManipulating);
-        }
-        else if (currentCommand[0] == `contains`) {
-            containsElements(currentCommand, arrForManipulating);
-        }
-        else if (currentCommand[0] == `remove`) {
-            removeElement(currentCommand, arrForManipulating);
-        }
-        else if (currentCommand[0] == `shift`) {
-            arrForManipulating = shiftElement(currentCommand, arrForManipulating);
-        }
-        else if (currentCommand[0] == `sumPairs`) {
-            arrForManipulating = sumPairsElements(currentCommand, arrForManipulating);
-        }
-        else if (currentCommand[0] == `print`) {
-            break;
+function solve(numbers, commands) {
+    let arr = [...numbers];
+    let commandsArr = [...commands].map(x => x.split(' ')).map(parseData);
+    let isFinished = false;
+    const commandActions = {
+        add: function ({ index, element }) {
+            arr = [...arr.slice(0, index), element, ...arr.slice(index)];
+        },
+        addMany: function ({ index, elements }) {
+            arr = [...arr.slice(0, index), ...elements, ...arr.slice(index)];
+        },
+        contains: function ({ element }) {
+            console.log(arr.indexOf(element));
+        },
+        remove: function ({ index }) {
+            arr = [...arr.slice(0, index), ...arr.slice(index + 1)];
+        },
+        shift: function ({ positions }) {
+            while (positions > arr.length) { positions -= arr.length; }
+            arr = [...arr.slice(positions), ...arr.slice(0, positions)];
+        },
+        sumPairs: function () {
+            arr = arr.reduce((acc, x, i) => {
+                if (i % 2 === 0 && i < arr.length - 1) {
+                    acc.push(x + arr[i + 1]);
+                }
+                return acc;
+            }, []);
+        },
+        print: function () {
+            isFinished = true;
         }
     }
-    
-    function addElements(currentCommand, arrForManipulating) {
-        arrForManipulating.splice(currentCommand[1], 0, Number(currentCommand[2]));
-        return arrForManipulating;
-    }
 
-    function addManyElements(currentCommand, arrForManipulating) {
-        currentCommand.shift();
-
-        for (let x = currentCommand.length - 1; x > 0; x--) {
-            arrForManipulating.splice(currentCommand[0], 0, Number(currentCommand[x]));
-        }
-
-        return arrForManipulating;
-    }
-
-    function containsElements(currentCommand, arrForManipulating) {
-        let isItThere = false;
-        let index = -1;
-
-        for (let i = 0; i < arrForManipulating.length; i++) {
-            if (currentCommand[1] == arrForManipulating[i]) {
-                isItThere = true;
-                index = i;
-                break;
+    function parseData(data) {
+        if (data[0] === 'add') {
+            return {
+                command: 'add',
+                index: Number(data[1]),
+                element: Number(data[2])
             }
         }
-
-        if (isItThere) {
-            console.log(index);
-        }
-        else{
-            console.log(index);
-        }
-
-        return arrForManipulating;
-    }
-
-    function removeElement(currentCommand, arrForManipulating) {
-        arrForManipulating.splice(currentCommand[1], 1);
-
-        return arrForManipulating;
-    }
-
-    function shiftElement(currentCommand, arrForManipulating) {
-        for (let i = 0; i < currentCommand[1]; i++) {
-            let currentElement = arrForManipulating[i];
-            arrForManipulating.push(currentElement);
-        }
-        
-        arrForManipulating.splice(0, currentCommand[1]);
-        
-        return arrForManipulating;
-    }
-
-    function sumPairsElements(currentCommand, arrForManipulating) {
-        let newArr = [];
-
-        for (let i = 0; i < arrForManipulating.length; i += 2) {
-            if (i + 1 >= arrForManipulating.length) {
-                newArr.push(Number(arrForManipulating[i]));
-                break;
+        if (data[0] === 'addMany') {
+            return {
+                command: data.shift(),
+                index: Number(data.shift()),
+                elements: data.map(Number)
             }
-            let number = Number(arrForManipulating[i]) + Number(arrForManipulating[i + 1]);
-            newArr.push(number);
         }
-
-        return newArr;
+        if (data[0] === 'contains') {
+            return {
+                command: 'contains',
+                element: Number(data[1])
+            }
+        }
+        if (data[0] === 'remove') {
+            return {
+                command: 'remove',
+                index: Number(data[1])
+            }
+        }
+        if (data[0] === 'shift') {
+            return {
+                command: 'shift',
+                positions: Number(data[1])
+            }
+        }
+        return {
+            command: data[0]
+        }
     }
 
-    console.log(arrForManipulating);
+    commandsArr.forEach(commandData => {
+        if (typeof commandActions[commandData.command] === 'function' && !isFinished) {
+            commandActions[commandData.command](commandData);
+        }
+    })
+
+    return arr
 }
-arrayManipulator([1, 2, 3, 4, 5],
-    ["shift 1", "print"])
+solve([1, 2, 3, 4, 5], ['addMany 5 9 8 7 6 5', 'contains 15', 'remove 3', 'shift 1', 'print'])
+// solve([1, 2, 4, 5, 6, 7], ['add 1 8', 'contains 1', 'contains 3', 'print'])
+// solve([1, 2, 4, 5, 6, 7], ['addMany 1 8 8 4 6 1', 'contains 1', 'contains 3', 'print'])

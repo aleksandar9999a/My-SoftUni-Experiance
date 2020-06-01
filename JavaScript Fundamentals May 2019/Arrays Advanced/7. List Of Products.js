@@ -1,8 +1,4 @@
 function listOfProducts(productArr) {
-    productArr.sort();
-
-    for (let i = 0; i < productArr.length; i++) {
-        console.log(`${i + 1}.${productArr[i]}`);
-    }
+    return productArr.sort().map((x, i) => `${i + 1}.${x}`).join('\n');
 }
 listOfProducts(["Potatoes", "Tomatoes", "Onions", "Apples"]);

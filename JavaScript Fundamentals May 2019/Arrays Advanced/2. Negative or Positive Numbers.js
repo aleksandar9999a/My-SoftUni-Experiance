@@ -1,19 +1,11 @@
-function negativeOrPositiveNumbers(numberArr) {
-    let arrFromarrangedNumbers = [];
-
-    for (let i = 0; i < numberArr.length; i++) {
-        let currentNumber = numberArr[i];
-
-        if (currentNumber < 0) {
-            arrFromarrangedNumbers.unshift(currentNumber);
+function negativeOrPositiveNumbers(arr) {
+    return arr.reduce((acc, x) => {
+        if (x >= 0) { 
+            acc.push(x); 
+        } else {
+            acc.unshift(x);
         }
-        else{
-            arrFromarrangedNumbers.push(currentNumber);
-        }
-    }
-
-    for (let x = 0; x < arrFromarrangedNumbers.length; x++) {
-        console.log(arrFromarrangedNumbers[x]);
-    }
+        return acc;
+    }, []).join('\n');
 }
 negativeOrPositiveNumbers([7, -2, 8, 9]);
